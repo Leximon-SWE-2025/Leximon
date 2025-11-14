@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://20n33q4yrn7h"]
+
+[ext_resource type="Script" uid="uid://ba88bdrbwot4y" path="res://scripts/MovePane.cs" id="1_l2fv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn72j"]
+bg_color = Color(0.6, 0.6, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+
+[node name="MovePane" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 236.0
+offset_top = 488.0
+offset_right = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2fv8")
+metadata/_edit_group_ = true
+
+[node name="MoveBackground" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dn72j")
+
+[node name="MoveContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

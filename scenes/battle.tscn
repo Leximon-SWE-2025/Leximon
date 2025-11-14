@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://uecvb5676uf3"]
+
+[ext_resource type="PackedScene" uid="uid://dow6qaulk6ubl" path="res://scenes/log_pane.tscn" id="1_dn72j"]
+[ext_resource type="Script" uid="uid://ddfgnr3rijbff" path="res://scripts/Battle.cs" id="1_p1qf1"]
+[ext_resource type="PackedScene" uid="uid://bjxiljk33jggf" path="res://scenes/health_bar.tscn" id="1_th188"]
+[ext_resource type="PackedScene" uid="uid://20n33q4yrn7h" path="res://scenes/move_pane.tscn" id="2_a12nh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgoel"]
+
+[node name="BattleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1qf1")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgoel")
+
+[node name="MovePane" parent="." instance=ExtResource("2_a12nh")]
+layout_mode = 1
+
+[node name="PlayerLog" parent="." instance=ExtResource("1_dn72j")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 5.0
+offset_top = -288.0
+offset_right = 183.0
+offset_bottom = -5.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="EnemyLog" parent="." instance=ExtResource("1_dn72j")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -183.0
+offset_top = -288.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PlayerHealth" parent="." instance=ExtResource("1_th188")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.0
+offset_top = -14.5
+offset_right = -228.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyHealth" parent="." instance=ExtResource("1_th188")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 228.0
+offset_top = -14.5
+offset_right = 501.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
