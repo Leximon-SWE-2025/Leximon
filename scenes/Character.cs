@@ -17,7 +17,7 @@ public partial class Character : Area2D
 	public float evaluate_effectiveness();
 	
 	public bool is_alive() {
-		return (hp <=0)? true: false;
+		return (hp > 0)? true: false;
 	}
 	
 	public void take_damage(float damage) {
