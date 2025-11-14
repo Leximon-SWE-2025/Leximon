@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dow6qaulk6ubl"]
+
+[ext_resource type="Script" uid="uid://dh44r4l8o7x8a" path="res://scripts/LogPane.cs" id="1_c52vi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_685wp"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="LogPane" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -974.0
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c52vi")
+metadata/_edit_group_ = true
+
+[node name="LogBackground" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_685wp")
+
+[node name="Body" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogLabel" type="Label" parent="Body"]
+layout_mode = 2
+text = "Affects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Affects" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+size_flags_vertical = 3
