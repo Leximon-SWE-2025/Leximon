@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxvq1k18wb1a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ah0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai1tc"]
+
+[node name="LevelBar" type="ProgressBar"]
+offset_right = 217.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_u0ah0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ai1tc")

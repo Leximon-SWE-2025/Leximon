@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhnicq2xpie3r"]
 
 [ext_resource type="Script" uid="uid://cbbni86d26uif" path="res://scenes/MainMenu.cs" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://cs62ulaxuqsl5" path="res://art/field_placeholder.jpg" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cs62ulaxuqsl5" path="res://addons/godot-git-plugin/field_placeholder.jpg" id="1_l6cm7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("1_l6cm7")

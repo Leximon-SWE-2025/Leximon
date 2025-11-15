@@ -8,5 +8,3 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - godot git addon <https://github.com/godotengine/godot-git-plugin> used under MIT License as outlined [here](./addons/godot-git-plugin/LICENSE)
 
 ## Image Attributions
-
-

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cierotp7eeee0"]
+
+[ext_resource type="Script" uid="uid://cqt56pcvo8eeb" path="res://scenes/InfoPanel.cs" id="1_0j73f"]
+[ext_resource type="PackedScene" uid="uid://bijdoa2gko531" path="res://scenes/info_panel_folder/Level_Box.tscn" id="1_mxpga"]
+[ext_resource type="PackedScene" uid="uid://bxvq1k18wb1a1" path="res://scenes/info_panel_folder/level_bar.tscn" id="1_nkgev"]
+[ext_resource type="PackedScene" uid="uid://bptn6ca1ijcp6" path="res://scenes/info_panel_folder/Dictionary.tscn" id="1_wrceg"]
+[ext_resource type="Script" uid="uid://pquuaab7irvm" path="res://scripts/info_panel_scripts/level_bar.cs" id="3_ktb4k"]
+[ext_resource type="PackedScene" uid="uid://bgg4a02h6lryu" path="res://scenes/info_panel_folder/word_synonym_antonyms.tscn" id="5_rai61"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olce6"]
+
+[node name="InfoPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0j73f")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_olce6")
+
+[node name="Dictionary" parent="." instance=ExtResource("1_wrceg")]
+layout_mode = 1
+offset_top = 98.0
+offset_bottom = -15.0
+
+[node name="LevelBox" parent="." instance=ExtResource("1_mxpga")]
+layout_mode = 1
+offset_top = 44.0
+offset_bottom = 44.0
+
+[node name="LevelBar" parent="." instance=ExtResource("1_nkgev")]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 47.0
+offset_right = 344.0
+offset_bottom = 74.0
+script = ExtResource("3_ktb4k")
+
+[node name="WordSynonymAntonyms" parent="." instance=ExtResource("5_rai61")]
+layout_mode = 1
+offset_left = 855.0
+offset_top = 93.0
+offset_right = -98.0
+offset_bottom = -225.0
