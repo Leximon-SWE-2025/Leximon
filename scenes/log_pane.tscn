@@ -40,7 +40,7 @@ grow_vertical = 2
 
 [node name="LogLabel" type="Label" parent="Body"]
 layout_mode = 2
-text = "Affects"
+text = "Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 

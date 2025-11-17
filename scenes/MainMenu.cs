@@ -11,7 +11,8 @@ public partial class MainMenu : Control
 		var b4 = GetNode<Button>("VBoxContainer/Button4");
 	}
 	private void _on_start_pressed(){
-		GD.Print("Start Button Works");
+		//GD.Print("Start Button Works");
+		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
 	}
 	
 	private void _on_load_pressed(){
@@ -23,7 +24,6 @@ public partial class MainMenu : Control
 	}
 	
 	private void _on_exit_pressed(){
-		GD.Print("Exit pressed");
 		GetTree().Quit();
 	}
 }

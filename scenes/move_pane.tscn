@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://20n33q4yrn7h"]
+[gd_scene load_steps=4 format=3 uid="uid://20n33q4yrn7h"]
 
-[ext_resource type="Script" uid="uid://ba88bdrbwot4y" path="res://scripts/MovePane.cs" id="1_l2fv8"]
+[ext_resource type="Script" uid="uid://ns0n03mv17wo" path="res://scenes/MovePane.cs" id="1_l2fv8"]
+[ext_resource type="PackedScene" uid="uid://dh2o4iecp64ak" path="res://scenes/card.tscn" id="2_vq2hu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn72j"]
 bg_color = Color(0.6, 0.6, 1, 1)
@@ -18,7 +19,7 @@ offset_right = -236.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l2fv8")
-metadata/_edit_group_ = true
+cardScene = ExtResource("2_vq2hu")
 
 [node name="MoveBackground" type="Panel" parent="."]
 layout_mode = 1

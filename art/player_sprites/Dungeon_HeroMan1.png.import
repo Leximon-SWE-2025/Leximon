@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs62ulaxuqsl5"
-path="res://.godot/imported/field_placeholder.jpg-d3b98e480aa04f7816b1a53459960138.ctex"
+uid="uid://d4k3ef6f85clk"
+path="res://.godot/imported/Dungeon_HeroMan1.png-e9df667527cf43da3f327c7a82a45dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/field_placeholder.jpg"
-dest_files=["res://.godot/imported/field_placeholder.jpg-d3b98e480aa04f7816b1a53459960138.ctex"]
+source_file="res://art/player_sprites/Dungeon_HeroMan1.png"
+dest_files=["res://.godot/imported/Dungeon_HeroMan1.png-e9df667527cf43da3f327c7a82a45dfc.ctex"]
 
 [params]
 
