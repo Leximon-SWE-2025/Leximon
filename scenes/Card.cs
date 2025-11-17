@@ -6,9 +6,7 @@ public partial class Card : Control
     [Export]
     float hoverAmmount;
 
-    //private Vector2? hoverPosition;
-    //private Vector2? groundedPosition;
-
+    String word => GetNode<Label>("VBoxContainer/WordName").Text;
 
     private Tween hoverTween;
     // Called when the node enters the scene tree for the first time.
@@ -20,11 +18,7 @@ public partial class Card : Control
     //{
     //}
 
-    //public void UpdatePosition()
-    //{
-    //    hoverPosition = Position + Vector2.Up * hoverAmmount;
-    //    groundedPosition = Position;
-    //}
+
 
 
     public void HoverBy(Vector2 ammount)
@@ -49,9 +43,22 @@ public partial class Card : Control
         if (@event is InputEventMouseButton mouseEvent)
         {
             if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.IsReleased())
-                GD.Print($"Mouse clicked for {GetNode<Label>("VBoxContainer/WordName").Text}");
+            {
+                if (GetNode<Label>("VBoxContainer/Help").GetRect().HasPoint(mouseEvent.Position))
+                {
+                    GD.Print($"Help Pressed for {word}");
+                }
+                else
+                {
+                    GD.Print($"Mouse clicked for {word}");
+                }
+            }
         }
+
     }
+
+
+  
 
     public void SetLabel(String text)
     {

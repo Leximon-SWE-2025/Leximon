@@ -12,7 +12,7 @@ public partial class MainMenu : Control
 	}
 	private void _on_start_pressed(){
 		//GD.Print("Start Button Works");
-		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+		GetTree().ChangeSceneToFile(@"res://scenes/game.tscn");
 	}
 	
 	private void _on_load_pressed(){

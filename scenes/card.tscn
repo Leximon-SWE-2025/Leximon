@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh2o4iecp64ak"]
+[gd_scene load_steps=3 format=3 uid="uid://dag72eeuondm3"]
 
 [ext_resource type="Script" uid="uid://dn64ut1antx1e" path="res://scenes/Card.cs" id="1_d81rb"]
 
@@ -22,7 +22,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_d81rb")
 hoverAmmount = 25.0
-metadata/_edit_group_ = true
 
 [node name="CardBackground" type="Panel" parent="."]
 layout_mode = 1
@@ -41,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="WordName" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -50,8 +50,11 @@ text = "Word"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="Help" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2867756, 0.41705662, 0.9684175, 1)
+text = "help"
+horizontal_alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
