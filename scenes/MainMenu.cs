@@ -20,7 +20,8 @@ public partial class MainMenu : Control
 	}
 	
 	private void _on_about_pressed(){
-		GD.Print("About Button Works");
+		//GD.Print("About Button Works");
+		OS.ShellOpen(@"https://leximon-swe-2025.github.io/Website/");
 	}
 	
 	private void _on_exit_pressed(){
