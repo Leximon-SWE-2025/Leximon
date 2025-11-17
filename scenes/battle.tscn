@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://uecvb5676uf3"]
+[gd_scene load_steps=6 format=3 uid="uid://bj5op5rmh6uds"]
 
+[ext_resource type="Script" uid="uid://dxebewmwf1kji" path="res://scenes/BattleUI.cs" id="1_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dow6qaulk6ubl" path="res://scenes/log_pane.tscn" id="1_dn72j"]
-[ext_resource type="Script" uid="uid://ddfgnr3rijbff" path="res://scripts/Battle.cs" id="1_p1qf1"]
 [ext_resource type="PackedScene" uid="uid://bjxiljk33jggf" path="res://scenes/health_bar.tscn" id="1_th188"]
 [ext_resource type="PackedScene" uid="uid://20n33q4yrn7h" path="res://scenes/move_pane.tscn" id="2_a12nh"]
 
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p1qf1")
+script = ExtResource("1_a12nh")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -79,3 +79,9 @@ offset_right = 501.0
 offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PlayerPos" type="Marker2D" parent="."]
+position = Vector2(211.5, 170)
+
+[node name="EnemyPos" type="Marker2D" parent="."]
+position = Vector2(940.5, 170)
