@@ -40,7 +40,7 @@ public partial class BattleUI : Control
 
     private int maxHealth;
     public int MaxHealth { get { return maxHealth; } }
-    
+
     private DefinitionPopUp DefinitionPopup;
     private MovePopUp MovePopUp;
     // Called when the node enters the scene tree for the first time.
@@ -63,7 +63,7 @@ public partial class BattleUI : Control
             state = BattleUIState.SelectWord;
             DefinitionPopup.Hide();
         };
-       
+
         MovePopUp.CloseMovePopUp += () =>
         {
             GD.Print("Close Move");

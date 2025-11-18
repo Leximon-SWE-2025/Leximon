@@ -12,11 +12,11 @@ public abstract partial class Character : Area2D
     //[Export]
     //Texture2D uiTexture;
 
-    private int currentHealth=100;
+    private int currentHealth = 100;
     public int CurrentHealth => currentHealth;
 
 
-    private int maxHealth=100;
+    private int maxHealth = 100;
     public int MaxHealth => maxHealth;
 
     public float PercentHealth
@@ -63,7 +63,7 @@ public abstract partial class Character : Area2D
 
         //this.GetNode<AnimatedSprite2D>("AnimatedSprite2D").SpriteFrames.GetFrameTexture("default", 0);
 
-        int[] indexes = [.. Enumerable.Range(0,knownMoves.Count)];
+        int[] indexes = [.. Enumerable.Range(0, knownMoves.Count)];
         //for (int i = 0; i < knownMoves.Count; i++)
         //    indexes[i] = i;
 

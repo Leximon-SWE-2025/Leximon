@@ -19,15 +19,15 @@ public partial class Card : Control
 
 
 
-    Label helpButton=> GetNode<Label>("VBoxContainer/Help");
+    Label helpButton => GetNode<Label>("VBoxContainer/Help");
 
     private Tween hoverTween;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
 
-        helpButton.Text= helpText;
+
+        helpButton.Text = helpText;
     }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     //public override void _Process(double delta)
@@ -89,7 +89,7 @@ public partial class Card : Control
     }
 
 
-  
+
 
     public void SetLabel(String text)
     {
