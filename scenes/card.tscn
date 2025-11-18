@@ -22,6 +22,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_d81rb")
 hoverAmmount = 25.0
+helpText = "help"
+helpClickedTest = "[color=purple][u]help[/u][/color]"
 
 [node name="CardBackground" type="Panel" parent="."]
 layout_mode = 1
@@ -55,6 +57,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.2867756, 0.41705662, 0.9684175, 1)
 text = "help"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

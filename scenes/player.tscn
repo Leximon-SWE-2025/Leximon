@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgnfb5u4vprn0"]
+[gd_scene load_steps=8 format=3 uid="uid://bgu5u14ys7ry5"]
 
 [ext_resource type="Script" uid="uid://dvseg7pnluunc" path="res://scenes/Player.cs" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://ceho4x4wtsoqe" path="res://art/tilemap.png" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_g2els")
+region = Rect2(1.545, 35.5, 50.955, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(18, 17)
@@ -27,6 +31,7 @@ size = Vector2(64, 64)
 [node name="Player" type="Area2D"]
 collision_mask = 3
 script = ExtResource("1_3vyb7")
+uiTexture = SubResource("AtlasTexture_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

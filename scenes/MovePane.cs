@@ -33,13 +33,13 @@ public partial class MovePane : Control
         }
     }
 
-    public void AddMove(Move move)
+    public Card AddMove(Move move)
     {
         var card = cardScene.Instantiate<Card>();
         card.SetLabel(move.Word);
 
         moveContainer.AddChild(card);
-
+        return card;
         //card.UpdatePosition();
     }
 }

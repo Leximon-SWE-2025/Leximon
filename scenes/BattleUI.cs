@@ -2,6 +2,11 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
+enum BattleUIState
+{
+    SelectWord, ViewDefinition, SelectMove
+}
 public partial class BattleUI : Control
 {
     //Player refrence
@@ -28,12 +33,16 @@ public partial class BattleUI : Control
     private LogPane enemyLogPane;
     private LogPane playerLogPane;
 
+    private BattleUIState state;
+
     private MovePane movePane; private int currentHealth;
     public int CurrentHealth { get { return currentHealth; } }
 
     private int maxHealth;
     public int MaxHealth { get { return maxHealth; } }
-
+    
+    private DefinitionPopUp DefinitionPopup;
+    private MovePopUp MovePopUp;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -43,21 +52,61 @@ public partial class BattleUI : Control
         enemyLogPane = GetNode<LogPane>("EnemyLog");
         playerLogPane = GetNode<LogPane>("PlayerLog");
 
-        movePane = GetNode<MovePane>(nameof(MovePane));
+        movePane = GetNode<MovePane>("MovePane");
+        DefinitionPopup = GetNode<DefinitionPopUp>("DefinitionPopUp");
+
+        MovePopUp = GetNode<MovePopUp>("MovePopUp");
+
+        DefinitionPopup.CloseDefinitionPopUp += () =>
+        {
+            GD.Print("Close Def");
+            state = BattleUIState.SelectWord;
+            DefinitionPopup.Hide();
+        };
+       
+        MovePopUp.CloseMovePopUp += () =>
+        {
+            GD.Print("Close Move");
+            state = BattleUIState.SelectWord;
+            MovePopUp.Hide();
+        };
 
         //TODO: grab player refrence
 
         //player.UpdateHealth += UpdatePlayerHealth;
         //UpdatePlayerHealth();
+        this.VisibilityChanged += () => { if (this.Visible) state = BattleUIState.SelectWord; };
     }
 
     public void UpdateMoves(Move[] moves)
     {
-
         movePane.ClearMoves();
         foreach (var move in moves)
         {
-            movePane.AddMove(move);
+            var card = movePane.AddMove(move);
+
+            card.ShowDefinition += (word) =>
+            {
+                GD.Print(state);
+                if (state == BattleUIState.SelectWord)
+                {
+                    DefinitionPopup.Text = $"Definition for {word}";
+                    state = BattleUIState.ViewDefinition;
+                    DefinitionPopup.Show();
+                }
+            };
+
+            card.SelectMove += (word) =>
+            {
+                GD.Print(state);
+                if (state == BattleUIState.SelectWord)
+                {
+                    MovePopUp.Text = $"{word}";
+                    state = BattleUIState.SelectMove;
+                    MovePopUp.Show();
+                }
+            };
+
         }
         //throw new NotImplementedException();
     }

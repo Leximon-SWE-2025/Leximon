@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfks746jhhhgr"]
+
+[ext_resource type="Script" uid="uid://pvryjcba85ya" path="res://scenes/MovePopUp.cs" id="1_3egiq"]
+
+[node name="MovePopUp" type="PanelContainer"]
+offset_right = 200.0
+offset_bottom = 150.0
+script = ExtResource("1_3egiq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Word" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="DefendButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Defend"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

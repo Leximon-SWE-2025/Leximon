@@ -24,14 +24,14 @@ public partial class Player : Character
         interactionArea = GetNode<Area2D>("InteractionArea");
 
         knownMoves = new HashSet<Move>   {
-            new Move(Word:"Cold", Type:new Type("Temp")),
-            new Move(Word:"Hot", Type:new Type("Temp")),
-            new Move(Word:"Wet", Type:new Type("Moist")),
-            new Move(Word:"Dry", Type:new Type("Moist")),
-            new Move(Word:"Bright", Type:new Type("Lum")),
-            new Move(Word:"Dark", Type:new Type("Lum")),
-            new Move(Word:"Fun", Type:new Type("Fun")),
-            new Move(Word:"Boring", Type:new Type("Fun")),
+            new Move(Word:"Cold"),
+            new Move(Word:"Hot"),
+            new Move(Word:"Wet"),
+            new Move(Word:"Dry"),
+            new Move(Word:"Bright"),
+            new Move(Word:"Dark"),
+            new Move(Word:"Fun"),
+            new Move(Word:"Boring"),
         };
     }
 

@@ -9,6 +9,9 @@ using System.Text;
 [GlobalClass]
 public abstract partial class Character : Area2D
 {
+    //[Export]
+    //Texture2D uiTexture;
+
     private int currentHealth=100;
     public int CurrentHealth => currentHealth;
 
@@ -58,7 +61,7 @@ public abstract partial class Character : Area2D
         }
         //var newMoves = new HashSet<Move>(count);
 
-
+        //this.GetNode<AnimatedSprite2D>("AnimatedSprite2D").SpriteFrames.GetFrameTexture("default", 0);
 
         int[] indexes = [.. Enumerable.Range(0,knownMoves.Count)];
         //for (int i = 0; i < knownMoves.Count; i++)

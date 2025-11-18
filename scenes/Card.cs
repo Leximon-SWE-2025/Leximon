@@ -6,12 +6,28 @@ public partial class Card : Control
     [Export]
     float hoverAmmount;
 
+    [Export]
+    String helpText;
+
+    [Export]
+    String helpClickedTest;
+
+    //[Export]
+    //PackedScene DefinitionPopup;
+
     String word => GetNode<Label>("VBoxContainer/WordName").Text;
+
+
+
+    Label helpButton=> GetNode<Label>("VBoxContainer/Help");
 
     private Tween hoverTween;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        
+
+        helpButton.Text= helpText;
     }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     //public override void _Process(double delta)
@@ -34,6 +50,16 @@ public partial class Card : Control
 
     }
 
+    //void _on_help_mouse_entered()
+    //{
+    //    helpButton.Text = helpClickedTest;
+    //}
+
+    //void _on_help_mouse_exited()
+    //{
+    //    helpButton.Text = helpText;
+    //}
+
     void _on_mouse_entered() => HoverBy(Vector2.Up * hoverAmmount);
 
     void _on_mouse_exited() => HoverBy(Vector2.Down * hoverAmmount);
@@ -44,13 +70,18 @@ public partial class Card : Control
         {
             if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.IsReleased())
             {
-                if (GetNode<Label>("VBoxContainer/Help").GetRect().HasPoint(mouseEvent.Position))
+                if (helpButton.GetRect().HasPoint(mouseEvent.Position))
                 {
-                    GD.Print($"Help Pressed for {word}");
+                    //GD.Print($"Help Pressed for {word}");
+                    //var popUp = DefinitionPopup.Instantiate();
+                    //popUp.GetNode<Label>("VBoxContainer/Label").Text = $"Definition for {word}";
+                    //AddChild(popUp);
+                    EmitSignal(SignalName.ShowDefinition, word);
                 }
                 else
                 {
-                    GD.Print($"Mouse clicked for {word}");
+                    EmitSignal(SignalName.SelectMove, word);
+                    //GD.Print($"Mouse clicked for {word}");
                 }
             }
         }
@@ -72,4 +103,9 @@ public partial class Card : Control
     //    label = Word;
     //}
     //public Card(Move move) : this(move.Word) { }
+
+    [Signal]
+    public delegate void ShowDefinitionEventHandler(String word);
+    [Signal]
+    public delegate void SelectMoveEventHandler(String word);
 }
