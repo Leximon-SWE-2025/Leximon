@@ -12,7 +12,12 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - <https://kenney.nl/assets/1-bit-input-prompts-pixel-16> CC0
 - <https://kenney.nl/assets/tiny-dungeon> CC0
 
+## Data Sources
+
+- Word Definitions from [Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page) under the [Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+
 ## References
+
 - <https://stackoverflow.com/questions/723211/quick-way-to-create-a-list-of-values-in-c>
 - <https://www.reddit.com/r/godot/comments/1ag5agj/boxcontainers_seem_to_squish_child_nodes_to/>
 - <https://docs.godotengine.org/en/stable/tutorials/inputs/input_examples.html>
