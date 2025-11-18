@@ -3,18 +3,26 @@
 [ext_resource type="Script" uid="uid://0wmpv6enabge" path="res://scenes/DefinitionPopUp.cs" id="1_tyvly"]
 
 [node name="DefinitionPopUp" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
 offset_right = 202.0
 offset_bottom = 187.0
 script = ExtResource("1_tyvly")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Word" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Def" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2

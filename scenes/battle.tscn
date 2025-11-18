@@ -29,19 +29,35 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mgoel")
 
 [node name="DefinitionPopUp" parent="." instance=ExtResource("5_lpir7")]
 visible = false
-layout_mode = 0
-offset_left = 485.0
-offset_top = 255.0
-offset_right = 687.0
-offset_bottom = 442.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.27057928
+anchor_right = 0.5
+anchor_bottom = 0.27057928
+offset_left = -101.0
+offset_top = -93.5
+offset_right = 101.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="MovePopUp" parent="." instance=ExtResource("3_6vh42")]
 visible = false
-layout_mode = 0
-offset_left = 485.0
-offset_top = 285.0
-offset_right = 685.0
-offset_bottom = 435.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3567073
+anchor_right = 0.5
+anchor_bottom = 0.3567073
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="MovePane" parent="." instance=ExtResource("2_a12nh")]
 layout_mode = 1

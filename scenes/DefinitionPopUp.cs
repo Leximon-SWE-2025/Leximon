@@ -13,23 +13,41 @@ public partial class DefinitionPopUp : PanelContainer
     //{
     //}
 
-    public String Text
+    public string Text
     {
         get
         {
-            return GetNode<Label>("VBoxContainer/Label").Text;
+            return GetNode<Label>("VBoxContainer/Def").Text;
 
         }
         set
         {
-            GetNode<Label>("VBoxContainer/Label").Text = value;
+            GetNode<Label>("VBoxContainer/Def").Text = value;
+        }
+    }
+    public string Word
+    {
+        get
+        {
+            return GetNode<Label>("VBoxContainer/Word").Text;
+
+        }
+        set
+        {
+            GetNode<Label>("VBoxContainer/Word").Text = value;
         }
     }
 
     void _on_button_pressed()
     {
-        EmitSignal(SignalName.CloseDefinitionPopUp);
+        Close();
         //EmitSignalCloseRequested();
+    }
+
+    public void Close()
+    {
+        EmitSignal(SignalName.CloseDefinitionPopUp);
+        Hide();
     }
 
     [Signal]

@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 
 enum BattleUIState
@@ -42,7 +43,7 @@ public partial class BattleUI : Control
     public int MaxHealth { get { return maxHealth; } }
 
     private DefinitionPopUp DefinitionPopup;
-    private MovePopUp MovePopUp;
+    private MovePopUp MovePopup;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -55,20 +56,22 @@ public partial class BattleUI : Control
         movePane = GetNode<MovePane>("MovePane");
         DefinitionPopup = GetNode<DefinitionPopUp>("DefinitionPopUp");
 
-        MovePopUp = GetNode<MovePopUp>("MovePopUp");
+        MovePopup = GetNode<MovePopUp>("MovePopUp");
 
         DefinitionPopup.CloseDefinitionPopUp += () =>
         {
-            GD.Print("Close Def");
-            state = BattleUIState.SelectWord;
-            DefinitionPopup.Hide();
+            if (DefinitionPopup.Visible)
+            {
+                state = BattleUIState.SelectWord;
+            }
         };
 
-        MovePopUp.CloseMovePopUp += () =>
+        MovePopup.CloseMovePopUp += () =>
         {
-            GD.Print("Close Move");
-            state = BattleUIState.SelectWord;
-            MovePopUp.Hide();
+            if (MovePopup.Visible)
+            {
+                state = BattleUIState.SelectWord;
+            }
         };
 
         //TODO: grab player refrence
@@ -87,10 +90,11 @@ public partial class BattleUI : Control
 
             card.ShowDefinition += (word) =>
             {
-                GD.Print(state);
+                //GD.Print(state);
                 if (state == BattleUIState.SelectWord)
                 {
-                    DefinitionPopup.Text = $"Definition for {word}";
+                    DefinitionPopup.Text = string.Join("\n", WordManager.Definitions[word]);
+                    DefinitionPopup.Word = WordManager.TitleCaseWord(word);
                     state = BattleUIState.ViewDefinition;
                     DefinitionPopup.Show();
                 }
@@ -98,12 +102,12 @@ public partial class BattleUI : Control
 
             card.SelectMove += (word) =>
             {
-                GD.Print(state);
+                //GD.Print(state);
                 if (state == BattleUIState.SelectWord)
                 {
-                    MovePopUp.Text = $"{word}";
+                    MovePopup.Text = WordManager.TitleCaseWord(word);
                     state = BattleUIState.SelectMove;
-                    MovePopUp.Show();
+                    MovePopup.Show();
                 }
             };
 
@@ -118,6 +122,15 @@ public partial class BattleUI : Control
     public void UpdateEnemyHealth(float healthPercent)
     {
         enemyHealthBar.Value = healthPercent;
+    }
+
+    internal void Close()
+    {
+        DefinitionPopup.Close();
+        MovePopup.Close();
+
+        state = BattleUIState.SelectWord;
+        Hide();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

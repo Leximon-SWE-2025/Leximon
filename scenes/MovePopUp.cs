@@ -27,8 +27,13 @@ public partial class MovePopUp : PanelContainer
 
     void _on_exit_button_pressed()
     {
+        Close();
+    }
+
+    public void Close()
+    {
         EmitSignal(SignalName.CloseMovePopUp);
-        //EmitSignalCloseRequested();
+        Hide();
     }
 
     [Signal]

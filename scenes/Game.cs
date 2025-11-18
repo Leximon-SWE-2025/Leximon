@@ -57,7 +57,7 @@ public partial class Game : Node2D
     {
         if (@event.IsActionPressed("ui_cancel"))
         {
-            BattleUI.Hide();
+            BattleUI.Close();
         }
     }
 
