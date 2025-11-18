@@ -1,10 +1,78 @@
 [
-    "cold",
-    "hot",
-    "wet",
-    "dry",
-    "bright",
-    "dark",
-    "fun",
-    "boring"
+    {
+        "word": "cold",
+        "types": [
+            "temperature"
+        ],
+        "definitions": [
+            "Having a low temperature"
+        ]
+    },
+    {
+        "word": "hot",
+        "types": [
+            "temperature"
+        ],
+        "definitions": [
+            "Having or giving off a high temperature"
+        ]
+    },
+    {
+        "word": "wet",
+        "types": [
+            "moist"
+        ],
+        "definitions": [
+            "Made up of liquid or moisture, usually (but not always) water"
+        ]
+    },
+    {
+        "word": "dry",
+        "types": [
+            "moist"
+        ],
+        "definitions": [
+            "Free from or lacking moisture"
+        ]
+    },
+    {
+        "word": "Bright",
+        "types": [
+            "brightness",
+            "light"
+        ],
+        "definitions": [
+            "Emitting much light"
+        ]
+    },
+    {
+        "word": "Dark",
+        "types": [
+            "brightness",
+            "light"
+        ],
+        "definitions": [
+            "Having an absolute or (more often) relative lack of light"
+        ]
+    },
+    {
+        "word": "fun",
+        "types": [
+            "fun",
+            "personality"
+        ],
+        "definitions": [
+            "Enjoyable or amusing"
+        ]
+    },
+    {
+        "word": "boring",
+        "types": [
+            "fun",
+            "personality"
+        ],
+        "definitions": [
+            "Causing boredom or tiredness; making one feel tired and impatient"
+        ]
+    }
 ]

@@ -15,6 +15,10 @@ run/main_scene="uid://bhnicq2xpie3r"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WordManager="*res://scripts/WordManager.cs"
+
 [display]
 
 window/size/viewport_height=656
