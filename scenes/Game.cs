@@ -5,7 +5,7 @@ using System.Linq;
 
 enum GameState
 {
-    Hub, Battle, Info
+    Hub, Battle, Info, Exit
 }
 
 public partial class Game : Node2D
@@ -19,6 +19,9 @@ public partial class Game : Node2D
     InfoPane InfoPane;
 
     GameState State;
+
+    [Export]
+    private ExitPane ExitPanel;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -72,6 +75,8 @@ public partial class Game : Node2D
 
         Player.EnterBattle += StartBattle;
 
+        ExitPanel.QuitGame += ()=> GetTree().Quit();
+
         ChangeState(GameState.Hub);
     }
 
@@ -84,9 +89,8 @@ public partial class Game : Node2D
                 Player.CanMove = true;
                 break;
             case GameState.Battle:
-                Player.CanMove = false;
-                break;
             case GameState.Info:
+            case GameState.Exit:
                 Player.CanMove = false;
                 break;
         }
@@ -120,13 +124,20 @@ public partial class Game : Node2D
         {
             switch (State)
             {
+                case GameState.Hub:
+                    ChangeState(GameState.Exit);
+                    ExitPanel.Show();
+                    break;
+                case GameState.Exit:
+                    ChangeState(GameState.Hub);
+                    ExitPanel.Hide();
+                    break;
                 case GameState.Battle:
                     BattleUI.Close();
                     break;
                 case GameState.Info:
                     InfoPane.Hide();
                     break;
-                default: break;
             }
         }
         else if (@event.IsActionPressed("open_info"))
