@@ -23,8 +23,9 @@ public partial class Player : Character
 
         interactionArea = GetNode<Area2D>("InteractionArea");
 
-        knownMoves = new HashSet<Move>   {
+        knownMoves = [
             new Move(Word:"cold"),
+            new Move(Word:"cool"),
             new Move(Word:"hot"),
             new Move(Word:"wet"),
             new Move(Word:"dry"),
@@ -32,7 +33,7 @@ public partial class Player : Character
             new Move(Word:"dark"),
             new Move(Word:"fun"),
             new Move(Word:"boring"),
-        };
+        ];
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
