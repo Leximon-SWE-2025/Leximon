@@ -117,5 +117,33 @@ grow_vertical = 2
 [node name="PlayerPos" type="Marker2D" parent="."]
 position = Vector2(211.5, 170)
 
+[node name="Label" type="Label" parent="PlayerPos"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -11.5
+offset_right = 70.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player Sprite Here"
+
 [node name="EnemyPos" type="Marker2D" parent="."]
 position = Vector2(940.5, 170)
+
+[node name="Label" type="Label" parent="EnemyPos"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -11.5
+offset_right = 72.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enemy Sprite Here"

@@ -28,6 +28,7 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record>
 - <https://learn.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder>
 - <https://www.reddit.com/r/godot/comments/mhnpgl/grid_container_with_scroll/>
+- <https://forum.godotengine.org/t/how-do-i-fix-error-no-export-template-found-at-the-expected-path-path/1982>
 
 ## AI Disclosure
 - [ChatGPT 5.1](https://chatgpt.com/)

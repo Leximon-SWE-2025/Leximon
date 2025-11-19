@@ -63,13 +63,8 @@ public partial class Game : Node2D
         InfoPane.Hidden += () => { ChangeState(GameState.Hub); };
 
         BattleUI.Hidden += () => { ChangeState(GameState.Hub); };
-        //BattleUI.Player = Player;
-        //BattleUI.Enemies.Add(Enemy);
 
-        //Player.NotificationReady += () => GD.Print("Ready");
-        //GD.Print($"Before: {Player.Position}");
         Player.Position = Player.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (Globals.TILE_SIZE / 2));
-        //GD.Print($"After: {Player.Position}");
 
         Enemy.Position = Enemy.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (12 * Globals.TILE_SIZE / 2));
 
