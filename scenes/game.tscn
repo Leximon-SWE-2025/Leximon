@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkvmcxoxwqims"]
+[gd_scene load_steps=10 format=4 uid="uid://c4ev2xcob5r0c"]
 
 [ext_resource type="Script" uid="uid://c24frtqh07rjy" path="res://scenes/Game.cs" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cgnfb5u4vprn0" path="res://scenes/player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bgu5u14ys7ry5" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bj5op5rmh6uds" path="res://scenes/battle.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://ceho4x4wtsoqe" path="res://art/tilemap.png" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://b351qgl3b65ir" path="res://scenes/enemy.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://hkubiwgosm33" path="res://scenes/info_pane.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bf8d775b2qtic" path="res://scenes/enemy.tscn" id="5_iywne"]
+[ext_resource type="Script" uid="uid://c40g8fkl4crlo" path="res://scenes/InfoPane.cs" id="5_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -156,6 +158,10 @@ tile_set = SubResource("TileSet_iywne")
 
 [node name="BattleUI" parent="CanvasLayer" instance=ExtResource("2_lnu2h")]
 visible = false
+
+[node name="InfoPane" parent="CanvasLayer" instance=ExtResource("4_p57ef")]
+visible = false
+script = ExtResource("5_u5sy4")
 
 [node name="Player" parent="." instance=ExtResource("1_yqjtg")]
 

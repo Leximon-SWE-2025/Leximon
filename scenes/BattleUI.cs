@@ -93,7 +93,7 @@ public partial class BattleUI : Control
                 //GD.Print(state);
                 if (state == BattleUIState.SelectWord)
                 {
-                    DefinitionPopup.Text = string.Join("\n", WordManager.Definitions[word]);
+                    DefinitionPopup.Text = string.Join("\n", WordManager.GetDefinitions(word));
                     DefinitionPopup.Word = WordManager.TitleCaseWord(word);
                     state = BattleUIState.ViewDefinition;
                     DefinitionPopup.Show();
