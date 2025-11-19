@@ -75,7 +75,7 @@ public partial class Game : Node2D
 
         Player.EnterBattle += StartBattle;
 
-        ExitPanel.QuitGame += ()=> GetTree().Quit();
+        ExitPanel.QuitGame += () => GetTree().Quit();
 
         ChangeState(GameState.Hub);
     }
