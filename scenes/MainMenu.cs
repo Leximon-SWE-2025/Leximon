@@ -5,7 +5,8 @@ public partial class MainMenu : Control
 {
     public override void _Ready()
     {
-        GD.Print("MainMenu Ready!");
+        if (OS.IsDebugBuild())
+            GD.Print("MainMenu Ready!");
         var b1 = GetNode<Button>("VBoxContainer/Button");
         var b2 = GetNode<Button>("VBoxContainer/Button2");
         var b3 = GetNode<Button>("VBoxContainer/Button3");
