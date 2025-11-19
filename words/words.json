@@ -6,6 +6,27 @@
         ],
         "definitions": [
             "Having a low temperature"
+        ],
+        "synonyms": [
+            "cool"
+        ],
+        "antonyms": [
+            "hot"
+        ]
+    },
+    {
+        "word": "cool",
+        "types": [
+            "temperature"
+        ],
+        "definitions": [
+            "Of a mildly low temperature"
+        ],
+        "synonyms": [
+            "cold"
+        ],
+        "antonyms": [
+            "hot"
         ]
     },
     {
@@ -15,6 +36,11 @@
         ],
         "definitions": [
             "Having or giving off a high temperature"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "cool",
+            "cold"
         ]
     },
     {
@@ -24,6 +50,10 @@
         ],
         "definitions": [
             "Made up of liquid or moisture, usually (but not always) water"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "dry"
         ]
     },
     {
@@ -33,6 +63,10 @@
         ],
         "definitions": [
             "Free from or lacking moisture"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "wet"
         ]
     },
     {
@@ -43,6 +77,10 @@
         ],
         "definitions": [
             "Emitting much light"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "dark"
         ]
     },
     {
@@ -53,6 +91,10 @@
         ],
         "definitions": [
             "Having an absolute or (more often) relative lack of light"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "light"
         ]
     },
     {
@@ -63,6 +105,10 @@
         ],
         "definitions": [
             "Enjoyable or amusing"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "boring"
         ]
     },
     {
@@ -73,6 +119,10 @@
         ],
         "definitions": [
             "Causing boredom or tiredness; making one feel tired and impatient"
+        ],
+        "synonyms": [],
+        "antonyms": [
+            "fun"
         ]
     }
 ]

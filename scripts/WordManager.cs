@@ -9,26 +9,32 @@ using System.Text;
 using System.Text.Json;
 
 
-public record WordInfo(string Word, string[] Types, string[] Definitions)
+public record WordInfo(string Word, string[] Types, string[] Definitions, string[] Synonyms, string[] Antonyms)
 {
     public string Word { get; init; } = Word.ToLower();
     public string[] Types { get; init; } = [.. Types.Select(type => type.ToLower())];
+    public string[] Synonyms { get; init; } = [.. Synonyms.Select(type => type.ToLower())];
+    public string[] Antonyms { get; init; } = [.. Antonyms.Select(type => type.ToLower())];
 
-    public override string ToString() => $"{nameof(WordInfo)} {{ {nameof(Word)} = {Word}, {nameof(Types)} = {{ {string.Join(", ", Types)} }}, {nameof(Definitions)} = {{ {string.Join(", ", Definitions)} }} }}";
+    public override string ToString() => $"{nameof(WordInfo)} {{ {string.Join(", ",
+            $"{nameof(Word)} = {Word}",
+            $"{nameof(Types)} = {{ {string.Join(", ", Types)} }}",
+            $"{nameof(Definitions)} = {{ {string.Join(", ", Definitions)} }}",
+            $"{nameof(Synonyms)} = {{ {string.Join(", ", Synonyms)} }}",
+            $"{nameof(Antonyms)} = {{ {string.Join(", ", Antonyms)} }}"
+        )} }}";
 }
 
 public partial class WordManager : Node
 {
     static private Dictionary<string, WordInfo> WordData;
 
-    //static private HashSet<string> words;
     static public IEnumerable<string> Words => WordData.Keys;
 
-    //static private Dictionary<string, string[]> types;
-    //static public Dictionary<string, string[]> Types => types;
-
-    ////static private Dictionary<string, string[]> definitions;
-    //static public Dictionary<string, string[]> Definitions => definitions;
+    public static IEnumerable<string> GetTypes(string word) => WordData[word].Types;
+    public static IEnumerable<string> GetDefinitions(string word) => WordData[word].Definitions;
+    public static IEnumerable<string> GetSynonyms(string word) => WordData[word].Synonyms;
+    public static IEnumerable<string> GetAntonyms(string word) => WordData[word].Antonyms;
 
     static private readonly JsonSerializerOptions jsonOptions = new()
     {
@@ -36,9 +42,6 @@ public partial class WordManager : Node
         AllowTrailingCommas = true,
         ReadCommentHandling = JsonCommentHandling.Skip,
     };
-
-    public static IEnumerable<string> GetTypes(string word) => WordData[word].Types;
-    public static IEnumerable<string> GetDefinitions(string word) => WordData[word].Definitions;
 
     public static string TitleCaseWord(string word) => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word);
     public override void _Ready()
