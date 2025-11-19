@@ -22,7 +22,6 @@ public partial class Game : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        State = GameState.Hub;
         var camera = GetNode<Camera2D>("Player/MainCamera");
 
         camera.LimitTop = 0;
@@ -58,9 +57,9 @@ public partial class Game : Node2D
             }
         };
 
-        InfoPane.Hidden += () => { State = GameState.Hub; };
+        InfoPane.Hidden += () => { ChangeState(GameState.Hub); };
 
-        BattleUI.Hidden += () => { State = GameState.Hub; };
+        BattleUI.Hidden += () => { ChangeState(GameState.Hub); };
         //BattleUI.Player = Player;
         //BattleUI.Enemies.Add(Enemy);
 
@@ -72,6 +71,25 @@ public partial class Game : Node2D
         Enemy.Position = Enemy.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (12 * Globals.TILE_SIZE / 2));
 
         Player.EnterBattle += StartBattle;
+
+        ChangeState(GameState.Hub);
+    }
+
+    private void ChangeState(GameState state)
+    {
+        this.State = state;
+        switch (state)
+        {
+            case GameState.Hub:
+                Player.CanMove = true;
+                break;
+            case GameState.Battle:
+                Player.CanMove = false;
+                break;
+            case GameState.Info:
+                Player.CanMove = false;
+                break;
+        }
     }
 
     void StartBattle(Character enemy)
@@ -85,17 +103,15 @@ public partial class Game : Node2D
             BattleUI.UpdatePlayerHealth(Player.PercentHealth);
 
             BattleUI.Show();
-            State = GameState.Battle;
+            ChangeState(GameState.Battle);
         }
     }
 
     private void OpenInfoPane()
     {
         InfoPane.Show();
-        State = GameState.Info;
+        ChangeState(GameState.Info);
     }
-
-
 
 
     public override void _Input(InputEvent @event)

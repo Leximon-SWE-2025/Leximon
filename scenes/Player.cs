@@ -12,7 +12,7 @@ public partial class Player : Character
     private AnimatedSprite2D sprite;
 
     private Vector2 screenSize;
-    private bool canMove = true;
+    public bool CanMove = true;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -40,7 +40,7 @@ public partial class Player : Character
     {
         var direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-        if (canMove)
+        if (CanMove)
         {
             Move(direction * Globals.TILE_SIZE);
         }
@@ -99,11 +99,11 @@ public partial class Player : Character
 
 
         var tween = CreateTween();
-        tween.Finished += () => canMove = true;
+        tween.Finished += () => CanMove = true;
 
         tween.TweenProperty(this, "position", Position + ammount, Globals.MovementTimeSec).SetTrans(Tween.TransitionType.Linear);
 
-        canMove = false;
+        CanMove = false;
     }
 
     public void add_move()
