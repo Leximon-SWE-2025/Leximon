@@ -29,15 +29,23 @@ public class RelationJsonConverter : JsonConverter<Relation>
 
 }
 
-public record CategoryInfo(string Type, Relation Relation);
+public record CategoryInfo(string Type, [property: JsonConverter(typeof(RelationJsonConverter))] Relation Relation)
+{
+    public override string ToString() => $"{nameof(CategoryInfo)} {{ {string.Join(", ",
+            $"{nameof(Type)} = {Type}",
+            $"{nameof(Relation)} = {Relation}"
+        )} }}";
+}
 
-public record WordInfo(string Word, HashSet<CategoryInfo> Types, string[] Definitions)
+public record WordInfo(string Word, CategoryInfo[] Types, string[] Definitions)
 {
     public string Word { get; init; } = Word.ToLower().Trim();
+    public string[] Definitions { get; init; } = Definitions ?? [];
+    public CategoryInfo[] Types { get; init; } = Types ?? [];
 
     public override string ToString() => $"{nameof(WordInfo)} {{ {string.Join(", ",
             $"{nameof(Word)} = {Word}",
-            $"{nameof(Types)} = {{ {string.Join(", ", Types)} }}",
+            $"{nameof(Types)} = {{ {string.Join(", ", [.. Types.Select(t => t.ToString())])} }}",
             $"{nameof(Definitions)} = {{ {string.Join(", ", Definitions)} }}"
         )} }}";
 }
@@ -53,15 +61,17 @@ public partial class WordManager : Node
 
     static private Dictionary<string, WordInfo> WordData;
 
-    static private Dictionary<string, string[]> SynonymsList;
-    static private Dictionary<string, string[]> AntonymsList;
+    //static private Dictionary<string, string[]> SynonymsList;
+    //static private Dictionary<string, string[]> AntonymsList;
 
     static public IEnumerable<string> Words => WordData.Keys;
 
-    public static IEnumerable<string> GetTypes(string word) => WordData[word].Types.Select(t => t.Type);
+    //public static IEnumerable<string> GetTypes(string word) => WordData[word].Types.Select(t => t.Type);
     public static IEnumerable<string> GetDefinitions(string word) => WordData[word].Definitions;
-    public static IEnumerable<string> GetSynonyms(string word) => SynonymsList[word];
-    public static IEnumerable<string> GetAntonyms(string word) => AntonymsList[word];
+
+    private static IEnumerable<string> GetOfRelation(string word, Relation relation) => WordData[word].Types.Where(t => t.Relation == relation).Select(t => t.Type);
+    public static IEnumerable<string> GetSynonyms(string word) => GetOfRelation(word, Relation.Synonym);
+    public static IEnumerable<string> GetAntonyms(string word) => GetOfRelation(word, Relation.Synonym);
 
     static private readonly JsonSerializerOptions jsonOptions = new()
     {
@@ -79,37 +89,37 @@ public partial class WordManager : Node
 
         WordData = wordData.ToDictionary(word => word.Word, word => word);
 
-        Dictionary<string, List<string>> tempSynonymList = new();
-        Dictionary<string, List<string>> tempAntonymList = new();
+        //Dictionary<string, List<string>> tempSynonymList = new();
+        //Dictionary<string, List<string>> tempAntonymList = new();
 
-        foreach (var word in WordData.Values)
-        {
-            foreach (var type in word.Types)
-            {
-                tempSynonymList.TryAdd(type.Type, []);
-                tempAntonymList.TryAdd(type.Type, []);
-                switch (type.Relation)
-                {
-                    case Relation.None:
-                        if (OS.IsDebugBuild())
-                        {
-                            GD.PrintErr($"Word: {word} had type with no relation");
-                        }
-                        break;
-                    case Relation.Synonym:
-                        tempSynonymList[type.Type].Add(word.Word);
-                        break;
-                    case Relation.Antonym:
-                        tempAntonymList[type.Type].Add(word.Word);
-                        break;
-                }
-            }
-        }
+        //foreach (var word in WordData.Values)
+        //{
+        //    foreach (var type in word.Types)
+        //    {
+        //        tempSynonymList.TryAdd(type.Type, []);
+        //        tempAntonymList.TryAdd(type.Type, []);
+        //        switch (type.Relation)
+        //        {
+        //            case Relation.None:
+        //                if (OS.IsDebugBuild())
+        //                {
+        //                    GD.PrintErr($"Word: {word} had type with no relation");
+        //                }
+        //                break;
+        //            case Relation.Synonym:
+        //                tempSynonymList[type.Type].Add(word.Word);
+        //                break;
+        //            case Relation.Antonym:
+        //                tempAntonymList[type.Type].Add(word.Word);
+        //                break;
+        //        }
+        //    }
+        //}
 
-        var key_converter = (KeyValuePair<string, List<string>> kv) => kv.Key;
-        var value_converter = (KeyValuePair<string, List<string>> kv) => kv.Value.ToArray();
-        SynonymsList = tempSynonymList.ToDictionary(key_converter, value_converter);
-        AntonymsList = tempAntonymList.ToDictionary(key_converter, value_converter);
+        //var key_converter = (KeyValuePair<string, List<string>> kv) => kv.Key;
+        //var value_converter = (KeyValuePair<string, List<string>> kv) => kv.Value.ToArray();
+        //SynonymsList = tempSynonymList.ToDictionary(key_converter, value_converter);
+        //AntonymsList = tempAntonymList.ToDictionary(key_converter, value_converter);
 
 
         if (OS.IsDebugBuild())
