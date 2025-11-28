@@ -43,10 +43,10 @@ public partial class InfoPane : PanelContainer
         var antonymLabel = infoContainer.GetNode<Label>("Antonyms");
 
         wordLabel.Text = WordManager.TitleCaseWord(word);
-        typeLabel.Text = $"Types: {string.Join(", ", WordManager.GetTypes(word))}";
+        //typeLabel.Text = $"Types: {string.Join(", ", WordManager.GetTypes(word))}";
         definitionLabel.Text = $"Definitions: {string.Join("\n", WordManager.GetDefinitions(word))}";
-        synonymLabel.Text = $"Synonyms: {string.Join(", ", WordManager.GetSynonyms(word))}";
-        antonymLabel.Text = $"Antonyms: {string.Join(", ", WordManager.GetAntonyms(word))}";
+        synonymLabel.Text = $"Synonym Types: {string.Join(", ", WordManager.GetSynonyms(word))}";
+        antonymLabel.Text = $"Antonym Types: {string.Join(", ", WordManager.GetAntonyms(word))}";
     }
 
     public void AddWord(string word)
