@@ -33,5 +33,11 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 ## AI Disclosure
 - [ChatGPT 5.1](https://chatgpt.com/)
   - "c#, how to efficiently get n unique random numbers in the range 0..r"
+- [ChatGPT 5.1](https://chatgpt.com/)
+  - `I have a json file in this structure "{ "word": "cold", "types": [ "temperature" ], "synonyms": [ "cool" ], "antonyms": [ "hot" ] }," can you generate more words with there synonyms and antonyms and their category/type. If a word appears as a synonym or antonym it must appear as a top level item in the json file. The target level of these words are 3rd to 5th graders`
+  - `I want at least 100 words, maybe 200. And every word should have at least synonym and antonym`
+  - `Can you make 200 words, and produce a downloadable json file. Also keep in mind that words can have multiple categories/types if appropriate`
+  - `I want more categories`
+  - `Add more words to reach 400 items. Produce a downloadable json file with the original 200 words and the new 200`
 
 

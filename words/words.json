@@ -1,128 +1,4806 @@
 [
-    {
-        "word": "cold",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Having a low temperature"
-        ],
-        "synonyms": [
-            "cool"
-        ],
-        "antonyms": [
-            "hot"
-        ]
-    },
-    {
-        "word": "cool",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Of a mildly low temperature"
-        ],
-        "synonyms": [
-            "cold"
-        ],
-        "antonyms": [
-            "hot"
-        ]
-    },
-    {
-        "word": "hot",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Having or giving off a high temperature"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "cool",
-            "cold"
-        ]
-    },
-    {
-        "word": "wet",
-        "types": [
-            "moist"
-        ],
-        "definitions": [
-            "Made up of liquid or moisture, usually (but not always) water"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "dry"
-        ]
-    },
-    {
-        "word": "dry",
-        "types": [
-            "moist"
-        ],
-        "definitions": [
-            "Free from or lacking moisture"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "wet"
-        ]
-    },
-    {
-        "word": "Bright",
-        "types": [
-            "brightness",
-            "light"
-        ],
-        "definitions": [
-            "Emitting much light"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "dark"
-        ]
-    },
-    {
-        "word": "Dark",
-        "types": [
-            "brightness",
-            "light"
-        ],
-        "definitions": [
-            "Having an absolute or (more often) relative lack of light"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "light"
-        ]
-    },
-    {
-        "word": "fun",
-        "types": [
-            "fun",
-            "personality"
-        ],
-        "definitions": [
-            "Enjoyable or amusing"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "boring"
-        ]
-    },
-    {
-        "word": "boring",
-        "types": [
-            "fun",
-            "personality"
-        ],
-        "definitions": [
-            "Causing boredom or tiredness; making one feel tired and impatient"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "fun"
-        ]
-    }
+  {
+    "word": "cold",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "cool"
+    ],
+    "antonyms": [
+      "hot"
+    ]
+  },
+  {
+    "word": "cool",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "cold"
+    ],
+    "antonyms": [
+      "hot"
+    ]
+  },
+  {
+    "word": "hot",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "warm"
+    ],
+    "antonyms": [
+      "cold"
+    ]
+  },
+  {
+    "word": "warm",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "hot"
+    ],
+    "antonyms": [
+      "cold"
+    ]
+  },
+  {
+    "word": "big",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "large"
+    ],
+    "antonyms": [
+      "small"
+    ]
+  },
+  {
+    "word": "large",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "big"
+    ],
+    "antonyms": [
+      "small"
+    ]
+  },
+  {
+    "word": "small",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "little"
+    ],
+    "antonyms": [
+      "big"
+    ]
+  },
+  {
+    "word": "little",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "small"
+    ],
+    "antonyms": [
+      "big"
+    ]
+  },
+  {
+    "word": "happy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "joyful"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "joyful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "happy"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "unhappy"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "unhappy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sad"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "fast",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "fast"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "sluggish"
+    ],
+    "antonyms": [
+      "fast"
+    ]
+  },
+  {
+    "word": "sluggish",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "fast"
+    ]
+  },
+  {
+    "word": "easy",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "simple"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "simple",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "easy"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "hard",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "difficult"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "difficult",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "hard"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "loud",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "noisy"
+    ],
+    "antonyms": [
+      "quiet"
+    ]
+  },
+  {
+    "word": "noisy",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "loud"
+    ],
+    "antonyms": [
+      "quiet"
+    ]
+  },
+  {
+    "word": "quiet",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "silent"
+    ],
+    "antonyms": [
+      "loud"
+    ]
+  },
+  {
+    "word": "silent",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "quiet"
+    ],
+    "antonyms": [
+      "loud"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "shiny"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "shiny",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "dark",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dim"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "dim",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dark"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "powerful"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "powerful",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "weak",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "fragile"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "fragile",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "weak"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "brave",
+    "types": [
+      "emotion",
+      "character"
+    ],
+    "synonyms": [
+      "courageous"
+    ],
+    "antonyms": [
+      "scared"
+    ]
+  },
+  {
+    "word": "courageous",
+    "types": [
+      "emotion",
+      "character"
+    ],
+    "synonyms": [
+      "brave"
+    ],
+    "antonyms": [
+      "scared"
+    ]
+  },
+  {
+    "word": "scared",
+    "types": [
+      "emotion",
+      "character"
+    ],
+    "synonyms": [
+      "afraid"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "afraid",
+    "types": [
+      "emotion",
+      "character"
+    ],
+    "synonyms": [
+      "scared"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "kind",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "nice"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "nice",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "kind"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "mean",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "unkind"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "unkind",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "mean"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "clean",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "neat"
+    ],
+    "antonyms": [
+      "dirty"
+    ]
+  },
+  {
+    "word": "neat",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "clean"
+    ],
+    "antonyms": [
+      "dirty"
+    ]
+  },
+  {
+    "word": "dirty",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "messy"
+    ],
+    "antonyms": [
+      "clean"
+    ]
+  },
+  {
+    "word": "messy",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "dirty"
+    ],
+    "antonyms": [
+      "clean"
+    ]
+  },
+  {
+    "word": "early",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "prompt"
+    ],
+    "antonyms": [
+      "late"
+    ]
+  },
+  {
+    "word": "prompt",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "early"
+    ],
+    "antonyms": [
+      "late"
+    ]
+  },
+  {
+    "word": "late",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "tardy"
+    ],
+    "antonyms": [
+      "early"
+    ]
+  },
+  {
+    "word": "tardy",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "late"
+    ],
+    "antonyms": [
+      "early"
+    ]
+  },
+  {
+    "word": "open",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "unlocked"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "unlocked",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "open"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "closed",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "shut"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "shut",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "closed"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "sharp",
+    "types": [
+      "shape"
+    ],
+    "synonyms": [
+      "pointy"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "pointy",
+    "types": [
+      "shape"
+    ],
+    "synonyms": [
+      "sharp"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "dull",
+    "types": [
+      "shape"
+    ],
+    "synonyms": [
+      "blunt"
+    ],
+    "antonyms": [
+      "sharp"
+    ]
+  },
+  {
+    "word": "blunt",
+    "types": [
+      "shape"
+    ],
+    "synonyms": [
+      "dull"
+    ],
+    "antonyms": [
+      "sharp"
+    ]
+  },
+  {
+    "word": "rich",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "wealthy"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "wealthy",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "rich"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "poor",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "needy"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "needy",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "poor"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "funny",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "silly"
+    ],
+    "antonyms": [
+      "serious"
+    ]
+  },
+  {
+    "word": "silly",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "funny"
+    ],
+    "antonyms": [
+      "serious"
+    ]
+  },
+  {
+    "word": "serious",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "stern"
+    ],
+    "antonyms": [
+      "funny"
+    ]
+  },
+  {
+    "word": "stern",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "serious"
+    ],
+    "antonyms": [
+      "funny"
+    ]
+  },
+  {
+    "word": "safe",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "secure"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "secure",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "safe"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "dangerous",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "risky"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "risky",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "dangerous"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "tall",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "high"
+    ],
+    "antonyms": [
+      "short"
+    ]
+  },
+  {
+    "word": "high",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "tall"
+    ],
+    "antonyms": [
+      "short"
+    ]
+  },
+  {
+    "word": "short",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "low"
+    ],
+    "antonyms": [
+      "tall"
+    ]
+  },
+  {
+    "word": "low",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "short"
+    ],
+    "antonyms": [
+      "tall"
+    ]
+  },
+  {
+    "word": "full",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "filled"
+    ],
+    "antonyms": [
+      "empty"
+    ]
+  },
+  {
+    "word": "filled",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "full"
+    ],
+    "antonyms": [
+      "empty"
+    ]
+  },
+  {
+    "word": "empty",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "hollow"
+    ],
+    "antonyms": [
+      "full"
+    ]
+  },
+  {
+    "word": "hollow",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "empty"
+    ],
+    "antonyms": [
+      "full"
+    ]
+  },
+  {
+    "word": "true",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "real"
+    ],
+    "antonyms": [
+      "false"
+    ]
+  },
+  {
+    "word": "real",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "true"
+    ],
+    "antonyms": [
+      "false"
+    ]
+  },
+  {
+    "word": "false",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "untrue"
+    ],
+    "antonyms": [
+      "true"
+    ]
+  },
+  {
+    "word": "untrue",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "false"
+    ],
+    "antonyms": [
+      "true"
+    ]
+  },
+  {
+    "word": "start",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "begin"
+    ],
+    "antonyms": [
+      "stop"
+    ]
+  },
+  {
+    "word": "begin",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "start"
+    ],
+    "antonyms": [
+      "stop"
+    ]
+  },
+  {
+    "word": "stop",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "end"
+    ],
+    "antonyms": [
+      "start"
+    ]
+  },
+  {
+    "word": "end",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "stop"
+    ],
+    "antonyms": [
+      "start"
+    ]
+  },
+  {
+    "word": "give",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "offer"
+    ],
+    "antonyms": [
+      "take"
+    ]
+  },
+  {
+    "word": "offer",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "give"
+    ],
+    "antonyms": [
+      "take"
+    ]
+  },
+  {
+    "word": "take",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "grab"
+    ],
+    "antonyms": [
+      "give"
+    ]
+  },
+  {
+    "word": "grab",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "take"
+    ],
+    "antonyms": [
+      "give"
+    ]
+  },
+  {
+    "word": "push",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "shove"
+    ],
+    "antonyms": [
+      "pull"
+    ]
+  },
+  {
+    "word": "shove",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "push"
+    ],
+    "antonyms": [
+      "pull"
+    ]
+  },
+  {
+    "word": "pull",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "tug"
+    ],
+    "antonyms": [
+      "push"
+    ]
+  },
+  {
+    "word": "tug",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "pull"
+    ],
+    "antonyms": [
+      "push"
+    ]
+  },
+  {
+    "word": "old",
+    "types": [
+      "age"
+    ],
+    "synonyms": [
+      "ancient"
+    ],
+    "antonyms": [
+      "young"
+    ]
+  },
+  {
+    "word": "ancient",
+    "types": [
+      "age"
+    ],
+    "synonyms": [
+      "old"
+    ],
+    "antonyms": [
+      "young"
+    ]
+  },
+  {
+    "word": "young",
+    "types": [
+      "age"
+    ],
+    "synonyms": [
+      "youthful"
+    ],
+    "antonyms": [
+      "old"
+    ]
+  },
+  {
+    "word": "youthful",
+    "types": [
+      "age"
+    ],
+    "synonyms": [
+      "young"
+    ],
+    "antonyms": [
+      "old"
+    ]
+  },
+  {
+    "word": "soft",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "gentle"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "gentle",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "soft"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "hard",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "tough"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "tough",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "hard"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "rapid"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "rapid",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "leisurely"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "leisurely",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "angry",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "mad"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "mad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "angry"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "calm",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "peaceful"
+    ],
+    "antonyms": [
+      "angry"
+    ]
+  },
+  {
+    "word": "peaceful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "calm"
+    ],
+    "antonyms": [
+      "angry"
+    ]
+  },
+  {
+    "word": "wide",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "broad"
+    ],
+    "antonyms": [
+      "narrow"
+    ]
+  },
+  {
+    "word": "broad",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "wide"
+    ],
+    "antonyms": [
+      "narrow"
+    ]
+  },
+  {
+    "word": "narrow",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "thin"
+    ],
+    "antonyms": [
+      "wide"
+    ]
+  },
+  {
+    "word": "thin",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "narrow"
+    ],
+    "antonyms": [
+      "wide"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "sturdy"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "sturdy",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "weak",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "frail"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "frail",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "weak"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "fun",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "enjoyable"
+    ],
+    "antonyms": [
+      "boring"
+    ]
+  },
+  {
+    "word": "enjoyable",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "fun"
+    ],
+    "antonyms": [
+      "boring"
+    ]
+  },
+  {
+    "word": "boring",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "dull"
+    ],
+    "antonyms": [
+      "fun"
+    ]
+  },
+  {
+    "word": "dull",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "boring"
+    ],
+    "antonyms": [
+      "fun"
+    ]
+  },
+  {
+    "word": "smart",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "clever"
+    ],
+    "antonyms": [
+      "silly"
+    ]
+  },
+  {
+    "word": "clever",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "smart"
+    ],
+    "antonyms": [
+      "silly"
+    ]
+  },
+  {
+    "word": "silly",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "foolish"
+    ],
+    "antonyms": [
+      "smart"
+    ]
+  },
+  {
+    "word": "foolish",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "silly"
+    ],
+    "antonyms": [
+      "smart"
+    ]
+  },
+  {
+    "word": "safe",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "protected"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "protected",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "safe"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "dangerous",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "threatening"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "threatening",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "dangerous"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "fresh",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "new"
+    ],
+    "antonyms": [
+      "stale"
+    ]
+  },
+  {
+    "word": "new",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "fresh"
+    ],
+    "antonyms": [
+      "stale"
+    ]
+  },
+  {
+    "word": "stale",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "old"
+    ],
+    "antonyms": [
+      "fresh"
+    ]
+  },
+  {
+    "word": "old",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "stale"
+    ],
+    "antonyms": [
+      "fresh"
+    ]
+  },
+  {
+    "word": "clear",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "plain"
+    ],
+    "antonyms": [
+      "confusing"
+    ]
+  },
+  {
+    "word": "plain",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "clear"
+    ],
+    "antonyms": [
+      "confusing"
+    ]
+  },
+  {
+    "word": "confusing",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "puzzling"
+    ],
+    "antonyms": [
+      "clear"
+    ]
+  },
+  {
+    "word": "puzzling",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "confusing"
+    ],
+    "antonyms": [
+      "clear"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "speedy"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "speedy",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "creeping"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "creeping",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "busy",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "active"
+    ],
+    "antonyms": [
+      "lazy"
+    ]
+  },
+  {
+    "word": "active",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "busy"
+    ],
+    "antonyms": [
+      "lazy"
+    ]
+  },
+  {
+    "word": "lazy",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "idle"
+    ],
+    "antonyms": [
+      "busy"
+    ]
+  },
+  {
+    "word": "idle",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "lazy"
+    ],
+    "antonyms": [
+      "busy"
+    ]
+  },
+  {
+    "word": "polite",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "courteous"
+    ],
+    "antonyms": [
+      "rude"
+    ]
+  },
+  {
+    "word": "courteous",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "polite"
+    ],
+    "antonyms": [
+      "rude"
+    ]
+  },
+  {
+    "word": "rude",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "impolite"
+    ],
+    "antonyms": [
+      "polite"
+    ]
+  },
+  {
+    "word": "impolite",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "rude"
+    ],
+    "antonyms": [
+      "polite"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "radiant"
+    ],
+    "antonyms": [
+      "gloomy"
+    ]
+  },
+  {
+    "word": "radiant",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "gloomy"
+    ]
+  },
+  {
+    "word": "gloomy",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "shadowy"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "shadowy",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "gloomy"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "helpful",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "supportive"
+    ],
+    "antonyms": [
+      "unhelpful"
+    ]
+  },
+  {
+    "word": "supportive",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "helpful"
+    ],
+    "antonyms": [
+      "unhelpful"
+    ]
+  },
+  {
+    "word": "unhelpful",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "useless"
+    ],
+    "antonyms": [
+      "helpful"
+    ]
+  },
+  {
+    "word": "useless",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "unhelpful"
+    ],
+    "antonyms": [
+      "helpful"
+    ]
+  },
+  {
+    "word": "deep",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "bottomless"
+    ],
+    "antonyms": [
+      "shallow"
+    ]
+  },
+  {
+    "word": "bottomless",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "deep"
+    ],
+    "antonyms": [
+      "shallow"
+    ]
+  },
+  {
+    "word": "shallow",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "surface"
+    ],
+    "antonyms": [
+      "deep"
+    ]
+  },
+  {
+    "word": "surface",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "shallow"
+    ],
+    "antonyms": [
+      "deep"
+    ]
+  },
+  {
+    "word": "friendly",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "kind"
+    ],
+    "antonyms": [
+      "unfriendly"
+    ]
+  },
+  {
+    "word": "kind",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "friendly"
+    ],
+    "antonyms": [
+      "unfriendly"
+    ]
+  },
+  {
+    "word": "unfriendly",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "coldhearted"
+    ],
+    "antonyms": [
+      "friendly"
+    ]
+  },
+  {
+    "word": "coldhearted",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "unfriendly"
+    ],
+    "antonyms": [
+      "friendly"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "mighty"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "mighty",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "weak",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "puny"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "puny",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "weak"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "happy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "cheerful"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "cheerful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "happy"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "gloomy"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "gloomy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sad"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "swift"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "swift",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "lagging"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "lagging",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "vivid"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "vivid",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "dull",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "faded"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "faded",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dull"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "honest",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "truthful"
+    ],
+    "antonyms": [
+      "dishonest"
+    ]
+  },
+  {
+    "word": "truthful",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "honest"
+    ],
+    "antonyms": [
+      "dishonest"
+    ]
+  },
+  {
+    "word": "dishonest",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "lying"
+    ],
+    "antonyms": [
+      "honest"
+    ]
+  },
+  {
+    "word": "lying",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "dishonest"
+    ],
+    "antonyms": [
+      "honest"
+    ]
+  },
+  {
+    "word": "fair",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "just"
+    ],
+    "antonyms": [
+      "unfair"
+    ]
+  },
+  {
+    "word": "just",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "fair"
+    ],
+    "antonyms": [
+      "unfair"
+    ]
+  },
+  {
+    "word": "unfair",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "biased"
+    ],
+    "antonyms": [
+      "fair"
+    ]
+  },
+  {
+    "word": "biased",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "unfair"
+    ],
+    "antonyms": [
+      "fair"
+    ]
+  },
+  {
+    "word": "healthy",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "fit"
+    ],
+    "antonyms": [
+      "sick"
+    ]
+  },
+  {
+    "word": "fit",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "healthy"
+    ],
+    "antonyms": [
+      "sick"
+    ]
+  },
+  {
+    "word": "sick",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "ill"
+    ],
+    "antonyms": [
+      "healthy"
+    ]
+  },
+  {
+    "word": "ill",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "sick"
+    ],
+    "antonyms": [
+      "healthy"
+    ]
+  },
+  {
+    "word": "calm",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "peaceful"
+    ],
+    "antonyms": [
+      "wild"
+    ]
+  },
+  {
+    "word": "peaceful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "calm"
+    ],
+    "antonyms": [
+      "wild"
+    ]
+  },
+  {
+    "word": "wild",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "rowdy"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "rowdy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "wild"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "brave",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "bold"
+    ],
+    "antonyms": [
+      "fearful"
+    ]
+  },
+  {
+    "word": "bold",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "brave"
+    ],
+    "antonyms": [
+      "fearful"
+    ]
+  },
+  {
+    "word": "fearful",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "timid"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "timid",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "fearful"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "happy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "glad"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "glad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "happy"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "blue"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "blue",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sad"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "brilliant"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "brilliant",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "dark",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "shadowy"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "shadowy",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dark"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "robust"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "robust",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "weak",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "delicate"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "delicate",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "weak"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "fast",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "speedy"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "speedy",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "fast"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "dragging"
+    ],
+    "antonyms": [
+      "fast"
+    ]
+  },
+  {
+    "word": "dragging",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "fast"
+    ]
+  },
+  {
+    "word": "calm",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "relaxed"
+    ],
+    "antonyms": [
+      "nervous"
+    ]
+  },
+  {
+    "word": "relaxed",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "calm"
+    ],
+    "antonyms": [
+      "nervous"
+    ]
+  },
+  {
+    "word": "nervous",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "tense"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "tense",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "nervous"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "rich",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "loaded"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "loaded",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "rich"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "poor",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "broke"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "broke",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "poor"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "clean",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "spotless"
+    ],
+    "antonyms": [
+      "dirty"
+    ]
+  },
+  {
+    "word": "spotless",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "clean"
+    ],
+    "antonyms": [
+      "dirty"
+    ]
+  },
+  {
+    "word": "dirty",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "filthy"
+    ],
+    "antonyms": [
+      "clean"
+    ]
+  },
+  {
+    "word": "filthy",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "dirty"
+    ],
+    "antonyms": [
+      "clean"
+    ]
+  },
+  {
+    "word": "easy",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "effortless"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "effortless",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "easy"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "hard",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "challenging"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "challenging",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "hard"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "soft",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "fluffy"
+    ],
+    "antonyms": [
+      "rough"
+    ]
+  },
+  {
+    "word": "fluffy",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "soft"
+    ],
+    "antonyms": [
+      "rough"
+    ]
+  },
+  {
+    "word": "rough",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "scratchy"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "scratchy",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "rough"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "warm",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "cozy"
+    ],
+    "antonyms": [
+      "cold"
+    ]
+  },
+  {
+    "word": "cozy",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "warm"
+    ],
+    "antonyms": [
+      "cold"
+    ]
+  },
+  {
+    "word": "cold",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "chilly"
+    ],
+    "antonyms": [
+      "warm"
+    ]
+  },
+  {
+    "word": "chilly",
+    "types": [
+      "temperature"
+    ],
+    "synonyms": [
+      "cold"
+    ],
+    "antonyms": [
+      "warm"
+    ]
+  },
+  {
+    "word": "loud",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "booming"
+    ],
+    "antonyms": [
+      "quiet"
+    ]
+  },
+  {
+    "word": "booming",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "loud"
+    ],
+    "antonyms": [
+      "quiet"
+    ]
+  },
+  {
+    "word": "quiet",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "hushed"
+    ],
+    "antonyms": [
+      "loud"
+    ]
+  },
+  {
+    "word": "hushed",
+    "types": [
+      "sound"
+    ],
+    "synonyms": [
+      "quiet"
+    ],
+    "antonyms": [
+      "loud"
+    ]
+  },
+  {
+    "word": "brave",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "fearless"
+    ],
+    "antonyms": [
+      "scared"
+    ]
+  },
+  {
+    "word": "fearless",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "brave"
+    ],
+    "antonyms": [
+      "scared"
+    ]
+  },
+  {
+    "word": "scared",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "jittery"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "jittery",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "scared"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "kind",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "caring"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "caring",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "kind"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "mean",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "harsh"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "harsh",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "mean"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "fair",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "equal"
+    ],
+    "antonyms": [
+      "unfair"
+    ]
+  },
+  {
+    "word": "equal",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "fair"
+    ],
+    "antonyms": [
+      "unfair"
+    ]
+  },
+  {
+    "word": "unfair",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "unequal"
+    ],
+    "antonyms": [
+      "fair"
+    ]
+  },
+  {
+    "word": "unequal",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "unfair"
+    ],
+    "antonyms": [
+      "fair"
+    ]
+  },
+  {
+    "word": "open",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "ajar"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "ajar",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "open"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "closed",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "sealed"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "sealed",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "closed"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "early",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "ahead"
+    ],
+    "antonyms": [
+      "late"
+    ]
+  },
+  {
+    "word": "ahead",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "early"
+    ],
+    "antonyms": [
+      "late"
+    ]
+  },
+  {
+    "word": "late",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "behind"
+    ],
+    "antonyms": [
+      "early"
+    ]
+  },
+  {
+    "word": "behind",
+    "types": [
+      "time"
+    ],
+    "synonyms": [
+      "late"
+    ],
+    "antonyms": [
+      "early"
+    ]
+  },
+  {
+    "word": "tall",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "towering"
+    ],
+    "antonyms": [
+      "short"
+    ]
+  },
+  {
+    "word": "towering",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "tall"
+    ],
+    "antonyms": [
+      "short"
+    ]
+  },
+  {
+    "word": "short",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "stubby"
+    ],
+    "antonyms": [
+      "tall"
+    ]
+  },
+  {
+    "word": "stubby",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "short"
+    ],
+    "antonyms": [
+      "tall"
+    ]
+  },
+  {
+    "word": "full",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "packed"
+    ],
+    "antonyms": [
+      "empty"
+    ]
+  },
+  {
+    "word": "packed",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "full"
+    ],
+    "antonyms": [
+      "empty"
+    ]
+  },
+  {
+    "word": "empty",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "bare"
+    ],
+    "antonyms": [
+      "full"
+    ]
+  },
+  {
+    "word": "bare",
+    "types": [
+      "amount"
+    ],
+    "synonyms": [
+      "empty"
+    ],
+    "antonyms": [
+      "full"
+    ]
+  },
+  {
+    "word": "true",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "correct"
+    ],
+    "antonyms": [
+      "false"
+    ]
+  },
+  {
+    "word": "correct",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "true"
+    ],
+    "antonyms": [
+      "false"
+    ]
+  },
+  {
+    "word": "false",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "wrong"
+    ],
+    "antonyms": [
+      "true"
+    ]
+  },
+  {
+    "word": "wrong",
+    "types": [
+      "logic"
+    ],
+    "synonyms": [
+      "false"
+    ],
+    "antonyms": [
+      "true"
+    ]
+  },
+  {
+    "word": "start",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "launch"
+    ],
+    "antonyms": [
+      "stop"
+    ]
+  },
+  {
+    "word": "launch",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "start"
+    ],
+    "antonyms": [
+      "stop"
+    ]
+  },
+  {
+    "word": "stop",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "halt"
+    ],
+    "antonyms": [
+      "start"
+    ]
+  },
+  {
+    "word": "halt",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "stop"
+    ],
+    "antonyms": [
+      "start"
+    ]
+  },
+  {
+    "word": "give",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "hand"
+    ],
+    "antonyms": [
+      "take"
+    ]
+  },
+  {
+    "word": "hand",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "give"
+    ],
+    "antonyms": [
+      "take"
+    ]
+  },
+  {
+    "word": "take",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "collect"
+    ],
+    "antonyms": [
+      "give"
+    ]
+  },
+  {
+    "word": "collect",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "take"
+    ],
+    "antonyms": [
+      "give"
+    ]
+  },
+  {
+    "word": "push",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "press"
+    ],
+    "antonyms": [
+      "pull"
+    ]
+  },
+  {
+    "word": "press",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "push"
+    ],
+    "antonyms": [
+      "pull"
+    ]
+  },
+  {
+    "word": "pull",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "yank"
+    ],
+    "antonyms": [
+      "push"
+    ]
+  },
+  {
+    "word": "yank",
+    "types": [
+      "action"
+    ],
+    "synonyms": [
+      "pull"
+    ],
+    "antonyms": [
+      "push"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "gleaming"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "gleaming",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "dull"
+    ]
+  },
+  {
+    "word": "dull",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "flat"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "flat",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dull"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "happy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "pleased"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "pleased",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "happy"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "downcast"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "downcast",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sad"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "healthy",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "sick"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "healthy"
+    ],
+    "antonyms": [
+      "sick"
+    ]
+  },
+  {
+    "word": "sick",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "weakly"
+    ],
+    "antonyms": [
+      "healthy"
+    ]
+  },
+  {
+    "word": "weakly",
+    "types": [
+      "health"
+    ],
+    "synonyms": [
+      "sick"
+    ],
+    "antonyms": [
+      "healthy"
+    ]
+  },
+  {
+    "word": "fresh",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "crisp"
+    ],
+    "antonyms": [
+      "stale"
+    ]
+  },
+  {
+    "word": "crisp",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "fresh"
+    ],
+    "antonyms": [
+      "stale"
+    ]
+  },
+  {
+    "word": "stale",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "old"
+    ],
+    "antonyms": [
+      "fresh"
+    ]
+  },
+  {
+    "word": "old",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "stale"
+    ],
+    "antonyms": [
+      "fresh"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "nimble"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "nimble",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slack"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "slack",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "busy",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "occupied"
+    ],
+    "antonyms": [
+      "lazy"
+    ]
+  },
+  {
+    "word": "occupied",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "busy"
+    ],
+    "antonyms": [
+      "lazy"
+    ]
+  },
+  {
+    "word": "lazy",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "sluggish"
+    ],
+    "antonyms": [
+      "busy"
+    ]
+  },
+  {
+    "word": "sluggish",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "lazy"
+    ],
+    "antonyms": [
+      "busy"
+    ]
+  },
+  {
+    "word": "polite",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "gracious"
+    ],
+    "antonyms": [
+      "rude"
+    ]
+  },
+  {
+    "word": "gracious",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "polite"
+    ],
+    "antonyms": [
+      "rude"
+    ]
+  },
+  {
+    "word": "rude",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "rough"
+    ],
+    "antonyms": [
+      "polite"
+    ]
+  },
+  {
+    "word": "rough",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "rude"
+    ],
+    "antonyms": [
+      "polite"
+    ]
+  },
+  {
+    "word": "helpful",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "useful"
+    ],
+    "antonyms": [
+      "unhelpful"
+    ]
+  },
+  {
+    "word": "useful",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "helpful"
+    ],
+    "antonyms": [
+      "unhelpful"
+    ]
+  },
+  {
+    "word": "unhelpful",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "useless"
+    ],
+    "antonyms": [
+      "helpful"
+    ]
+  },
+  {
+    "word": "useless",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "unhelpful"
+    ],
+    "antonyms": [
+      "helpful"
+    ]
+  },
+  {
+    "word": "deep",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "profound"
+    ],
+    "antonyms": [
+      "shallow"
+    ]
+  },
+  {
+    "word": "profound",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "deep"
+    ],
+    "antonyms": [
+      "shallow"
+    ]
+  },
+  {
+    "word": "shallow",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "slight"
+    ],
+    "antonyms": [
+      "deep"
+    ]
+  },
+  {
+    "word": "slight",
+    "types": [
+      "depth"
+    ],
+    "synonyms": [
+      "shallow"
+    ],
+    "antonyms": [
+      "deep"
+    ]
+  },
+  {
+    "word": "friendly",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "pleasant"
+    ],
+    "antonyms": [
+      "unfriendly"
+    ]
+  },
+  {
+    "word": "pleasant",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "friendly"
+    ],
+    "antonyms": [
+      "unfriendly"
+    ]
+  },
+  {
+    "word": "unfriendly",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "cold"
+    ],
+    "antonyms": [
+      "friendly"
+    ]
+  },
+  {
+    "word": "cold",
+    "types": [
+      "behavior"
+    ],
+    "synonyms": [
+      "unfriendly"
+    ],
+    "antonyms": [
+      "friendly"
+    ]
+  },
+  {
+    "word": "smart",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "brainy"
+    ],
+    "antonyms": [
+      "silly"
+    ]
+  },
+  {
+    "word": "brainy",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "smart"
+    ],
+    "antonyms": [
+      "silly"
+    ]
+  },
+  {
+    "word": "silly",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "goofy"
+    ],
+    "antonyms": [
+      "smart"
+    ]
+  },
+  {
+    "word": "goofy",
+    "types": [
+      "intellect"
+    ],
+    "synonyms": [
+      "silly"
+    ],
+    "antonyms": [
+      "smart"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "sparkling"
+    ],
+    "antonyms": [
+      "gloomy"
+    ]
+  },
+  {
+    "word": "sparkling",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "gloomy"
+    ]
+  },
+  {
+    "word": "gloomy",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "murky"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "murky",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "gloomy"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "calm",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "still"
+    ],
+    "antonyms": [
+      "wild"
+    ]
+  },
+  {
+    "word": "still",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "calm"
+    ],
+    "antonyms": [
+      "wild"
+    ]
+  },
+  {
+    "word": "wild",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "rowdy"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "rowdy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "wild"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "fun",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "playful"
+    ],
+    "antonyms": [
+      "boring"
+    ]
+  },
+  {
+    "word": "playful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "fun"
+    ],
+    "antonyms": [
+      "boring"
+    ]
+  },
+  {
+    "word": "boring",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "plain"
+    ],
+    "antonyms": [
+      "fun"
+    ]
+  },
+  {
+    "word": "plain",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "boring"
+    ],
+    "antonyms": [
+      "fun"
+    ]
+  },
+  {
+    "word": "safe",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "shielded"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "shielded",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "safe"
+    ],
+    "antonyms": [
+      "dangerous"
+    ]
+  },
+  {
+    "word": "dangerous",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "hazardous"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "hazardous",
+    "types": [
+      "condition"
+    ],
+    "synonyms": [
+      "dangerous"
+    ],
+    "antonyms": [
+      "safe"
+    ]
+  },
+  {
+    "word": "wide",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "spacious"
+    ],
+    "antonyms": [
+      "narrow"
+    ]
+  },
+  {
+    "word": "spacious",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "wide"
+    ],
+    "antonyms": [
+      "narrow"
+    ]
+  },
+  {
+    "word": "narrow",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "tight"
+    ],
+    "antonyms": [
+      "wide"
+    ]
+  },
+  {
+    "word": "tight",
+    "types": [
+      "size"
+    ],
+    "synonyms": [
+      "narrow"
+    ],
+    "antonyms": [
+      "wide"
+    ]
+  },
+  {
+    "word": "strong",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "burly"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "burly",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "strong"
+    ],
+    "antonyms": [
+      "weak"
+    ]
+  },
+  {
+    "word": "weak",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "limp"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "limp",
+    "types": [
+      "strength"
+    ],
+    "synonyms": [
+      "weak"
+    ],
+    "antonyms": [
+      "strong"
+    ]
+  },
+  {
+    "word": "happy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sunny"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sunny",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "happy"
+    ],
+    "antonyms": [
+      "sad"
+    ]
+  },
+  {
+    "word": "sad",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "dreary"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "dreary",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "sad"
+    ],
+    "antonyms": [
+      "happy"
+    ]
+  },
+  {
+    "word": "quick",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "fleet"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "fleet",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "quick"
+    ],
+    "antonyms": [
+      "slow"
+    ]
+  },
+  {
+    "word": "slow",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slothful"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "slothful",
+    "types": [
+      "speed"
+    ],
+    "synonyms": [
+      "slow"
+    ],
+    "antonyms": [
+      "quick"
+    ]
+  },
+  {
+    "word": "clear",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "obvious"
+    ],
+    "antonyms": [
+      "confusing"
+    ]
+  },
+  {
+    "word": "obvious",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "clear"
+    ],
+    "antonyms": [
+      "confusing"
+    ]
+  },
+  {
+    "word": "confusing",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "unclear"
+    ],
+    "antonyms": [
+      "clear"
+    ]
+  },
+  {
+    "word": "unclear",
+    "types": [
+      "clarity"
+    ],
+    "synonyms": [
+      "confusing"
+    ],
+    "antonyms": [
+      "clear"
+    ]
+  },
+  {
+    "word": "bright",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "radiant"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "radiant",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "bright"
+    ],
+    "antonyms": [
+      "dark"
+    ]
+  },
+  {
+    "word": "dark",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dreary"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "dreary",
+    "types": [
+      "light"
+    ],
+    "synonyms": [
+      "dark"
+    ],
+    "antonyms": [
+      "bright"
+    ]
+  },
+  {
+    "word": "soft",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "gentle"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "gentle",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "soft"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "hard",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "unyielding"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "unyielding",
+    "types": [
+      "texture"
+    ],
+    "synonyms": [
+      "hard"
+    ],
+    "antonyms": [
+      "soft"
+    ]
+  },
+  {
+    "word": "open",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "unsealed"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "unsealed",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "open"
+    ],
+    "antonyms": [
+      "closed"
+    ]
+  },
+  {
+    "word": "closed",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "shut"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "shut",
+    "types": [
+      "state"
+    ],
+    "synonyms": [
+      "closed"
+    ],
+    "antonyms": [
+      "open"
+    ]
+  },
+  {
+    "word": "rich",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "prosperous"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "prosperous",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "rich"
+    ],
+    "antonyms": [
+      "poor"
+    ]
+  },
+  {
+    "word": "poor",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "needy"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "needy",
+    "types": [
+      "quality"
+    ],
+    "synonyms": [
+      "poor"
+    ],
+    "antonyms": [
+      "rich"
+    ]
+  },
+  {
+    "word": "easy",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "smooth"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "smooth",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "easy"
+    ],
+    "antonyms": [
+      "hard"
+    ]
+  },
+  {
+    "word": "hard",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "rocky"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "rocky",
+    "types": [
+      "difficulty"
+    ],
+    "synonyms": [
+      "hard"
+    ],
+    "antonyms": [
+      "easy"
+    ]
+  },
+  {
+    "word": "kind",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "helpful"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "helpful",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "kind"
+    ],
+    "antonyms": [
+      "mean"
+    ]
+  },
+  {
+    "word": "mean",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "spiteful"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "spiteful",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "mean"
+    ],
+    "antonyms": [
+      "kind"
+    ]
+  },
+  {
+    "word": "brave",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "daring"
+    ],
+    "antonyms": [
+      "fearful"
+    ]
+  },
+  {
+    "word": "daring",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "brave"
+    ],
+    "antonyms": [
+      "fearful"
+    ]
+  },
+  {
+    "word": "fearful",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "meek"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "meek",
+    "types": [
+      "character"
+    ],
+    "synonyms": [
+      "fearful"
+    ],
+    "antonyms": [
+      "brave"
+    ]
+  },
+  {
+    "word": "calm",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "peaceful"
+    ],
+    "antonyms": [
+      "anxious"
+    ]
+  },
+  {
+    "word": "peaceful",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "calm"
+    ],
+    "antonyms": [
+      "anxious"
+    ]
+  },
+  {
+    "word": "anxious",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "edgy"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  },
+  {
+    "word": "edgy",
+    "types": [
+      "emotion"
+    ],
+    "synonyms": [
+      "anxious"
+    ],
+    "antonyms": [
+      "calm"
+    ]
+  }
 ]
