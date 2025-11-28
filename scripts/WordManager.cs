@@ -27,6 +27,13 @@ public record WordInfo(string Word, string[] Types, string[] Definitions, string
 
 public partial class WordManager : Node
 {
+    public enum Relation
+    {
+        Synonym,
+        Antonym,
+        Neither
+    }
+
     static private Dictionary<string, WordInfo> WordData;
 
     static public IEnumerable<string> Words => WordData.Keys;
@@ -73,6 +80,29 @@ public partial class WordManager : Node
                 GD.Print(word);
             }
         }
+    }
+
+    public static Relation ClassifyRelation(string word1, string word2)
+    {
+        if (string.IsNullOrWhiteSpace(word1) || string.IsNullOrWhiteSpace(word2))
+            throw new ArgumentException("Words must not be null or empty.");
+
+        var w1 = word1.Trim().ToLowerInvariant();
+        var w2 = word2.Trim().ToLowerInvariant();
+
+        if (w1 == w2)
+            return Relation.Neither;
+
+        if (!WordData.TryGetValue(w1, out var info1) || !WordData.TryGetValue(w2, out var info2))
+            return Relation.Neither;
+
+        if (info1.Synonyms.Contains(w2) || info2.Synonyms.Contains(w1))
+            return Relation.Synonym;
+
+        if (info1.Antonyms.Contains(w2) || info2.Antonyms.Contains(w1))
+            return Relation.Antonym;
+
+        return Relation.Neither;
     }
 }
 
