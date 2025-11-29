@@ -1,128 +1,237 @@
 [
-    {
-        "word": "cold",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Having a low temperature"
-        ],
-        "synonyms": [
-            "cool"
-        ],
-        "antonyms": [
-            "hot"
-        ]
-    },
-    {
-        "word": "cool",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Of a mildly low temperature"
-        ],
-        "synonyms": [
-            "cold"
-        ],
-        "antonyms": [
-            "hot"
-        ]
-    },
-    {
-        "word": "hot",
-        "types": [
-            "temperature"
-        ],
-        "definitions": [
-            "Having or giving off a high temperature"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "cool",
-            "cold"
-        ]
-    },
-    {
-        "word": "wet",
-        "types": [
-            "moist"
-        ],
-        "definitions": [
-            "Made up of liquid or moisture, usually (but not always) water"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "dry"
-        ]
-    },
-    {
-        "word": "dry",
-        "types": [
-            "moist"
-        ],
-        "definitions": [
-            "Free from or lacking moisture"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "wet"
-        ]
-    },
-    {
-        "word": "Bright",
-        "types": [
-            "brightness",
-            "light"
-        ],
-        "definitions": [
-            "Emitting much light"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "dark"
-        ]
-    },
-    {
-        "word": "Dark",
-        "types": [
-            "brightness",
-            "light"
-        ],
-        "definitions": [
-            "Having an absolute or (more often) relative lack of light"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "light"
-        ]
-    },
-    {
-        "word": "fun",
-        "types": [
-            "fun",
-            "personality"
-        ],
-        "definitions": [
-            "Enjoyable or amusing"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "boring"
-        ]
-    },
-    {
-        "word": "boring",
-        "types": [
-            "fun",
-            "personality"
-        ],
-        "definitions": [
-            "Causing boredom or tiredness; making one feel tired and impatient"
-        ],
-        "synonyms": [],
-        "antonyms": [
-            "fun"
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "dim",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"},
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "unhappy",
+		"types": [
+			{"type": "happy", "relation": "antonym"},
+			{"type": "sad", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "warm",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "scorching",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
+
+	{
+		"word": "fantastic",
+		"types": [
+			{"type": "awesome", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "dull",
+		"types": [
+			{"type": "awesome", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "mediocre",
+		"types": [
+			{"type": "awesome", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "freezing",
+		"types": [
+			{"type": "hot", "relation": "antonym"},
+			{"type": "cold", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "dumb",
+		"types": [
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "sunny",
+		"types": [
+			{"type": "light", "relation": "synonym"},
+			{"type": "hot", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "cheerful",
+		"types": [
+			{"type": "dark", "relation": "antonym"},
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "sullen",
+		"types": [
+			{"type": "sad", "relation": "synonym"},
+			{"type": "happy", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "miserable",
+		"types": [
+			{"type": "sad", "relation": "synonym"},
+			{"type": "happy", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "glad",
+		"types": [
+			{"type": "sad", "relation": "antonym"},
+			{"type": "happy", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "heated",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "frigid",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "arid",
+		"types": [
+			{"type": "dry", "relation": "synonym"},
+			{"type": "wet", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "parched",
+		"types": [
+			{"type": "dry", "relation": "synonym"},
+			{"type": "wet", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "humid",
+		"types": [
+			{"type": "dry", "relation": "antonym"},
+			{"type": "hot", "relation": "synonym"},
+			{"type": "wet", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "soggy",
+		"types": [
+			{"type": "wet", "relation": "synonym"},
+			{"type": "dry", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "quick",
+		"types": [
+			{"type": "fast", "relation": "synonym"},
+			{"type": "slow", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "rapid",
+		"types": [
+			{"type": "fast", "relation": "synonym"},
+			{"type": "slow", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "sluggish",
+		"types": [
+			{"type": "slow", "relation": "synonym"},
+			{"type": "fast", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "lethargic",
+		"types": [
+			{"type": "slow", "relation": "synonym"},
+			{"type": "fast", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "beautiful",
+		"types": [
+			{"type": "pretty", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "attractive",
+		"types": [
+			{"type": "pretty", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "plain",
+		"types": [
+			{"type": "pretty", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "ugly",
+		"types": [
+			{"type": "pretty", "relation": "antonym"}
+		]
+	}
 ]
