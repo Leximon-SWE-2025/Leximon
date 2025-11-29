@@ -33,5 +33,5 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 ## AI Disclosure
 - [ChatGPT 5.1](https://chatgpt.com/)
   - "c#, how to efficiently get n unique random numbers in the range 0..r"
-
-
+- [gpt-oss:20b](https://ollama.com/library/gpt-oss:20b)
+  - Used to generate list of words and their types (`words/words.json`).
