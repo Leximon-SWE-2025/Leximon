@@ -44,20 +44,15 @@ public record WordInfo(string Word, CategoryInfo[] Types, string[] Definitions)
     public CategoryInfo[] Types { get; init; } = Types ?? [];
 
     public override string ToString() => $"{nameof(WordInfo)} {{ {string.Join(", ",
-            $"{nameof(Word)} = {Word}",
-            $"{nameof(Types)} = {{ {string.Join(", ", [.. Types.Select(t => t.ToString())])} }}",
-            $"{nameof(Definitions)} = {{ {string.Join(", ", Definitions)} }}"
-        )} }}";
+          $"{nameof(Word)} = {Word}",
+          $"{nameof(Types)} = {{ {string.Join(", ", [.. Types.Select(t => t.ToString())])} }}",
+          $"{nameof(Definitions)} = {{ {string.Join(", ", Definitions)} }}"
+      )} }}";
 }
 
 public partial class WordManager : Node
 {
-    public enum Relation
-    {
-        Synonym,
-        Antonym,
-        Neither
-    }
+
 
     static private Dictionary<string, WordInfo> WordData;
 
@@ -71,7 +66,9 @@ public partial class WordManager : Node
 
     private static IEnumerable<string> GetOfRelation(string word, Relation relation) => WordData[word].Types.Where(t => t.Relation == relation).Select(t => t.Type);
     public static IEnumerable<string> GetSynonyms(string word) => GetOfRelation(word, Relation.Synonym);
+    public static IEnumerable<string> GetSynonyms(WordInfo word) => GetOfRelation(word.Word, Relation.Synonym);
     public static IEnumerable<string> GetAntonyms(string word) => GetOfRelation(word, Relation.Synonym);
+    public static IEnumerable<string> GetAntonyms(WordInfo word) => GetOfRelation(word.Word, Relation.Synonym);
 
     static private readonly JsonSerializerOptions jsonOptions = new()
     {
@@ -131,6 +128,31 @@ public partial class WordManager : Node
         }
     }
 
+    public static bool AreSynonyms(string word1, string word2)
+    {
+        var synonyms1 = GetSynonyms(word1);
+        var synonyms2 = GetSynonyms(word2);
+
+        if (synonyms1.Intersect(synonyms2).Any())
+        {
+            return true;
+        }
+        return false;
+    }
+    public static bool AreAntonyms(string word1, string word2)
+    {
+        var synonyms1 = GetSynonyms(word1);
+        var synonyms2 = GetSynonyms(word2);
+        var antonyms1 = GetAntonyms(word1);
+        var antonyms2 = GetAntonyms(word2);
+
+        if (synonyms1.Intersect(antonyms2).Any() || synonyms2.Intersect(antonyms1).Any())
+        {
+            return true;
+        }
+        return false;
+    }
+
     public static Relation ClassifyRelation(string word1, string word2)
     {
         if (string.IsNullOrWhiteSpace(word1) || string.IsNullOrWhiteSpace(word2))
@@ -140,18 +162,17 @@ public partial class WordManager : Node
         var w2 = word2.Trim().ToLowerInvariant();
 
         if (w1 == w2)
-            return Relation.Neither;
+            return Relation.None;
+        if (!WordData.TryGetValue(w1, out _) || !WordData.TryGetValue(w2, out _))
+            return Relation.None;
 
-        if (!WordData.TryGetValue(w1, out var info1) || !WordData.TryGetValue(w2, out var info2))
-            return Relation.Neither;
-
-        if (info1.Synonyms.Contains(w2) || info2.Synonyms.Contains(w1))
+        if (AreSynonyms(w1, w2))
             return Relation.Synonym;
 
-        if (info1.Antonyms.Contains(w2) || info2.Antonyms.Contains(w1))
+        if (AreAntonyms(w1, w2))
             return Relation.Antonym;
 
-        return Relation.Neither;
+        return Relation.None;
     }
 }
 
