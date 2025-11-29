@@ -1,0 +1,24 @@
+[
+    {
+        "word": "cool",
+        "types": [
+            {"type": "cold", "relation": "synonym"},
+            {"type": "awesome", "relation": "synonym"}
+        ]
+    },
+    {
+        "word": "bright",
+        "types": [
+            {"type": "smart", "relation": "synonym"},
+            {"type": "light", "relation": "synonym"},
+            {"type": "dark", "relation": "antonym"}
+        ]
+    },
+    {
+        "word": "black",
+        "types": [
+            {"type": "dark", "relation": "synonym"},
+            {"type": "light", "relation": "antonym"}
+        ]
+    }
+]
