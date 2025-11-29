@@ -31,7 +31,7 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - <https://forum.godotengine.org/t/how-do-i-fix-error-no-export-template-found-at-the-expected-path-path/1982>
 
 ## AI Disclosure
-- [ChatGPT 5.1](https://chatgpt.com/)
+- [ChatGPT 5.1](https://chatgpt.com/): Code to select random moves to show to the player
   - "c#, how to efficiently get n unique random numbers in the range 0..r"
 - [gpt-oss:20b](https://ollama.com/library/gpt-oss:20b)
   - Used to generate list of words and their types (full chat [here](./AI-disclosure/wordlist-generation/chat_history.md)).
