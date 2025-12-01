@@ -83,7 +83,7 @@ public abstract partial class Character : Area2D
             .ToArray();
     }
 
-    public abstract void Attack();
+    public abstract void Attack(Move move, Character target);
 
     public abstract void Defend();
 

@@ -111,9 +111,9 @@ public partial class Player : Character
         throw new NotImplementedException();
     }
 
-    public override void Attack()
+    public override void Attack(Move move, Character target)
     {
-        throw new NotImplementedException();
+        target.ApplyDamage(10);
     }
 
     public override void Defend()

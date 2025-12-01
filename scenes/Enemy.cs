@@ -5,8 +5,17 @@ public partial class Enemy : Character
 {
 
     AnimatedSprite2D icon;
-    // public Move selectRandomMove(); 
-    public override void Attack()
+    private Random rand = new Random();
+    public Move selectRandomMove()
+    {
+        // random number from 0 to 1
+        // 0 represents Attack, 1 represents Defend
+
+        int enemy_length = CurrentMoves.Length;
+        int move_no = (rand.Next(0, enemy_length));
+        return CurrentMoves[move_no];
+    }
+    public override void Attack(Move move, Character target)
     {
         throw new NotImplementedException();
     }
