@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj5op5rmh6uds"]
+[gd_scene load_steps=13 format=3 uid="uid://bj5op5rmh6uds"]
 
 [ext_resource type="Script" uid="uid://dxebewmwf1kji" path="res://scenes/BattleUI.cs" id="1_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dow6qaulk6ubl" path="res://scenes/log_pane.tscn" id="1_dn72j"]
@@ -6,8 +6,39 @@
 [ext_resource type="PackedScene" uid="uid://20n33q4yrn7h" path="res://scenes/move_pane.tscn" id="2_a12nh"]
 [ext_resource type="PackedScene" uid="uid://bfks746jhhhgr" path="res://scenes/move_pop_up.tscn" id="3_6vh42"]
 [ext_resource type="PackedScene" uid="uid://htdn0n64jwi1" path="res://scenes/definition_pop_up.tscn" id="5_lpir7"]
+[ext_resource type="Texture2D" uid="uid://ceho4x4wtsoqe" path="res://art/tilemap.png" id="7_f4pi3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgoel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("7_f4pi3")
+region = Rect2(0, 119, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yahae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("7_f4pi3")
+region = Rect2(17, 170, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k1nj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BattleUI" type="Control"]
 layout_mode = 3
@@ -118,6 +149,7 @@ grow_vertical = 2
 position = Vector2(211.5, 170)
 
 [node name="Label" type="Label" parent="PlayerPos"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -131,10 +163,15 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Player Sprite Here"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerPos"]
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_yahae")
+
 [node name="EnemyPos" type="Marker2D" parent="."]
 position = Vector2(940.5, 170)
 
 [node name="Label" type="Label" parent="EnemyPos"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -147,3 +184,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Enemy Sprite Here"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyPos"]
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_4k1nj")
