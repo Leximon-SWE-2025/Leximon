@@ -19,6 +19,7 @@ public partial class HubWorld : Node2D
 
     private GameState State;
 
+    [Export]
     private const int ENEMY_COUNT = 5;
     private RandomNumberGenerator rng = new();
 
