@@ -1,7 +1,10 @@
 using Godot;
 using System;
 using System.Linq;
-
+enum GameState
+{
+    Hub, Battle, Info, Exit
+}
 public partial class HubWorld : Node2D
 {
     [Export] public PackedScene EnemyScene;  
@@ -13,6 +16,8 @@ public partial class HubWorld : Node2D
     private BattleUI battleUI;
     private InfoPane infoPane;
     private ExitPane exitPanel;
+
+    private GameState State;
 
     private const int ENEMY_COUNT = 5;
     private RandomNumberGenerator rng = new();
@@ -35,9 +40,11 @@ public partial class HubWorld : Node2D
 
         player.EnterBattle += StartBattle;
         infoPane.UpdateWords += RefreshInfoPane;
-        infoPane.Hidden += () => player.CanMove = true;
-        battleUI.Hidden += () => player.CanMove = true;
+        infoPane.Hidden += () => { ChangeState(GameState.Hub); };
+        battleUI.Hidden += () => { ChangeState(GameState.Hub); };
         exitPanel.QuitGame += () => GetTree().Quit();
+
+        player.Position = player.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (Globals.TILE_SIZE / 2));
 
         SpawnEnemies();
     }
@@ -69,12 +76,23 @@ public partial class HubWorld : Node2D
 
     private void StartBattle(Character enemy)
     {
-        player.CanMove = false;
-        player.SelectMoves(5);
-        battleUI.UpdateMoves(player.CurrentMoves);
-        battleUI.UpdateEnemyHealth(100);
-        battleUI.UpdatePlayerHealth(player.PercentHealth);
-        battleUI.Show();
+        //player.CanMove = false;
+        //player.SelectMoves(5);
+        //battleUI.UpdateMoves(player.CurrentMoves);
+        //battleUI.UpdateEnemyHealth(100);
+        //battleUI.UpdatePlayerHealth(player.PercentHealth);
+        //battleUI.Show();
+        if (State == GameState.Hub)
+        {
+            player.SelectMoves(5);
+
+            battleUI.UpdateMoves(player.CurrentMoves);
+            battleUI.UpdateEnemyHealth(100f);
+            battleUI.UpdatePlayerHealth(player.PercentHealth);
+
+            battleUI.Show();
+            ChangeState(GameState.Battle);
+        }
     }
 
     private void RefreshInfoPane()
@@ -83,21 +101,55 @@ public partial class HubWorld : Node2D
         foreach (var move in player.KnownMoves)
             infoPane.AddWord(move.Word);
     }
-
+    private void OpenInfoPane()
+    {
+        infoPane.Show();
+        ChangeState(GameState.Info);
+    }
     public override void _Input(InputEvent e)
     {
         if (e.IsActionPressed("ui_cancel"))
         {
-            if (exitPanel.Visible) { exitPanel.Hide(); player.CanMove = true; }
-            else if (!battleUI.Visible && !infoPane.Visible) { exitPanel.Show(); player.CanMove = false; }
+            switch (State)
+            {
+                case GameState.Hub:
+                    ChangeState(GameState.Exit);
+                    exitPanel.Show();
+                    break;
+                case GameState.Exit:
+                    ChangeState(GameState.Hub);
+                    exitPanel.Hide();
+                    break;
+                case GameState.Battle:
+                    battleUI.Close();
+                    break;
+                case GameState.Info:
+                    infoPane.Hide();
+                    break;
+            }
         }
-        else if (e.IsActionPressed("open_info") && !battleUI.Visible && !exitPanel.Visible)
+        else if (e.IsActionPressed("open_info"))
         {
-            infoPane.Show();
-            RefreshInfoPane();
-            player.CanMove = false;
+            OpenInfoPane();
+            //infoPane.Show();
+            //RefreshInfoPane();
+            //player.CanMove = false;
         }
     }
-
+    private void ChangeState(GameState state)
+    {
+        this.State = state;
+        switch (state)
+        {
+            case GameState.Hub:
+                player.CanMove = true;
+                break;
+            case GameState.Battle:
+            case GameState.Info:
+            case GameState.Exit:
+                player.CanMove = false;
+                break;
+        }
+    }
     public void RespawnEnemies() => SpawnEnemies();
 }
