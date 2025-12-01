@@ -68,41 +68,41 @@ Here is the updated list with **clever** added using only existing types:
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	}
 ]
 ```
 
@@ -118,47 +118,47 @@ Here’s the list with a new adjective that includes **“cold”** as one of it
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frosty",
-        "types": [
-            {"type": "cold", "relation": "synonym"}
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"}
+		]
+	}
 ]
 ```
 
@@ -392,62 +392,62 @@ Here’s the updated list with **dim** including all the types we discussed:
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frosty",
-        "types": [
-            {"type": "cold", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "dim",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"},
-            {"type": "smart", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "unhappy",
-        "types": [
-            {"type": "happy", "relation": "antonym"},
-            {"type": "sad", "relation": "synonym"}
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "dim",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"},
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "unhappy",
+		"types": [
+			{"type": "happy", "relation": "antonym"},
+			{"type": "sad", "relation": "synonym"}
+		]
+	}
 ]
 ```
 
@@ -473,64 +473,64 @@ Here’s the updated JSON with the new type **“hot”** added as an antonym to
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frosty",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "dim",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"},
-            {"type": "smart", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "unhappy",
-        "types": [
-            {"type": "happy", "relation": "antonym"},
-            {"type": "sad", "relation": "synonym"}
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "dim",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"},
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "unhappy",
+		"types": [
+			{"type": "happy", "relation": "antonym"},
+			{"type": "sad", "relation": "synonym"}
+		]
+	}
 ]
 ```
 
@@ -561,78 +561,78 @@ Here’s the updated list with the two new adjectives:
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frosty",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "dim",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"},
-            {"type": "smart", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "unhappy",
-        "types": [
-            {"type": "happy", "relation": "antonym"},
-            {"type": "sad", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "warm",
-        "types": [
-            {"type": "hot", "relation": "synonym"},
-            {"type": "cold", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "scorching",
-        "types": [
-            {"type": "hot", "relation": "synonym"},
-            {"type": "cold", "relation": "antonym"}
-        ]
-    }
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "dim",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"},
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "unhappy",
+		"types": [
+			{"type": "happy", "relation": "antonym"},
+			{"type": "sad", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "warm",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "scorching",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	}
 ]
 ```
 
@@ -1054,34 +1054,34 @@ import json
 from collections import defaultdict
 
 def load_adjectives(path: str):
-    """Load the JSON array from the given file."""
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+	"""Load the JSON array from the given file."""
+	with open(path, 'r', encoding='utf-8') as f:
+		return json.load(f)
 
 def count_types(adjectives):
-    """
+	"""
     Return a dict mapping type -> {'synonym': count, 'antonym': count}
-    """
-    counts = defaultdict(lambda: {'synonym': 0, 'antonym': 0})
-    for entry in adjectives:
-        for t in entry.get('types', []):
-            rel = t.get('relation')
-            t_type = t.get('type')
-            if rel in ('synonym', 'antonym') and t_type:
-                counts[t_type][rel] += 1
-    return counts
+	"""
+	counts = defaultdict(lambda: {'synonym': 0, 'antonym': 0})
+	for entry in adjectives:
+		for t in entry.get('types', []):
+			rel = t.get('relation')
+			t_type = t.get('type')
+			if rel in ('synonym', 'antonym') and t_type:
+				counts[t_type][rel] += 1
+	return counts
 
 def main():
-    adjectives = load_adjectives('adjectives.json')
-    type_counts = count_types(adjectives)
+	adjectives = load_adjectives('adjectives.json')
+	type_counts = count_types(adjectives)
 
-    print(f"{'Type':<12}{'Synonyms':>10}{'Antonyms':>10}")
-    print("-" * 32)
-    for t, c in sorted(type_counts.items()):
-        print(f"{t:<12}{c['synonym']:>10}{c['antonym']:>10}")
+	print(f"{'Type':<12}{'Synonyms':>10}{'Antonyms':>10}")
+	print("-" * 32)
+	for t, c in sorted(type_counts.items()):
+		print(f"{t:<12}{c['synonym']:>10}{c['antonym']:>10}")
 
 if __name__ == "__main__":
-    main()
+	main()
 ```
 
 ### What it prints
@@ -1295,155 +1295,155 @@ Here’s the updated list with the additional types you requested.
 
 ```json
 [
-    {
-        "word": "cool",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "awesome", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "bright",
-        "types": [
-            {"type": "smart", "relation": "synonym"},
-            {"type": "light", "relation": "synonym"},
-            {"type": "dark", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "black",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "joyful",
-        "types": [
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "clever",
-        "types": [
-            {"type": "smart", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frosty",
-        "types": [
-            {"type": "cold", "relation": "synonym"},
-            {"type": "hot", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "dim",
-        "types": [
-            {"type": "dark", "relation": "synonym"},
-            {"type": "light", "relation": "antonym"},
-            {"type": "smart", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "unhappy",
-        "types": [
-            {"type": "happy", "relation": "antonym"},
-            {"type": "sad", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "warm",
-        "types": [
-            {"type": "hot", "relation": "synonym"},
-            {"type": "cold", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "scorching",
-        "types": [
-            {"type": "hot", "relation": "synonym"},
-            {"type": "cold", "relation": "antonym"}
-        ]
-    },
+	{
+		"word": "cool",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "awesome", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "bright",
+		"types": [
+			{"type": "smart", "relation": "synonym"},
+			{"type": "light", "relation": "synonym"},
+			{"type": "dark", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "black",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "joyful",
+		"types": [
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "clever",
+		"types": [
+			{"type": "smart", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frosty",
+		"types": [
+			{"type": "cold", "relation": "synonym"},
+			{"type": "hot", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "dim",
+		"types": [
+			{"type": "dark", "relation": "synonym"},
+			{"type": "light", "relation": "antonym"},
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "unhappy",
+		"types": [
+			{"type": "happy", "relation": "antonym"},
+			{"type": "sad", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "warm",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "scorching",
+		"types": [
+			{"type": "hot", "relation": "synonym"},
+			{"type": "cold", "relation": "antonym"}
+		]
+	},
 
-    {
-        "word": "fantastic",
-        "types": [
-            {"type": "awesome", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "dull",
-        "types": [
-            {"type": "awesome", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "mediocre",
-        "types": [
-            {"type": "awesome", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "freezing",
-        "types": [
-            {"type": "hot", "relation": "antonym"},
-            {"type": "cold", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "dumb",
-        "types": [
-            {"type": "smart", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "sunny",
-        "types": [
-            {"type": "light", "relation": "synonym"},
-            {"type": "hot", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "cheerful",
-        "types": [
-            {"type": "dark", "relation": "antonym"},
-            {"type": "happy", "relation": "synonym"},
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "sullen",
-        "types": [
-            {"type": "happy", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "miserable",
-        "types": [
-            {"type": "sad", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "glad",
-        "types": [
-            {"type": "sad", "relation": "antonym"}
-        ]
-    },
-    {
-        "word": "heated",
-        "types": [
-            {"type": "hot", "relation": "synonym"}
-        ]
-    },
-    {
-        "word": "frigid",
-        "types": [
-            {"type": "hot", "relation": "antonym"}
-        ]
-    }
+	{
+		"word": "fantastic",
+		"types": [
+			{"type": "awesome", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "dull",
+		"types": [
+			{"type": "awesome", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "mediocre",
+		"types": [
+			{"type": "awesome", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "freezing",
+		"types": [
+			{"type": "hot", "relation": "antonym"},
+			{"type": "cold", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "dumb",
+		"types": [
+			{"type": "smart", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "sunny",
+		"types": [
+			{"type": "light", "relation": "synonym"},
+			{"type": "hot", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "cheerful",
+		"types": [
+			{"type": "dark", "relation": "antonym"},
+			{"type": "happy", "relation": "synonym"},
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "sullen",
+		"types": [
+			{"type": "happy", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "miserable",
+		"types": [
+			{"type": "sad", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "glad",
+		"types": [
+			{"type": "sad", "relation": "antonym"}
+		]
+	},
+	{
+		"word": "heated",
+		"types": [
+			{"type": "hot", "relation": "synonym"}
+		]
+	},
+	{
+		"word": "frigid",
+		"types": [
+			{"type": "hot", "relation": "antonym"}
+		]
+	}
 ]
 ```
 

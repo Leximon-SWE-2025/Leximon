@@ -5,7 +5,14 @@ public partial class Enemy : Character
 {
 
     AnimatedSprite2D icon;
-    // public Move selectRandomMove(); 
+    private Random rand = new Random();
+    public Move selectRandomMove()
+    {
+        // random number from 0 to 1
+        // 0 represents Attack, 1 represents Defend
+
+        return (rand.Next(0, 2) == 0) ? Attack : Defend;
+    }
     public override void Attack()
     {
         throw new NotImplementedException();
