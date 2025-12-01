@@ -16,12 +16,12 @@ public partial class Enemy : Character, ISaveable
 
         return (rand.Next(0, 2) == 0) ? Attack : Defend;
     }
-    public override void Attack()
+    public override void Attack(Move move)
     {
         throw new NotImplementedException();
     }
 
-    public override void Defend()
+    public override void Defend(Move move)
     {
         throw new NotImplementedException();
     }
