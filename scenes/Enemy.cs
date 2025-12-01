@@ -10,8 +10,9 @@ public partial class Enemy : Character
     {
         // random number from 0 to 1
         // 0 represents Attack, 1 represents Defend
-
-        return (rand.Next(0, 2) == 0) ? Attack : Defend;
+        int enemy_length = CurrentMoves.Length;
+        int move_no = (rand.Next(0, enemy_length));
+        return CurrentMoves[move_no];
     }
     public override void Attack(Move move)
     {
