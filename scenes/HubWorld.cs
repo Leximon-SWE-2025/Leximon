@@ -7,7 +7,7 @@ public partial class HubWorld : Node2D
     [Export] public PackedScene EnemyScene;  
     [Export] public Node2D EnemyContainer; 
     [Export] public Vector2 SpawnMin = new(0, 0);
-    [Export] public Vector2 SpawnMax = new(500, 500);
+    [Export] public Vector2 SpawnMax = new(1152, 656);
 
     private Player player;
     private BattleUI battleUI;
