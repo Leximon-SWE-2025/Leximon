@@ -35,9 +35,9 @@ public abstract partial class Character : Area2D
     public float defense_multiplier;
 
 
-    protected HashSet<Move> knownMoves = new();
+    protected HashSet<Move> knownMoves = [];
 
-    public List<Move> KnownMoves => [.. knownMoves];
+    public Move[] KnownMoves => [.. knownMoves];
 
 
     private Move[] currentMoves;
