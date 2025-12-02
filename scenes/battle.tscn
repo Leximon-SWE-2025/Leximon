@@ -188,3 +188,4 @@ text = "Enemy Sprite Here"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyPos"]
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_4k1nj")
+flip_h = true
