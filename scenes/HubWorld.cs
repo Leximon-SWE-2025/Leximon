@@ -1,14 +1,19 @@
 using Godot;
+using System.Collections.Generic;
 using System;
+using System.IO;
 using System.Linq;
+using FileAccess = Godot.FileAccess;
+using System.Text.Json;
+
 enum GameState
 {
     Hub, Battle, Info, Exit
 }
-public partial class HubWorld : Node2D
+public partial class HubWorld : Node2D, ISaveable
 {
-    [Export] public PackedScene EnemyScene;  
-    [Export] public Node2D EnemyContainer; 
+    [Export] public PackedScene EnemyScene;
+    [Export] public Node2D EnemyContainer;
     [Export] public Vector2 SpawnMin = new(0, 0);
     [Export] public Vector2 SpawnMax = new(1152, 656);
 
@@ -38,15 +43,25 @@ public partial class HubWorld : Node2D
         camera.LimitBottom = (int)SpawnMax.Y;
         camera.LimitEnabled = true;
 
+        camera.Position = player.Position;
+
         player.EnterBattle += StartBattle;
         infoPane.UpdateWords += RefreshInfoPane;
         infoPane.Hidden += () => { ChangeState(GameState.Hub); };
         battleUI.Hidden += () => { ChangeState(GameState.Hub); };
-        exitPanel.QuitGame += () => GetTree().Quit();
+        exitPanel.QuitGame += SaveAndQuit;
 
         player.Position = player.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (Globals.TILE_SIZE / 2));
 
         SpawnEnemies();
+
+        Ready += () => Load(Globals.SAVE_FILE_PATH);
+    }
+
+    private void SaveAndQuit()
+    {
+        Save(Globals.SAVE_FILE_PATH);
+        GetTree().Quit();
     }
 
     private void SpawnEnemies()
@@ -67,11 +82,15 @@ public partial class HubWorld : Node2D
             var enemy = EnemyScene.Instantiate<Enemy>();
             float x = rng.RandfRange(SpawnMin.X, SpawnMax.X);
             float y = rng.RandfRange(SpawnMin.Y, SpawnMax.Y);
+            enemy.Name = $"Enemy_{i}";
             enemy.Position = new Vector2(x, y);
             EnemyContainer.AddChild(enemy);
         }
 
-        GD.Print($"Spawned {ENEMY_COUNT} enemies at random positions.");
+        if (OS.IsDebugBuild())
+        {
+            GD.Print($"Spawned {ENEMY_COUNT} enemies at random positions.");
+        }
     }
 
     private void StartBattle(Character enemy)
@@ -151,5 +170,56 @@ public partial class HubWorld : Node2D
                 break;
         }
     }
+
+
+    private void Save(string path)
+    {
+        ArgumentNullException.ThrowIfNull(path);
+
+        using var saveFile = FileAccess.Open(path, FileAccess.ModeFlags.Write);
+        //var json_data = Json.Stringify(this.Save());
+
+        var json_data = JsonSerializer.Serialize(Save());
+        saveFile.StoreLine(json_data);
+
+    }
+    private void Load(string path)
+    {
+        ArgumentNullException.ThrowIfNull(path);
+        using var saveFile = FileAccess.Open(path, FileAccess.ModeFlags.Read);
+        if (saveFile is null) return;
+        var json_data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(saveFile.GetAsText());
+        Load(json_data);
+    }
+
     public void RespawnEnemies() => SpawnEnemies();
+
+    public Dictionary<string, object> Save()
+    {
+
+        var data = new Dictionary<string, object>
+        {
+            {player.Name, player.Save() }
+        };
+        foreach (var enemy in EnemyContainer.GetChildren().OfType<Enemy>())
+        {
+            data[enemy.Name] = enemy.Save();
+        }
+        return data;
+    }
+
+    public void Load(Dictionary<string, JsonElement> dict)
+    {
+        if (OS.IsDebugBuild())
+        {
+            GD.Print([.. dict]);
+            GD.Print(player is null);
+
+        }
+        player.Load(dict[player.Name].Deserialize<Dictionary<string, JsonElement>>());
+        foreach (var enemy in EnemyContainer.GetChildren().OfType<Enemy>())
+        {
+            enemy.Load(dict[enemy.Name].Deserialize<Dictionary<string, JsonElement>>());
+        }
+    }
 }

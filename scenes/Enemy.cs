@@ -1,7 +1,10 @@
 using Godot;
+using System.Collections.Generic;
 using System;
+using System.Text.Json;
 
-public partial class Enemy : Character
+
+public partial class Enemy : Character, ISaveable
 {
 
     AnimatedSprite2D icon;
@@ -14,6 +17,21 @@ public partial class Enemy : Character
     public override void Defend()
     {
         throw new NotImplementedException();
+    }
+
+    public override void Load(Dictionary<string, JsonElement> dict)
+    {
+        base.Load(dict);
+        knownMoves = [.. WordManager.AllMoves];
+    }
+
+    public override Dictionary<string, object> Save()
+    {
+        var data = base.Save();
+
+        data.Remove(nameof(knownMoves)); // Because Enemies know all the moves we won't save them
+
+        return data;
     }
 
     public override void _Ready()
