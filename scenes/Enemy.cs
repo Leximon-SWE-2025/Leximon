@@ -48,6 +48,8 @@ public partial class Enemy : Character, ISaveable
         //var interactionArea = GetNode<Area2D>("InteractionArea");
         var interactionArea = GetNode<Area2D>("InteractionArea");
 
+        RandomizeType();
+
         interactionArea.AreaEntered += InteractionAreaEntered;
         interactionArea.AreaExited += InteractionAreaExited;
     }

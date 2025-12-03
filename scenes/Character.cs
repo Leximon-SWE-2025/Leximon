@@ -17,6 +17,8 @@ public abstract partial class Character : Area2D, ISaveable
     public int CurrentHealth => currentHealth;
 
 
+    public string Type;
+
     private int maxHealth = 100;
     public int MaxHealth => maxHealth;
 
@@ -117,7 +119,8 @@ public abstract partial class Character : Area2D, ISaveable
             {nameof(maxHealth),maxHealth },
             {nameof(knownMoves), knownMoves.Select(m=>m.Word).ToArray() },
             {nameof(attack_multiplier), attack_multiplier},
-            {nameof(defense_multiplier), defense_multiplier}
+            {nameof(defense_multiplier), defense_multiplier},
+            {nameof(Type), Type}
         };
 
         return data;
@@ -140,6 +143,7 @@ public abstract partial class Character : Area2D, ISaveable
         }
         attack_multiplier = dict[nameof(attack_multiplier)].GetSingle();
         defense_multiplier = dict[nameof(defense_multiplier)].GetSingle();
+        Type = dict[nameof(Type)].GetString();
     }
 
     [Signal]

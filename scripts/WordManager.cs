@@ -74,6 +74,16 @@ public partial class WordManager : Node
     public static IEnumerable<string> GetAntonyms(string word) => GetOfRelation(word, Relation.Synonym);
     public static IEnumerable<string> GetAntonyms(WordInfo word) => GetOfRelation(word.Word, Relation.Synonym);
 
+    public static IEnumerable<string> RandomTypes(int count = 1) => AllTypes.Random(count);
+    public static IEnumerable<Move> RandomMoves(int count = 5) => RandomWords(count).Select(w => new Move(w));
+    public static IEnumerable<string> RandomWords(int count = 5)
+    {
+        var wordsCopy = Words.ToArray();
+        Random.Shared.Shuffle(wordsCopy);
+
+        return wordsCopy.Take(count);
+    }
+
     static private readonly JsonSerializerOptions jsonOptions = new()
     {
         PropertyNameCaseInsensitive = true,

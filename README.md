@@ -33,6 +33,8 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - <https://stackoverflow.com/questions/438939/is-there-any-way-to-call-the-parent-version-of-an-overridden-method-c-net>
 - <https://www.gdquest.com/library/pixel_art_setup_godot4/>
 - <https://docs.godotengine.org/en/stable/tutorials/inputs/handling_quit_requests.html>
+- <https://stackoverflow.com/questions/1999181/is-there-a-standard-never-returns-attribute-for-c-sharp-functions>
+- <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/user-defined-conversion-operators>
 
 ## AI Disclosure
 - [ChatGPT 5.1](https://chatgpt.com/): Code to select random moves to show to the player
