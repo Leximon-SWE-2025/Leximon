@@ -63,7 +63,7 @@ public partial class WordManager : Node
 
     public static IEnumerable<Move> AllMoves => WordData.Keys.Select(word => new Move(word));
 
-    public static IEnumerable<string> AllTypes => WordData.Values.SelectMany(wd => wd.Types.Select(t => t.Type)).ToHashSet();
+    public static IEnumerable<string> AllTypes => WordData.Values.SelectMany(wd => wd.Types.Select(t => t.Type)).Distinct(); // Gets all unique the types
 
     //public static IEnumerable<string> GetTypes(string word) => WordData[word].Types.Select(t => t.Type);
     public static IEnumerable<string> GetDefinitions(string word) => WordData[word].Definitions;
