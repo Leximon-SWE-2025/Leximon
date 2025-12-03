@@ -17,7 +17,7 @@ public partial class Enemy : Character, ISaveable
         int move_no = (rand.Next(0, enemy_length));
         return CurrentMoves[move_no];
     }
-    public override void Attack(Move move)
+    public override void Attack(Move move, Character target)
     {
         throw new NotImplementedException();
     }

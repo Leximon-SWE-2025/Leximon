@@ -84,7 +84,7 @@ public abstract partial class Character : Area2D, ISaveable
             .ToArray();
     }
 
-    public abstract void Attack(Move move);
+    public abstract void Attack(Move move, Character target);
 
     public abstract void Defend(Move move);
 
