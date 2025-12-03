@@ -57,6 +57,13 @@ public partial class HubWorld : Node2D, ISaveable
 
         Ready += () => Load(Globals.SAVE_FILE_PATH);
     }
+    public override void _Notification(int what)
+    {
+        if (what == NotificationWMCloseRequest)
+        {
+            SaveAndQuit();
+        }
+    }
 
     private void SaveAndQuit()
     {
