@@ -61,6 +61,8 @@ public partial class WordManager : Node
 
     static public IEnumerable<string> Words => WordData.Keys;
 
+    public static IEnumerable<Move> AllMoves => WordData.Keys.Select(word => new Move(word));
+
     //public static IEnumerable<string> GetTypes(string word) => WordData[word].Types.Select(t => t.Type);
     public static IEnumerable<string> GetDefinitions(string word) => WordData[word].Definitions;
 

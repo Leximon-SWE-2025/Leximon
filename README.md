@@ -29,6 +29,9 @@ This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 - <https://learn.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder>
 - <https://www.reddit.com/r/godot/comments/mhnpgl/grid_container_with_scroll/>
 - <https://forum.godotengine.org/t/how-do-i-fix-error-no-export-template-found-at-the-expected-path-path/1982>
+- <https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html>
+- <https://stackoverflow.com/questions/438939/is-there-any-way-to-call-the-parent-version-of-an-overridden-method-c-net>
+- <https://www.gdquest.com/library/pixel_art_setup_godot4/>
 
 ## AI Disclosure
 - [ChatGPT 5.1](https://chatgpt.com/): Code to select random moves to show to the player

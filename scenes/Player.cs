@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 
 
@@ -116,9 +118,19 @@ public partial class Player : Character
         target.ApplyDamage(10);
     }
 
-    public override void Defend()
+    public override void Defend(Move move)
     {
         throw new NotImplementedException();
+    }
+
+    public override void Load(Dictionary<string, JsonElement> dict)
+    {
+        base.Load(dict);
+
+
+        var words = WordManager.AllMoves;
+
+        knownMoves = [..knownMoves.Intersect(words)];
     }
 
     // public List<Moves> getMoveList();

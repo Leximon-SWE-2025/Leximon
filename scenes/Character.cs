@@ -4,10 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 //using ;
 
 [GlobalClass]
-public abstract partial class Character : Area2D
+public abstract partial class Character : Area2D, ISaveable
 {
     //[Export]
     //Texture2D uiTexture;
@@ -35,9 +36,9 @@ public abstract partial class Character : Area2D
     public float defense_multiplier;
 
 
-    protected HashSet<Move> knownMoves = new();
+    protected HashSet<Move> knownMoves = [];
 
-    public List<Move> KnownMoves => [.. knownMoves];
+    public Move[] KnownMoves => [.. knownMoves];
 
 
     private Move[] currentMoves;
@@ -85,7 +86,7 @@ public abstract partial class Character : Area2D
 
     public abstract void Attack(Move move, Character target);
 
-    public abstract void Defend();
+    public abstract void Defend(Move move);
 
     public float EvaluateEffectiveness()
     {
@@ -102,6 +103,43 @@ public abstract partial class Character : Area2D
     {
         currentHealth += (int)ammount;
         EmitSignal(SignalName.UpdateHealth);
+    }
+
+    public virtual Dictionary<string, object> Save()
+    {
+        var data = new Dictionary<string, object>()
+        {
+            {nameof(currentHealth), currentHealth},
+            {nameof(Position), new Dictionary<string,object>(){
+                                    {nameof(Position.X),Position.X },
+                                    {nameof(Position.Y),Position.Y }
+            }},
+            {nameof(maxHealth),maxHealth },
+            {nameof(knownMoves), knownMoves.Select(m=>m.Word).ToArray() },
+            {nameof(attack_multiplier), attack_multiplier},
+            {nameof(defense_multiplier), defense_multiplier}
+        };
+
+        return data;
+    }
+
+    public virtual void Load(Dictionary<string, JsonElement> dict)
+    {
+        currentHealth = dict[nameof(currentHealth)].GetInt32();
+        var positionData = dict[nameof(Position)].Deserialize<Dictionary<string, JsonElement>>();
+        Position = new(positionData[nameof(Position.X)].GetSingle(), positionData[nameof(Position.Y)].GetSingle());
+        maxHealth = dict[nameof(maxHealth)].GetInt32();
+        try
+        {
+            var moves = dict[nameof(knownMoves)].Deserialize<string[]>();
+            knownMoves = [.. moves.Select(m => new Move(m))];
+        }
+        catch (KeyNotFoundException)
+        {
+            knownMoves = []; // Enemies do not store this value, so this is fine
+        }
+        attack_multiplier = dict[nameof(attack_multiplier)].GetSingle();
+        defense_multiplier = dict[nameof(defense_multiplier)].GetSingle();
     }
 
     [Signal]
