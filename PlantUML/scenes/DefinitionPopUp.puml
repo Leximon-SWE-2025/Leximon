@@ -1,0 +1,10 @@
+@startuml
+class DefinitionPopUp <<partial>> {
+    + <<override>> _Ready() : void
+    + Text : string <<get>> <<set>>
+    + Word : string <<get>> <<set>>
+    - _on_button_pressed() : void
+    + Close() : void
+}
+PanelContainer <|-- DefinitionPopUp
+@enduml

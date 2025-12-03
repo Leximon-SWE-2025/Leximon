@@ -1,0 +1,6 @@
+@startuml
+struct Move <<readonly>> <<record>> {
+    + Word : string <<get>> <<init>>
+    + Word : string <<get>> <<init>>
+}
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+abstract class Character <<partial>> {
+    - currentHealth : int = 100
+    + CurrentHealth : int <<get>>
+    + Type : string
+    - maxHealth : int = 100
+    + MaxHealth : int <<get>>
+    + PercentHealth : float <<get>>
+    + attack_multiplier : float
+    + defense_multiplier : float
+    # knownMoves : HashSet<Move>
+    + KnownMoves : Move[] <<get>>
+    - currentMoves : Move[]
+    + CurrentMoves : Move[] <<get>>
+    + IsAlive : bool <<get>>
+    # RandomizeType() : void
+    + SelectMoves(count:int, target:Character) : void
+    + {abstract} Attack(move:Move, target:Character) : void
+    + {abstract} Defend(move:Move) : void
+    + EvaluateEffectiveness() : float
+    + ApplyDamage(damage:float) : void
+    + Heal(ammount:float) : void
+    + <<virtual>> Save() : Dictionary<string, object>
+    + <<virtual>> Load(dict:Dictionary<string, JsonElement>) : void
+}
+Area2D <|-- Character
+ISaveable <|-- Character
+@enduml

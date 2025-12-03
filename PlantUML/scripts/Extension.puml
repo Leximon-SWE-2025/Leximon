@@ -1,0 +1,5 @@
+@startuml
+class IEnumerableExtensions <<static>> {
+    + {static} Random(source:IEnumerable<T>, count:int) : IEnumerable<T>
+}
+@enduml

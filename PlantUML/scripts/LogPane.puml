@@ -1,0 +1,9 @@
+@startuml
+class LogPane <<partial>> {
+    - messageContainer : VBoxContainer
+    + <<override>> _Ready() : void
+    + Log(move:string) : void
+    + Clear() : void
+}
+Control <|-- LogPane
+@enduml

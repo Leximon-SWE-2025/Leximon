@@ -1,0 +1,19 @@
+@startuml
+class Player <<partial>> {
+    - interactionArea : Area2D
+    - sprite : AnimatedSprite2D
+    - screenSize : Vector2
+    + CanMove : bool = true
+    + <<override>> _Ready() : void
+    + <<override>> _Process(delta:double) : void
+    + <<override>> _Input(@event:InputEvent) : void
+    - TryEnterBattle() : bool
+    + UpdateSprite(moveDirection:Vector2) : void
+    + Move(ammount:Vector2) : void
+    + add_move() : void
+    + <<override>> Attack(move:Move, target:Character) : void
+    + <<override>> Defend(move:Move) : void
+    + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
+}
+Character <|-- Player
+@enduml

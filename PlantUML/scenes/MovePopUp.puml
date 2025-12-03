@@ -1,0 +1,11 @@
+@startuml
+class MovePopUp <<partial>> {
+    + <<override>> _Ready() : void
+    + Text : String <<get>> <<set>>
+    - _on_attack_button_pressed() : void
+    - _on_defend_button_pressed() : void
+    - _on_exit_button_pressed() : void
+    + Close() : void
+}
+PanelContainer <|-- MovePopUp
+@enduml
