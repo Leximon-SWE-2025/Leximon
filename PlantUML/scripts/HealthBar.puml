@@ -1,0 +1,7 @@
+@startuml
+class HealthBar <<partial>> {
+    + <<override>> _Ready() : void
+    + <<override>> _Process(delta:double) : void
+}
+ProgressBar <|-- HealthBar
+@enduml

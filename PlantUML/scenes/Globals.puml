@@ -1,0 +1,8 @@
+@startuml
+class Globals {
+    + {static} <<readonly>> TILE_SIZE : int = 16
+    + {static} SAVE_FILE_PATH : string <<get>>
+    + {static} MovementTime : TimeSpan <<get>>
+    + {static} MovementTimeSec : double <<get>>
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ExitPane <<partial>> {
+    + <<override>> _Ready() : void
+    - _on_exit_button_pressed() : void
+}
+PanelContainer <|-- ExitPane
+@enduml

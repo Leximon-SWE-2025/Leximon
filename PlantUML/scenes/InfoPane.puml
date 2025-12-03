@@ -1,0 +1,11 @@
+@startuml
+class InfoPane <<partial>> {
+    - wordContainer : GridContainer
+    + <<override>> _Ready() : void
+    - Display() : void
+    + ClearWords() : void
+    - DisplayWordInfo(word:string) : void
+    + AddWord(word:string) : void
+}
+PanelContainer <|-- InfoPane
+@enduml

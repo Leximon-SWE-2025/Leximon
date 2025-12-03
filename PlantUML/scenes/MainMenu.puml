@@ -1,0 +1,10 @@
+@startuml
+class MainMenu <<partial>> {
+    + <<override>> _Ready() : void
+    - _on_start_pressed() : void
+    - _on_load_pressed() : void
+    - _on_about_pressed() : void
+    - _on_exit_pressed() : void
+}
+Control <|-- MainMenu
+@enduml

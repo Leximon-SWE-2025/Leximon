@@ -1,0 +1,32 @@
+@startuml
+enum Target {
+    Player,
+    Enemy,
+}
+enum BattleUIState {
+    SelectWord,
+    ViewDefinition,
+    SelectMove,
+}
+class BattleUI <<partial>> {
+    - enemyHealthBar : HealthBar
+    - playerHealthBar : HealthBar
+    - enemyLogPane : LogPane
+    - playerLogPane : LogPane
+    - state : BattleUIState
+    - movePane : MovePane
+    - currentHealth : int
+    + CurrentHealth : int <<get>>
+    - maxHealth : int
+    + MaxHealth : int <<get>>
+    - DefinitionPopup : DefinitionPopUp
+    - MovePopup : MovePopUp
+    + <<override>> _Ready() : void
+    + UpdateMoves(moves:Move[]) : void
+    + UpdatePlayerHealth(healthPercent:float) : void
+    + UpdateEnemyHealth(healthPercent:float) : void
+    <<internal>> Close() : void
+    + LogMove(word:string, target:Target) : void
+}
+Control <|-- BattleUI
+@enduml

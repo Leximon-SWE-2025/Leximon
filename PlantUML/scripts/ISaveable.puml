@@ -1,0 +1,6 @@
+@startuml
+interface ISaveable {
+    + {abstract} Save() : Dictionary<string,object>
+    + {abstract} Load(dict:LoadType) : void
+}
+@enduml
