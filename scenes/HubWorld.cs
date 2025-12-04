@@ -76,7 +76,7 @@ public partial class HubWorld : Node2D, ISaveable
     {
         if (EnemyContainer != null)
             foreach (Node child in EnemyContainer.GetChildren())
-                child.QueueFree();
+                child.Free();
 
         if (EnemyContainer == null)
         {
