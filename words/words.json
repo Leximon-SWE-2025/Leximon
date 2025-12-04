@@ -5,7 +5,10 @@
 			{"type": "cold", "relation": "synonym"},
 			{"type": "awesome", "relation": "synonym"},
 			{"type": "hot", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Of a mildly low temperature."
+        ]
 	},
 	{
 		"word": "bright",
@@ -13,34 +16,50 @@
 			{"type": "smart", "relation": "synonym"},
 			{"type": "light", "relation": "synonym"},
 			{"type": "dark", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Emitting much light; visually dazzling; luminous, lucent, radiant."
+        ]
 	},
 	{
 		"word": "black",
 		"types": [
 			{"type": "dark", "relation": "synonym"},
 			{"type": "light", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Absorbing all light and reflecting none; dark and hueless."
+        ]
 	},
 	{
 		"word": "joyful",
 		"types": [
 			{"type": "happy", "relation": "synonym"},
 			{"type": "sad", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Feeling or causing joy."
+        ]
 	},
 	{
 		"word": "clever",
 		"types": [
 			{"type": "smart", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Quick to understand, learn, and devise or apply ideas; intelligent."
+        ]
 	},
 	{
 		"word": "frosty",
 		"types": [
 			{"type": "cold", "relation": "synonym"},
 			{"type": "hot", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Cold, chilly; icy.",
+            "Having frost on it or in it."
+        ]
 	},
 	{
 		"word": "dim",
@@ -48,67 +67,99 @@
 			{"type": "dark", "relation": "synonym"},
 			{"type": "light", "relation": "antonym"},
 			{"type": "smart", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Not bright or colorful.",
+            "Not smart or intelligent."
+        ]
 	},
 	{
 		"word": "unhappy",
 		"types": [
 			{"type": "happy", "relation": "antonym"},
 			{"type": "sad", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Not happy; sad."
+        ]
 	},
 	{
 		"word": "warm",
 		"types": [
 			{"type": "hot", "relation": "synonym"},
 			{"type": "cold", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Of a somewhat high temperature, often but not always connoting that the high temperature is pleasant rather than uncomfortable."
+        ]
 	},
 	{
 		"word": "scorching",
 		"types": [
 			{"type": "hot", "relation": "synonym"},
 			{"type": "cold", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Very hot."
+        ]
 	},
 
 	{
 		"word": "fantastic",
 		"types": [
 			{"type": "awesome", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Wonderful; marvelous; excellent; extraordinarily good or great (used especially as an intensifier)."
+        ]
 	},
 	{
 		"word": "dull",
 		"types": [
 			{"type": "awesome", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Lacking the ability to cut easily; not sharp."
+        ]
 	},
 	{
 		"word": "mediocre",
 		"types": [
 			{"type": "awesome", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Not excellent or outstanding, usually disappointingly so."
+        ]
 	},
 	{
 		"word": "freezing",
 		"types": [
 			{"type": "hot", "relation": "antonym"},
 			{"type": "cold", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Very cold",
+            "Suffering or causing frost"
+        ]
 	},
 	{
 		"word": "dumb",
 		"types": [
 			{"type": "smart", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Pointless, foolish, lacking intellectual content or value."
+        ]
 	},
 	{
 		"word": "sunny",
 		"types": [
 			{"type": "light", "relation": "synonym"},
 			{"type": "hot", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Featuring a lot of sunshine."
+        ]
 	},
 	{
 		"word": "cheerful",
@@ -116,56 +167,80 @@
 			{"type": "dark", "relation": "antonym"},
 			{"type": "happy", "relation": "synonym"},
 			{"type": "sad", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Noticeably happy and optimistic."
+        ]
 	},
 	{
 		"word": "sullen",
 		"types": [
 			{"type": "sad", "relation": "synonym"},
 			{"type": "happy", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Gloomy; dismal; foreboding."
+        ]
 	},
 	{
 		"word": "miserable",
 		"types": [
 			{"type": "sad", "relation": "synonym"},
 			{"type": "happy", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "In a state of misery: very sad, ill, or poor."
+        ]
 	},
 	{
 		"word": "glad",
 		"types": [
 			{"type": "sad", "relation": "antonym"},
 			{"type": "happy", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Pleased; happy; gratified."
+        ]
 	},
 	{
 		"word": "heated",
 		"types": [
 			{"type": "hot", "relation": "synonym"},
 			{"type": "cold", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Made warm or hot by some means."
+        ]
 	},
 	{
 		"word": "frigid",
 		"types": [
 			{"type": "cold", "relation": "synonym"},
 			{"type": "hot", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Very cold; lacking warmth; icy."
+        ]
 	},
 	{
 		"word": "arid",
 		"types": [
 			{"type": "dry", "relation": "synonym"},
 			{"type": "wet", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Very dry."
+        ]
 	},
 	{
 		"word": "parched",
 		"types": [
 			{"type": "dry", "relation": "synonym"},
 			{"type": "wet", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Very thirsty."
+        ]
 	},
 	{
 		"word": "humid",
@@ -173,65 +248,97 @@
 			{"type": "dry", "relation": "antonym"},
 			{"type": "hot", "relation": "synonym"},
 			{"type": "wet", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Containing perceptible moisture (usually describing air or atmosphere); damp; moist; somewhat wet or watery."
+        ]
 	},
 	{
 		"word": "soggy",
 		"types": [
 			{"type": "wet", "relation": "synonym"},
 			{"type": "dry", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Soaked with moisture or other liquid."
+        ]
 	},
 	{
 		"word": "quick",
 		"types": [
 			{"type": "fast", "relation": "synonym"},
 			{"type": "slow", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Moving with speed, rapidity or swiftness, or capable of doing so; rapid; fast."
+        ]
 	},
 	{
 		"word": "rapid",
 		"types": [
 			{"type": "fast", "relation": "synonym"},
 			{"type": "slow", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Very swift or quick."
+        ]
 	},
 	{
 		"word": "sluggish",
 		"types": [
 			{"type": "slow", "relation": "synonym"},
 			{"type": "fast", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Habitually idle and lazy; slothful; dull; inactive"
+        ]
 	},
 	{
 		"word": "lethargic",
 		"types": [
 			{"type": "slow", "relation": "synonym"},
 			{"type": "fast", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "sluggish, slow"
+        ]
 	},
 	{
 		"word": "beautiful",
 		"types": [
 			{"type": "pretty", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Possessing beauty, impressing the eye; attractive."
+        ]
 	},
 	{
 		"word": "attractive",
 		"types": [
 			{"type": "pretty", "relation": "synonym"}
-		]
+		],
+        "definitions": [
+            "Causing attraction; having the quality of attracting by inherent force.", 
+            "Having the power of charming or alluring by agreeable qualities; enticing."
+        ]
 	},
 	{
 		"word": "plain",
 		"types": [
 			{"type": "pretty", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Simple, unaltered.",
+            "Ordinary; lacking adornment or ornamentation; unembellished."
+        ]
 	},
 	{
 		"word": "ugly",
 		"types": [
 			{"type": "pretty", "relation": "antonym"}
-		]
+		],
+        "definitions": [
+            "Displeasing to the eye; aesthetically unpleasing."
+        ]
 	}
 ]
