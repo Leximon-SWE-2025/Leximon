@@ -51,6 +51,7 @@ public partial class HubWorld : Node2D, ISaveable
         infoPane.Hidden += () => { ChangeState(GameState.Hub); };
         battleUI.Hidden += () => { ChangeState(GameState.Hub); };
         exitPanel.QuitGame += SaveAndQuit;
+        exitPanel.SaveGame += () => { Save(Globals.SAVE_FILE_PATH);};
 
         player.Position = player.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (Globals.TILE_SIZE / 2));
 

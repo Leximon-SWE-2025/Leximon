@@ -15,9 +15,16 @@ public partial class ExitPane : PanelContainer
 
     void _on_exit_button_pressed()
     {
-        EmitSignal(SignalName.QuitGame);
+        GetTree().ChangeSceneToFile(@"res://scenes/main_menu.tscn");
+    }
+
+    void _on_save_button_pressed()
+    {
+        EmitSignal(SignalName.SaveGame);
     }
 
     [Signal]
     public delegate void QuitGameEventHandler();
+    [Signal]
+    public delegate void SaveGameEventHandler();
 }

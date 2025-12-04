@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=4 uid="uid://y5sfdsbd7q38"]
 
-[ext_resource type="Script" uid="uid://cj5t66fmqhpf7" path="res://scenes/HubWorld.cs" id="1_gjsbx"]
+[ext_resource type="Script" uid="uid://dusa6ll3q1b5f" path="res://scenes/HubWorld.cs" id="1_gjsbx"]
 [ext_resource type="PackedScene" uid="uid://bgu5u14ys7ry5" path="res://scenes/player.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bf8d775b2qtic" path="res://scenes/enemy.tscn" id="2_gjsbx"]
+[ext_resource type="PackedScene" uid="uid://b351qgl3b65ir" path="res://scenes/enemy.tscn" id="2_gjsbx"]
 [ext_resource type="PackedScene" uid="uid://bj5op5rmh6uds" path="res://scenes/battle.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://ceho4x4wtsoqe" path="res://art/tilemap.png" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://hkubiwgosm33" path="res://scenes/info_pane.tscn" id="4_p57ef"]
