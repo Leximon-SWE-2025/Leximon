@@ -81,14 +81,12 @@ public partial class Player : Character
 
     {
         var direction = moveDirection.Normalized();
-        if (direction == Vector2.Left)
+        sprite.FlipH = direction.X switch
         {
-            sprite.FlipH = true;
-        }
-        else if (direction == Vector2.Right)
-        {
-            sprite.FlipH = false;
-        }
+            < 0 => true,
+            > 0 => false,
+            _ => sprite.FlipH
+        };
     }
 
     public void Move(Vector2 ammount)
