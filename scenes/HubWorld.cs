@@ -21,6 +21,7 @@ public partial class HubWorld : Node2D, ISaveable
     private BattleUI battleUI;
     private InfoPane infoPane;
     private ExitPane exitPanel;
+    private Camera2D camera;
 
     private GameState State;
 
@@ -36,7 +37,7 @@ public partial class HubWorld : Node2D, ISaveable
         infoPane = GetNode<InfoPane>("CanvasLayer/InfoPane");
         exitPanel = GetNode<ExitPane>("CanvasLayer/ExitPane");
 
-        var camera = GetNode<Camera2D>("Player/MainCamera");
+        camera = GetNode<Camera2D>("Player/MainCamera");
         camera.LimitLeft = (int)SpawnMin.X;
         camera.LimitTop = (int)SpawnMin.Y;
         camera.LimitRight = (int)SpawnMax.X;
@@ -228,5 +229,7 @@ public partial class HubWorld : Node2D, ISaveable
         {
             enemy.Load(dict[enemy.Name].Deserialize<Dictionary<string, JsonElement>>());
         }
+
+        camera.Position = player.Position; // This could be fixed by loading during node ready, but this works for now
     }
 }
