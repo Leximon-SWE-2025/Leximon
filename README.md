@@ -2,6 +2,24 @@
 
 This is the repo for the Leximon project for Group 2 in SWEI @ UML Fall 2025
 
+## Build the Game 
+The tools needed to build the game:
+- Windows Operating System
+- Godot Version 4.5.1
+- .NET SDK
+- Git bash
+
+For the first time building the game, click on the green button called code.
+Copy the https link, go to git bash then at the desired path,
+type in git clone. Then paste the https linked just recently copied.
+
+Type git fetch hit enter, then type git pull then hit enter. This should transfer 
+the files for Leximon into the users folder.
+
+Open Godot Version 4.5.1, go to import then choose the path the Leximon file. Select the folder. The build should be successful.
+
+To run the game, enter F5.
+
 ## Resources
 
 - gitignore file sourced from [gitignore.io](https://www.toptal.com/developers/gitignore) under the CC0 license as outlined in the project's [git repository](https://github.com/toptal/gitignore.io)
