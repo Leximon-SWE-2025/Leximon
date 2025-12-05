@@ -116,10 +116,7 @@ public partial class Player : Character
         CanMove = false;
     }
 
-    public void add_move()
-    {
-        throw new NotImplementedException();
-    }
+  
 
 
 
