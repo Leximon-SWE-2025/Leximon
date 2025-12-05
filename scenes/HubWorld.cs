@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using FileAccess = Godot.FileAccess;
 using System.Text.Json;
+using System.Diagnostics.CodeAnalysis;
 
 enum GameState
 {
@@ -28,6 +29,10 @@ public partial class HubWorld : Node2D, ISaveable
     private const int ENEMY_COUNT = 5;
     private RandomNumberGenerator rng = new();
 
+    private Character opponent = null;
+
+    private const int NUMBER_OF_MOVES = 5;
+
     public override void _Ready()
     {
         rng.Randomize();
@@ -44,7 +49,7 @@ public partial class HubWorld : Node2D, ISaveable
         camera.LimitBottom = (int)SpawnMax.Y;
         camera.LimitEnabled = true;
 
-        camera.Position = player.Position;
+        //camera.Position = player.Position;
 
         player.EnterBattle += StartBattle;
         infoPane.UpdateWords += RefreshInfoPane;
@@ -57,16 +62,72 @@ public partial class HubWorld : Node2D, ISaveable
 
         SpawnEnemies();
 
+        battleUI.PlayerAttack += PlayerAttack;
+        battleUI.PlayerDefend += PlayerDefend;
+
         Ready += () => Load(Globals.SAVE_FILE_PATH);
     }
-    public override void _Notification(int what)
+
+    public void PlayerAttack(string word)
     {
-        if (what == NotificationWMCloseRequest)
+        if (OS.IsDebugBuild())
         {
-            SaveAndQuit();
+            GD.Print($"Player attacking with {word}");
+        }
+        battleUI.LogAttack(word, Target.Enemy);
+        battleUI.LogAttackStatus(player.Attack(new Move(word), opponent), Target.Enemy);
+        battleUI.UpdateEnemyHealth(opponent.PercentHealth);
+        player.SelectMoves(NUMBER_OF_MOVES, target: opponent);
+        battleUI.UpdateMoves(player.CurrentMoves);
+        TriggerEnemyAction();
+    }
+
+    public void PlayerDefend(string word)
+    {
+        if (OS.IsDebugBuild())
+        {
+            GD.Print($"Player defend {word}");
+        }
+        player.Defend(word);
+        battleUI.LogDefend(word, Target.Player);
+        battleUI.UpdatePlayerLog(player);
+        TriggerEnemyAction();
+    }
+
+    private void TriggerEnemyAction()
+    {
+        var moveType = opponent.SelectMoveType();
+        var word = opponent.SelectRandomMove(player);
+        switch (moveType)
+        {
+            case MoveType.Attack:
+
+                var status=opponent.Attack(word, player);
+                battleUI.UpdatePlayerHealth(player.PercentHealth);
+                battleUI.LogAttack(word, Target.Player);
+                battleUI.LogAttackStatus(status, Target.Player);
+                break;
+            case MoveType.Defend:
+                opponent.Defend(word);
+                battleUI.LogDefend(word, Target.Enemy);
+                battleUI.UpdateEnemyLog(opponent);
+                break;
         }
     }
 
+    public override void _Notification(int what)
+    {
+        switch ((long)what)
+        {
+            case NotificationWMCloseRequest:
+                SaveAndQuit();
+                break;
+            default:
+                break;
+
+        }
+    }
+    [DoesNotReturn]
     private void SaveAndQuit()
     {
         Save(Globals.SAVE_FILE_PATH);
@@ -112,11 +173,15 @@ public partial class HubWorld : Node2D, ISaveable
         //battleUI.Show();
         if (State == GameState.Hub)
         {
-            player.SelectMoves(5);
+            opponent = enemy;
+            player.SelectMoves(NUMBER_OF_MOVES, target: opponent);
 
             battleUI.UpdateMoves(player.CurrentMoves);
-            battleUI.UpdateEnemyHealth(100f);
+            battleUI.UpdateEnemyHealth(enemy.PercentHealth);
             battleUI.UpdatePlayerHealth(player.PercentHealth);
+
+            battleUI.UpdatePlayerLog(player);
+            battleUI.UpdateEnemyLog(opponent);
 
             battleUI.Show();
             ChangeState(GameState.Battle);
@@ -134,6 +199,14 @@ public partial class HubWorld : Node2D, ISaveable
         infoPane.Show();
         ChangeState(GameState.Info);
     }
+
+    private void ExitBattle()
+    {
+        // TODO: reset health
+        RespawnEnemies();
+        player.FullHeal();
+        battleUI.Close();
+    }
     public override void _Input(InputEvent e)
     {
         if (e.IsActionPressed("ui_cancel"))
@@ -149,7 +222,7 @@ public partial class HubWorld : Node2D, ISaveable
                     exitPanel.Hide();
                     break;
                 case GameState.Battle:
-                    battleUI.Close();
+                    ExitBattle();
                     break;
                 case GameState.Info:
                     infoPane.Hide();
@@ -231,6 +304,6 @@ public partial class HubWorld : Node2D, ISaveable
             enemy.Load(dict[enemy.Name].Deserialize<Dictionary<string, JsonElement>>());
         }
 
-        camera.Position = player.Position; // This could be fixed by loading during node ready, but this works for now
+        //camera.Position = player.Position; // This could be fixed by loading during node ready, but this works for now
     }
 }
