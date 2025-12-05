@@ -9,7 +9,7 @@ public enum Target
 }
 enum BattleUIState
 {
-    SelectWord, ViewDefinition, SelectMove,EnemyMove
+    SelectWord, ViewDefinition, SelectMove, EnemyMove
 }
 public partial class BattleUI : Control
 {
@@ -21,11 +21,7 @@ public partial class BattleUI : Control
 
     private BattleUIState state;
 
-    private MovePane movePane; private int currentHealth;
-    public int CurrentHealth => currentHealth;
-
-    private int maxHealth;
-    public int MaxHealth => maxHealth;
+    private MovePane movePane;
 
     private DefinitionPopUp DefinitionPopup;
     private MovePopUp MovePopup;
@@ -57,6 +53,10 @@ public partial class BattleUI : Control
             {
                 state = BattleUIState.SelectWord;
             }
+            if (OS.IsDebugBuild())
+            {
+                GD.Print($"Setting state to {state}");
+            }
         };
 
         MovePopup.PlayerAttack += (word) => { EmitSignal(SignalName.PlayerAttack, word); };
@@ -74,11 +74,19 @@ public partial class BattleUI : Control
     public void WaitForEnemyMove()
     {
         state = BattleUIState.EnemyMove;
+        if (OS.IsDebugBuild())
+        {
+            GD.Print($"Setting state to {state}");
+        }
     }
 
     public void PlayerTurn()
     {
         state = BattleUIState.SelectWord;
+        if (OS.IsDebugBuild())
+        {
+            GD.Print($"Setting state to {state}");
+        }
     }
 
     public void UpdatePlayerLog(Character player)

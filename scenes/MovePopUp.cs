@@ -27,15 +27,15 @@ public partial class MovePopUp : PanelContainer
 
     void _on_attack_button_pressed()
     {
-        EmitSignal(SignalName.PlayerAttack, Text);
         Close();
+        EmitSignal(SignalName.PlayerAttack, Text);
 
     }
 
     void _on_defend_button_pressed()
     {
-        EmitSignal(SignalName.PlayerDefend, Text);
         Close();
+        EmitSignal(SignalName.PlayerDefend, Text);
     }
 
     void _on_exit_button_pressed()
