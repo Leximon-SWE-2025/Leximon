@@ -56,7 +56,7 @@ public partial class HubWorld : Node2D, ISaveable
         infoPane.Hidden += () => { ChangeState(GameState.Hub); };
         battleUI.Hidden += () => { ChangeState(GameState.Hub); };
         exitPanel.QuitGame += SaveAndQuit;
-        exitPanel.SaveGame += () => { Save(Globals.SAVE_FILE_PATH);};
+        exitPanel.SaveGame += () => { Save(Globals.SAVE_FILE_PATH); };
 
         player.Position = player.Position.Snapped(Globals.TILE_SIZE) + (Vector2.One * (Globals.TILE_SIZE / 2));
 
@@ -65,7 +65,20 @@ public partial class HubWorld : Node2D, ISaveable
         battleUI.PlayerAttack += PlayerAttack;
         battleUI.PlayerDefend += PlayerDefend;
 
+        battleUI.PlayerWin += PlayerWin;
+        battleUI.EnemyWin += PlayerLose;
+
         Ready += () => Load(Globals.SAVE_FILE_PATH);
+    }
+
+    public void PlayerWin()
+    {
+
+    }
+
+    public void PlayerLose()
+    {
+
     }
 
     public void PlayerAttack(string word)
@@ -91,6 +104,8 @@ public partial class HubWorld : Node2D, ISaveable
         player.Defend(word);
         battleUI.LogDefend(word, Target.Player);
         battleUI.UpdatePlayerLog(player);
+        player.SelectMoves(NUMBER_OF_MOVES, target: opponent);
+        battleUI.UpdateMoves(player.CurrentMoves);
         TriggerEnemyAction();
     }
 
@@ -102,7 +117,7 @@ public partial class HubWorld : Node2D, ISaveable
         {
             case MoveType.Attack:
 
-                var status=opponent.Attack(word, player);
+                var status = opponent.Attack(word, player);
                 battleUI.UpdatePlayerHealth(player.PercentHealth);
                 battleUI.LogAttack(word, Target.Player);
                 battleUI.LogAttackStatus(status, Target.Player);
