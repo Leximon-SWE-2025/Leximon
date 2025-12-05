@@ -62,12 +62,16 @@ public partial class BattleUI : Control
         MovePopup.PlayerAttack += (word) => { EmitSignal(SignalName.PlayerAttack, word); };
         MovePopup.PlayerDefend += (word) => { EmitSignal(SignalName.PlayerDefend, word); };
 
+
+
         //TODO: grab player refrence
 
         //player.UpdateHealth += UpdatePlayerHealth;
         //UpdatePlayerHealth();
         this.VisibilityChanged += () => { if (this.Visible) state = BattleUIState.SelectWord; };
     }
+
+
 
     public void UpdatePlayerLog(Character player)
     {

@@ -122,24 +122,33 @@ public abstract partial class Character : Area2D, ISaveable
         //this.GetNode<AnimatedSprite2D>("AnimatedSprite2D").SpriteFrames.GetFrameTexture("default", 0);
         var enemyType = target.Type;
 
-        var words = knownMoves.Random(5).ToArray();
+        //var words = knownMoves.Random(5).ToArray();
 
-        var enemyAntonyms = WordManager.GetTypeAntonyms(enemyType) ?? [words[0]];
-        var enemySynonyms = WordManager.GetTypeSynonyms(enemyType) ?? [words[1]];
+        var enemyAntonyms = WordManager.GetTypeAntonyms(enemyType);
+        var enemySynonyms = WordManager.GetTypeSynonyms(enemyType);
 
-        var myAntonyms = WordManager.GetTypeAntonyms(Type) ?? [words[2]];
-        var mySynonyms = WordManager.GetTypeSynonyms(Type) ?? [words[3]];
+        var myAntonyms = WordManager.GetTypeAntonyms(Type);
+        var mySynonyms = WordManager.GetTypeSynonyms(Type);
 
 
+        var optimalMove = Random.Shared.NextDouble() switch
+        {
+            > 0.5 => enemyAntonyms.RandomItem(),
+            _ => mySynonyms.RandomItem(),
+        };
+        var midMove = Random.Shared.NextDouble() switch
+        {
+            > 0.5 => enemySynonyms.RandomItem(),
+            _ => myAntonyms.RandomItem(),
+        };
 
-        currentMoves = [
-            enemyAntonyms.RandomItem(),
-            enemySynonyms.RandomItem(),
-            myAntonyms.RandomItem(),
-            mySynonyms.RandomItem(),
-            words[4]
-            //..knownMoves.Random(1)
-        ];
+        string[] setMoves = [optimalMove, midMove];
+
+        var otherMoves = knownMoves.Random(count).Select(m => m.Word).Except(setMoves).Take(count - setMoves.Length);
+
+        currentMoves = [.. otherMoves.Concat(setMoves)];
+
+
         Random.Shared.Shuffle(currentMoves);
 
         //int[] indexes = [.. Enumerable.Range(0, knownMoves.Count)];
