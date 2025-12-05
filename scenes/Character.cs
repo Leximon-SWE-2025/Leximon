@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -55,7 +56,7 @@ public abstract partial class Character : Area2D, ISaveable
 
 
 
-    protected IEnumerable<Move> knownMoves =  WordManager.AllMoves;
+    protected IEnumerable<Move> knownMoves = WordManager.AllMoves;
 
     public Move[] KnownMoves => [.. knownMoves];
 
@@ -224,6 +225,12 @@ public abstract partial class Character : Area2D, ISaveable
     //    throw new NotImplementedException();
     //}
 
+
+    public void DebugSetHealth(double ammount)
+    {
+        if (OS.IsDebugBuild())
+            currentHealth = ammount;
+    }
     public void ApplyDamage(float damage)
     {
         if (damage <= 0) return;

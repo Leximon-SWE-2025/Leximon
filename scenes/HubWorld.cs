@@ -283,6 +283,14 @@ public partial class HubWorld : Node2D, ISaveable
             //RefreshInfoPane();
             //player.CanMove = false;
         }
+        else if ( State== GameState.Battle&& OS.IsDebugBuild() && e.IsAction("debug_damage"))
+        {
+            player.DebugSetHealth(1);
+            opponent.DebugSetHealth(1);
+
+            battleUI.UpdatePlayerHealth(player.PercentHealth);
+            battleUI.UpdateEnemyHealth(opponent.PercentHealth);
+        }
     }
     private void ChangeState(GameState state)
     {
@@ -346,9 +354,11 @@ public partial class HubWorld : Node2D, ISaveable
 
         }
         player.Load(dict[player.Name].Deserialize<Dictionary<string, JsonElement>>());
+        player.FullHeal();
         foreach (var enemy in EnemyContainer.GetChildren().OfType<Enemy>())
         {
             enemy.Load(dict[enemy.Name].Deserialize<Dictionary<string, JsonElement>>());
+            enemy.FullHeal();
         }
 
         //camera.Position = player.Position; // This could be fixed by loading during node ready, but this works for now
