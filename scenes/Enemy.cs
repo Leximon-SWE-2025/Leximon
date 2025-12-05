@@ -8,24 +8,9 @@ public partial class Enemy : Character, ISaveable
 {
 
     AnimatedSprite2D icon;
-    private Random rand = new Random();
-    public Move selectRandomMove()
-    {
-        // random number from 0 to 1
-        // 0 represents Attack, 1 represents Defend
-        int enemy_length = CurrentMoves.Length;
-        int move_no = (rand.Next(0, enemy_length));
-        return CurrentMoves[move_no];
-    }
-    public override void Attack(Move move, Character target)
-    {
-        throw new NotImplementedException();
-    }
 
-    public override void Defend(Move move)
-    {
-        throw new NotImplementedException();
-    }
+
+    
 
     public override void Load(Dictionary<string, JsonElement> dict)
     {
@@ -52,6 +37,8 @@ public partial class Enemy : Character, ISaveable
 
         interactionArea.AreaEntered += InteractionAreaEntered;
         interactionArea.AreaExited += InteractionAreaExited;
+
+        baseDamage = Globals.BaseEnemyDamage;
     }
 
     private void InteractionAreaEntered(Area2D body)

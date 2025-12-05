@@ -25,6 +25,19 @@ public partial class MovePopUp : PanelContainer
         }
     }
 
+    void _on_attack_button_pressed()
+    {
+        EmitSignal(SignalName.PlayerAttack, Text);
+        Close();
+
+    }
+
+    void _on_defend_button_pressed()
+    {
+        EmitSignal(SignalName.PlayerDefend, Text);
+        Close();
+    }
+
     void _on_exit_button_pressed()
     {
         Close();
@@ -38,4 +51,9 @@ public partial class MovePopUp : PanelContainer
 
     [Signal]
     public delegate void CloseMovePopUpEventHandler();
+
+    [Signal]
+    public delegate void PlayerAttackEventHandler(string word);
+    [Signal]
+    public delegate void PlayerDefendEventHandler(string word);
 }

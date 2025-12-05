@@ -14,27 +14,36 @@ public partial class Player : Character
 
     private Vector2 screenSize;
     public bool CanMove = true;
+
+    private int battlesWon = 0;
+    public int BattlesWon
+    {
+        get => battlesWon;
+
+        set
+        {
+            battlesWon=value;
+            if (battlesWon % Globals.WinsToSwitchType == 0)
+            {
+                RandomizeType();
+            }
+        }
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         screenSize = GetViewportRect().Size;
 
+        RandomizeType();
 
         sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         interactionArea = GetNode<Area2D>("InteractionArea");
 
-        knownMoves = [
-            new Move(Word:"cold"),
-            new Move(Word:"cool"),
-            new Move(Word:"hot"),
-            new Move(Word:"wet"),
-            new Move(Word:"dry"),
-            new Move(Word:"bright"),
-            new Move(Word:"dark"),
-            new Move(Word:"fun"),
-            new Move(Word:"boring"),
-        ];
+        knownMoves = [.. WordManager.RandomMoves()];
+
+        baseDamage = Globals.BasePlayerDamage;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -111,24 +120,15 @@ public partial class Player : Character
         throw new NotImplementedException();
     }
 
-    public override void Attack(Move move, Character target)
-    {
-        target.ApplyDamage(10);
-    }
-
-    public override void Defend(Move move)
-    {
-        throw new NotImplementedException();
-    }
+   
 
     public override void Load(Dictionary<string, JsonElement> dict)
     {
         base.Load(dict);
 
-
         var words = WordManager.AllMoves;
 
-        knownMoves = [..knownMoves.Intersect(words)];
+        knownMoves = [.. knownMoves.Intersect(words)];
     }
 
     // public List<Moves> getMoveList();

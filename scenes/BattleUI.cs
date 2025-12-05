@@ -3,31 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-
+public enum Target
+{
+    Player, Enemy
+}
 enum BattleUIState
 {
     SelectWord, ViewDefinition, SelectMove
 }
 public partial class BattleUI : Control
 {
-    //Player refrence
-    //[Export]
-    //private Player player;
-    //private List<Enemy> enemies = new();
-
-    //public Player Player
-    //{
-    //    get { return player; }
-    //    set { player = value; }
-    //}
-    //public List<Enemy> Enemies
-    //{
-    //    get { return enemies; }
-    //    set { enemies = value; }
-    //}
-
-    // Enemy refrence
-
     private HealthBar enemyHealthBar;
     private HealthBar playerHealthBar;
 
@@ -37,10 +22,10 @@ public partial class BattleUI : Control
     private BattleUIState state;
 
     private MovePane movePane; private int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } }
+    public int CurrentHealth => currentHealth;
 
     private int maxHealth;
-    public int MaxHealth { get { return maxHealth; } }
+    public int MaxHealth => maxHealth;
 
     private DefinitionPopUp DefinitionPopup;
     private MovePopUp MovePopup;
@@ -74,12 +59,28 @@ public partial class BattleUI : Control
             }
         };
 
+        MovePopup.PlayerAttack += (word) => { EmitSignal(SignalName.PlayerAttack, word); };
+        MovePopup.PlayerDefend += (word) => { EmitSignal(SignalName.PlayerDefend, word); };
+
         //TODO: grab player refrence
 
         //player.UpdateHealth += UpdatePlayerHealth;
         //UpdatePlayerHealth();
         this.VisibilityChanged += () => { if (this.Visible) state = BattleUIState.SelectWord; };
     }
+
+    public void UpdatePlayerLog(Character player)
+    {
+        GD.Print(player.Type);
+        playerLogPane.Label = $"Player ({player.Type}: {player.Armor:0.00})";
+    }
+    public void UpdateEnemyLog(Character enemy)
+    {
+        GD.Print(enemy.Type);
+        enemyLogPane.Label = $"Enemy ({enemy.Type}: {enemy.Armor:0.00})";
+    }
+
+
 
     public void UpdateMoves(Move[] moves)
     {
@@ -115,13 +116,20 @@ public partial class BattleUI : Control
         //throw new NotImplementedException();
     }
 
-    public void UpdatePlayerHealth(float healthPercent)
+    public void UpdatePlayerHealth(double healthPercent)
     {
-        playerHealthBar.Value = healthPercent;
+        playerHealthBar.SetHealth(healthPercent);
+        if (healthPercent <= 0)
+        {
+            EmitSignal(SignalName.EnemyWin);
+        }
     }
-    public void UpdateEnemyHealth(float healthPercent)
+    public void UpdateEnemyHealth(double healthPercent)
     {
-        enemyHealthBar.Value = healthPercent;
+        enemyHealthBar.SetHealth(healthPercent);
+        if (healthPercent <= 0) {
+            EmitSignal(SignalName.PlayerWin);
+        }
     }
 
     internal void Close()
@@ -136,9 +144,41 @@ public partial class BattleUI : Control
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     //public override void _Process(double delta)
     //{
+
     //}
 
+    LogPane GetLogPane(Target target) => target switch
+    {
+        Target.Player => playerLogPane,
+        Target.Enemy => enemyLogPane,
+        _ => throw new NotImplementedException(),
+    };
+
+
+    public void LogAttack(string word, Target target) => GetLogPane(target).LogMove(word, MoveType.Attack);
+
+    public void LogDefend(string word, Target target) => GetLogPane(target).LogMove(word, MoveType.Defend);
+
+
+    public void LogAttackStatus(AttackStatus status, Target target)
+    {
+        GetLogPane(target).Log($"Attack was {status}");
+    }
+
+    [Signal]
+    public delegate void PlayerWinEventHandler();
+    [Signal]
+    public delegate void EnemyWinEventHandler();
 
     [Signal]
     public delegate void SelectPlayerMovesEventHandler(int count);
+    [Signal]
+    public delegate void PlayerAttackEventHandler(string word);
+    [Signal]
+    public delegate void PlayerDefendEventHandler(string word);
+
+    [Signal]
+    public delegate void EnemyAttackEventHandler(string word);
+    [Signal]
+    public delegate void EnemyDefendEventHandler(string word);
 }
