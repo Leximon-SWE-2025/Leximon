@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhnicq2xpie3r"]
 
 [ext_resource type="Script" uid="uid://cbbni86d26uif" path="res://scenes/MainMenu.cs" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://cs62ulaxuqsl5" path="res://art/field_placeholder.jpg" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://ctsmnt2al00nd" path="res://art/pexels-tanuj-matta-2125119-13778249.jpg" id="2_ekxnf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
-texture = ExtResource("1_l6cm7")
+texture = ExtResource("2_ekxnf")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
 bg_color = Color(0.99558, 0.99558, 0.99558, 1)
