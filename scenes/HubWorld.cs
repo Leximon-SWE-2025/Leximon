@@ -67,15 +67,15 @@ public partial class HubWorld : Node2D, ISaveable
 
         battleUI.PlayerWin += PlayerWin;
         battleUI.EnemyWin += PlayerLose;
-
+        
         Ready += () => Load(Globals.SAVE_FILE_PATH);
     }
 
     public void PlayerWin()
     {
         player.BattlesWon++;
-        ExitBattle();
         RespawnEnemies();
+        ExitBattle();
     }
 
     public void PlayerLose()
