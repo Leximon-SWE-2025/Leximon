@@ -4,6 +4,8 @@ class Player <<partial>> {
     - sprite : AnimatedSprite2D
     - screenSize : Vector2
     + CanMove : bool = true
+    - battlesWon : int = 0
+    + BattlesWon : int <<get>> <<set>>
     + <<override>> _Ready() : void
     + <<override>> _Process(delta:double) : void
     + <<override>> _Input(@event:InputEvent) : void
@@ -11,8 +13,6 @@ class Player <<partial>> {
     + UpdateSprite(moveDirection:Vector2) : void
     + Move(ammount:Vector2) : void
     + add_move() : void
-    + <<override>> Attack(move:Move, target:Character) : void
-    + <<override>> Defend(move:Move) : void
     + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
 }
 Character <|-- Player

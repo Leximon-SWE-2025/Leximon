@@ -1,23 +1,34 @@
 @startuml
+enum AttackStatus {
+    Effective,
+    Normal,
+    Ineffective,
+}
 abstract class Character <<partial>> {
-    - currentHealth : int = 100
-    + CurrentHealth : int <<get>>
-    + Type : string
-    - maxHealth : int = 100
-    + MaxHealth : int <<get>>
-    + PercentHealth : float <<get>>
-    + attack_multiplier : float
-    + defense_multiplier : float
+    - currentHealth : double = 100
+    + CurrentHealth : double <<get>>
+    # baseDamage : int
+    # armor : double = 1.0
+    + Armor : double <<get>>
+    # type : string
+    + Type : string <<get>>
+    - maxHealth : double = 100
+    + MaxHealth : double <<get>>
+    + PercentHealth : double <<get>> <<set>>
     # knownMoves : HashSet<Move>
     + KnownMoves : Move[] <<get>>
     - currentMoves : Move[]
     + CurrentMoves : Move[] <<get>>
     + IsAlive : bool <<get>>
+    + SelectRandomMove() : Move
+    + SelectRandomMove(effectiveAgainst:Character, type:MoveType) : Move
+    + SelectMoveType() : MoveType
     # RandomizeType() : void
     + SelectMoves(count:int, target:Character) : void
-    + {abstract} Attack(move:Move, target:Character) : void
-    + {abstract} Defend(move:Move) : void
-    + EvaluateEffectiveness() : float
+    + FullHeal() : void
+    + ResetArmor() : void
+    + Attack(move:Move, target:Character) : AttackStatus
+    + Defend(move:Move) : void
     + ApplyDamage(damage:float) : void
     + Heal(ammount:float) : void
     + <<virtual>> Save() : Dictionary<string, object>

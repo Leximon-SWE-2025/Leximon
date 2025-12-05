@@ -14,20 +14,26 @@ class HubWorld <<partial>> {
     - battleUI : BattleUI
     - infoPane : InfoPane
     - exitPanel : ExitPane
+    - camera : Camera2D
     - State : GameState
     - <<const>> ENEMY_COUNT : int = 5
     - rng : RandomNumberGenerator
     - opponent : Character = null
     - <<const>> NUMBER_OF_MOVES : int = 5
     + <<override>> _Ready() : void
+    + PlayerWin() : void
+    + PlayerLose() : void
     + PlayerAttack(word:string) : void
-    - TriggerEnemyAttack() : void
+    + PlayerDefend(word:string) : void
+    - TriggerEnemyAction() : void
     + <<override>> _Notification(what:int) : void
     - SaveAndQuit() : void
+    - Quit() : void
     - SpawnEnemies() : void
     - StartBattle(enemy:Character) : void
     - RefreshInfoPane() : void
     - OpenInfoPane() : void
+    - ExitBattle() : void
     + <<override>> _Input(e:InputEvent) : void
     - ChangeState(state:GameState) : void
     - Save(path:string) : void

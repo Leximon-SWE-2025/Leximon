@@ -4,6 +4,10 @@ enum Relation {
     Synonym,
     Antonym,
 }
+class RelationExtension <<static>> {
+    + {static} DamageMultiplier(relation:Relation) : double
+    + {static} DefenseMultiplier(relation:Relation) : double
+}
 class RelationJsonConverter {
     + <<override>> Read(reader:Utf8JsonReader, typeToConvert:Type, options:JsonSerializerOptions) : Relation
     + <<override>> Write(writer:Utf8JsonWriter, value:Relation, options:JsonSerializerOptions) : void
@@ -33,6 +37,8 @@ class WordManager <<partial>> {
     + {static} GetSynonyms(word:WordInfo) : IEnumerable<string>
     + {static} GetAntonyms(word:string) : IEnumerable<string>
     + {static} GetAntonyms(word:WordInfo) : IEnumerable<string>
+    + {static} GetTypeAntonyms(type:string) : IEnumerable<string>
+    + {static} GetTypeSynonyms(type:string) : IEnumerable<string>
     + {static} RandomTypes(count:int) : IEnumerable<string>
     + {static} RandomMoves(count:int) : IEnumerable<Move>
     + {static} RandomWords(count:int) : IEnumerable<string>
@@ -41,7 +47,7 @@ class WordManager <<partial>> {
     + <<override>> _Ready() : void
     + {static} AreSynonyms(word1:string, word2:string) : bool
     + {static} AreAntonyms(word1:string, word2:string) : bool
-    + {static} ClassifyRelation(word1:string, word2:string) : Relation
+    + {static} ClassifyRelation(word:string, type:string) : Relation
 }
 "JsonConverter`1" "<Relation>" <|-- RelationJsonConverter
 Node <|-- WordManager

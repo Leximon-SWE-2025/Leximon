@@ -22,11 +22,16 @@ class BattleUI <<partial>> {
     - DefinitionPopup : DefinitionPopUp
     - MovePopup : MovePopUp
     + <<override>> _Ready() : void
+    + UpdatePlayerLog(player:Character) : void
+    + UpdateEnemyLog(enemy:Character) : void
     + UpdateMoves(moves:Move[]) : void
-    + UpdatePlayerHealth(healthPercent:float) : void
-    + UpdateEnemyHealth(healthPercent:float) : void
+    + UpdatePlayerHealth(healthPercent:double) : void
+    + UpdateEnemyHealth(healthPercent:double) : void
     <<internal>> Close() : void
-    + LogMove(word:string, target:Target) : void
+    - GetLogPane(target:Target) : LogPane
+    + LogAttack(word:string, target:Target) : void
+    + LogDefend(word:string, target:Target) : void
+    + LogAttackStatus(status:AttackStatus, target:Target) : void
 }
 Control <|-- BattleUI
 @enduml

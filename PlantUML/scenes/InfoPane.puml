@@ -1,8 +1,12 @@
 @startuml
 class InfoPane <<partial>> {
     - wordContainer : GridContainer
+    - playerType : Label
+    - stats : Label
+    - player : Player
     + <<override>> _Ready() : void
     - Display() : void
+    - UpdatePlayerInfo() : void
     + ClearWords() : void
     - DisplayWordInfo(word:string) : void
     + AddWord(word:string) : void

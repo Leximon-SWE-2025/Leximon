@@ -1,10 +1,6 @@
 @startuml
 class Enemy <<partial>> {
     - icon : AnimatedSprite2D
-    - rand : Random
-    + selectRandomMove() : Move
-    + <<override>> Attack(move:Move, target:Character) : void
-    + <<override>> Defend(move:Move) : void
     + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
     + <<override>> Save() : Dictionary<string, object>
     + <<override>> _Ready() : void

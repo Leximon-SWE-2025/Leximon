@@ -1,9 +1,20 @@
 @startuml
+class MoveLog <<record>> {
+    + Word : string <<get>> <<init>>
+    + Type : MoveType <<get>> <<init>>
+    + <<override>> ToString() : string
+}
 class LogPane <<partial>> {
     - messageContainer : VBoxContainer
+    - messageLabel : Label
+    - logLabel : Label
+    - log : Queue<object>
+    + Label : string <<get>> <<set>>
     + <<override>> _Ready() : void
-    + Log(move:string) : void
+    + LogMove(move:string, type:MoveType) : void
+    + Log(item:T) : void
     + Clear() : void
+    + <<override>> _Process(delta:double) : void
 }
 Control <|-- LogPane
 @enduml
