@@ -12,7 +12,6 @@ class Player <<partial>> {
     - TryEnterBattle() : bool
     + UpdateSprite(moveDirection:Vector2) : void
     + Move(ammount:Vector2) : void
-    + add_move() : void
     + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
 }
 Character <|-- Player

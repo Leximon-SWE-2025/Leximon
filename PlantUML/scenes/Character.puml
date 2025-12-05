@@ -15,7 +15,7 @@ abstract class Character <<partial>> {
     - maxHealth : double = 100
     + MaxHealth : double <<get>>
     + PercentHealth : double <<get>> <<set>>
-    # knownMoves : HashSet<Move>
+    # knownMoves : IEnumerable<Move>
     + KnownMoves : Move[] <<get>>
     - currentMoves : Move[]
     + CurrentMoves : Move[] <<get>>

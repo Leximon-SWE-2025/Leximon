@@ -7,6 +7,7 @@ enum BattleUIState {
     SelectWord,
     ViewDefinition,
     SelectMove,
+    EnemyMove,
 }
 class BattleUI <<partial>> {
     - enemyHealthBar : HealthBar
@@ -22,6 +23,8 @@ class BattleUI <<partial>> {
     - DefinitionPopup : DefinitionPopUp
     - MovePopup : MovePopUp
     + <<override>> _Ready() : void
+    + WaitForEnemyMove() : void
+    + PlayerTurn() : void
     + UpdatePlayerLog(player:Character) : void
     + UpdateEnemyLog(enemy:Character) : void
     + UpdateMoves(moves:Move[]) : void

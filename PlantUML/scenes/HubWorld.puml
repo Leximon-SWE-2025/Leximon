@@ -10,6 +10,7 @@ class HubWorld <<partial>> {
     + EnemyContainer : Node2D
     + SpawnMin : Vector2
     + SpawnMax : Vector2
+    - enemyActionTimer : Timer
     - player : Player
     - battleUI : BattleUI
     - infoPane : InfoPane
