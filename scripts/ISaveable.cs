@@ -6,6 +6,6 @@ using LoadType = System.Collections.Generic.Dictionary<string, System.Text.Json.
 
 internal interface ISaveable
 {
-    public abstract Dictionary<string,object> Save();
+    public abstract Dictionary<string, object> Save();
     public abstract void Load(LoadType dict);
 }

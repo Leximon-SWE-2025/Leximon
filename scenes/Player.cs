@@ -22,8 +22,8 @@ public partial class Player : Character
 
         set
         {
-            battlesWon=value;
-            if (battlesWon % Globals.WinsToSwitchType == 0)
+            battlesWon = value;
+            if ((battlesWon % Globals.WinsToSwitchType) == 0)
             {
                 RandomizeType();
             }
@@ -67,7 +67,8 @@ public partial class Player : Character
 
     private bool TryEnterBattle()
     {
-        Enemy[] enemies_in_range = interactionArea.GetOverlappingAreas().OfType<Enemy>().ToArray();
+        Enemy[] enemies_in_range = [.. interactionArea.GetOverlappingAreas().OfType<Enemy>()];
+        armor = Globals.BaseDefence;
 
         Enemy enemy_to_fight;
         if (enemies_in_range.Length == 0)
@@ -120,7 +121,7 @@ public partial class Player : Character
         throw new NotImplementedException();
     }
 
-   
+
 
     public override void Load(Dictionary<string, JsonElement> dict)
     {

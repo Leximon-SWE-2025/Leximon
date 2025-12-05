@@ -131,7 +131,8 @@ public partial class BattleUI : Control
     public void UpdateEnemyHealth(double healthPercent)
     {
         enemyHealthBar.SetHealth(healthPercent);
-        if (healthPercent <= 0) {
+        if (healthPercent <= 0)
+        {
             EmitSignal(SignalName.PlayerWin);
         }
     }

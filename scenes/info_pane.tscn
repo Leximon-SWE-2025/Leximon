@@ -7,49 +7,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerType" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 4
 
-[node name="WordsContainer" type="GridContainer" parent="HBoxContainer/ScrollContainer2"]
+[node name="WordsContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/ScrollContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+[node name="InfoContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ScrollContainer"]
 custom_minimum_size = Vector2(0, 325)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Word" type="Label" parent="HBoxContainer/ScrollContainer/InfoContainer"]
+[node name="Word" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Types" type="Label" parent="HBoxContainer/ScrollContainer/InfoContainer"]
+[node name="Definitions" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer"]
 layout_mode = 2
 vertical_alignment = 1
 
-[node name="Definitions" type="Label" parent="HBoxContainer/ScrollContainer/InfoContainer"]
+[node name="Types" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer"]
 layout_mode = 2
 vertical_alignment = 1
 
-[node name="Synonyms" type="Label" parent="HBoxContainer/ScrollContainer/InfoContainer"]
+[node name="Synonyms" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer"]
 layout_mode = 2
 vertical_alignment = 1
 
-[node name="Antonyms" type="Label" parent="HBoxContainer/ScrollContainer/InfoContainer"]
+[node name="Antonyms" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer"]
 layout_mode = 2
 vertical_alignment = 1

@@ -72,7 +72,7 @@ public abstract partial class Character : Area2D, ISaveable
         }
     }
     public Move SelectRandomMove() => knownMoves.RandomItem();
-    public Move SelectRandomMove(Character effectiveAgainst)
+    public Move SelectRandomMove(Character effectiveAgainst, MoveType type)
     {
         var rand = Random.Shared.NextDouble();
 
@@ -81,14 +81,28 @@ public abstract partial class Character : Area2D, ISaveable
             GD.Print($"Effective move: rand = {rand}");
         }
 
-        return rand switch
+        return type switch
         {
-            > 0.6 => WordManager.GetTypeAntonyms(effectiveAgainst.Type).RandomItem(),
+            MoveType.Attack => rand switch
+            {
+                > 0.5 => WordManager.GetTypeAntonyms(effectiveAgainst.Type).RandomItem(),
 
-            > 0.4 => WordManager.GetTypeSynonyms(effectiveAgainst.Type).RandomItem(),
+                > 0.2 => WordManager.GetTypeSynonyms(effectiveAgainst.Type).RandomItem(),
 
-            _ => SelectRandomMove()
+                _ => SelectRandomMove()
+            },
+            MoveType.Defend => rand switch
+            {
+                > 0.5 => WordManager.GetTypeSynonyms(effectiveAgainst.Type).RandomItem(),
+
+                > 0.2 => WordManager.GetTypeAntonyms(effectiveAgainst.Type).RandomItem(),
+
+                _ => SelectRandomMove()
+            },
+            _ => throw new NotImplementedException(),
         };
+
+
     }
     public MoveType SelectMoveType()
     {
@@ -172,6 +186,8 @@ public abstract partial class Character : Area2D, ISaveable
     }
 
     public void FullHeal() => currentHealth = maxHealth;
+
+    public void ResetArmor() => armor = Globals.BaseDefence;
 
     public AttackStatus Attack(Move move, Character target)
     {

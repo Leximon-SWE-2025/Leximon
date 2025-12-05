@@ -73,12 +73,14 @@ public partial class HubWorld : Node2D, ISaveable
 
     public void PlayerWin()
     {
-
+        player.BattlesWon++;
+        ExitBattle();
+        RespawnEnemies();
     }
 
     public void PlayerLose()
     {
-
+        ExitBattle();
     }
 
     public void PlayerAttack(string word)
@@ -112,17 +114,18 @@ public partial class HubWorld : Node2D, ISaveable
     private void TriggerEnemyAction()
     {
         var moveType = opponent.SelectMoveType();
-        var word = opponent.SelectRandomMove(player);
+        Move word;
         switch (moveType)
         {
             case MoveType.Attack:
-
+                word = opponent.SelectRandomMove(player, type: MoveType.Attack);
                 var status = opponent.Attack(word, player);
                 battleUI.UpdatePlayerHealth(player.PercentHealth);
                 battleUI.LogAttack(word, Target.Player);
                 battleUI.LogAttackStatus(status, Target.Player);
                 break;
             case MoveType.Defend:
+                word = opponent.SelectRandomMove(player, type: MoveType.Defend);
                 opponent.Defend(word);
                 battleUI.LogDefend(word, Target.Enemy);
                 battleUI.UpdateEnemyLog(opponent);
@@ -135,7 +138,8 @@ public partial class HubWorld : Node2D, ISaveable
         switch ((long)what)
         {
             case NotificationWMCloseRequest:
-                SaveAndQuit();
+                //SaveAndQuit();
+                Quit();
                 break;
             default:
                 break;
@@ -146,8 +150,11 @@ public partial class HubWorld : Node2D, ISaveable
     private void SaveAndQuit()
     {
         Save(Globals.SAVE_FILE_PATH);
-        GetTree().Quit();
+        Quit();
     }
+
+    [DoesNotReturn]
+    private void Quit() => GetTree().Quit();
 
     private void SpawnEnemies()
     {
@@ -218,9 +225,12 @@ public partial class HubWorld : Node2D, ISaveable
     private void ExitBattle()
     {
         // TODO: reset health
-        RespawnEnemies();
+
         player.FullHeal();
+        player.ResetArmor();
         battleUI.Close();
+
+        Save(Globals.SAVE_FILE_PATH);
     }
     public override void _Input(InputEvent e)
     {
@@ -237,7 +247,13 @@ public partial class HubWorld : Node2D, ISaveable
                     exitPanel.Hide();
                     break;
                 case GameState.Battle:
-                    ExitBattle();
+                    //ExitBattle();
+
+                    opponent.FullHeal();
+                    opponent.ResetArmor();
+                    player.FullHeal();
+                    player.ResetArmor();
+                    battleUI.Close();
                     break;
                 case GameState.Info:
                     infoPane.Hide();

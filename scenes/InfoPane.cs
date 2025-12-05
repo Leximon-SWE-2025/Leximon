@@ -1,24 +1,41 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class InfoPane : PanelContainer
 {
     private GridContainer wordContainer;
+
+    private Label playerType;
+    private Label stats;
+
+    [Export] Player player;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         this.VisibilityChanged += Display;
 
-        wordContainer = GetNode<GridContainer>("HBoxContainer/ScrollContainer2/WordsContainer");
+        wordContainer = GetNode<GridContainer>("VBoxContainer/HBoxContainer/ScrollContainer2/WordsContainer");
+
+        playerType = GetNode<Label>("VBoxContainer/HBoxContainer2/PlayerType");
+        stats = GetNode<Label>("VBoxContainer/HBoxContainer2/Stats");
+
         //wordContainer = GetNode<GridContainer>("HBoxContainer/WordsContainer");
     }
     private void Display()
     {
         if (Visible)
         {
+            UpdatePlayerInfo();
             EmitSignal(SignalName.UpdateWords);
         }
+    }
+
+    private void UpdatePlayerInfo()
+    {
+        playerType.Text = $"Current type: {player.Type}";
+        stats.Text = $"{player.CurrentHealth}/{player.MaxHealth} hp";
     }
 
     public void ClearWords()
@@ -31,7 +48,7 @@ public partial class InfoPane : PanelContainer
 
     private void DisplayWordInfo(string word)
     {
-        var infoContainer = GetNode<VBoxContainer>("HBoxContainer/ScrollContainer/InfoContainer");
+        var infoContainer = GetNode<VBoxContainer>("VBoxContainer/HBoxContainer/ScrollContainer/InfoContainer");
 
         var wordLabel = infoContainer.GetNode<Label>("Word");
         var typeLabel = infoContainer.GetNode<Label>("Types");
@@ -44,21 +61,21 @@ public partial class InfoPane : PanelContainer
 
         wordLabel.Text = WordManager.TitleCaseWord(word);
         //typeLabel.Text = $"Types: {string.Join(", ", WordManager.GetTypes(word))}";
-        definitionLabel.Text = $"Definitions: {string.Join("\n", WordManager.GetDefinitions(word))}";
+        definitionLabel.Text = $"Definitions: {string.Join("\n", WordManager.GetDefinitions(word).Select(def => $"- {def}"))}";
         synonymLabel.Text = $"Synonym Types: {string.Join(", ", WordManager.GetSynonyms(word))}";
         antonymLabel.Text = $"Antonym Types: {string.Join(", ", WordManager.GetAntonyms(word))}";
     }
 
     public void AddWord(string word)
     {
-        var button = new Button();
-        //label.HorizontalAlignment = HorizontalAlignment.Center;
-        //label.VerticalAlignment = VerticalAlignment.Center;
-        button.SizeFlagsHorizontal = SizeFlags.ExpandFill;
-        button.SizeFlagsVertical = SizeFlags.Expand;
+        var button = new Button
+        {
+            SizeFlagsHorizontal = SizeFlags.ExpandFill,
+            SizeFlagsVertical = SizeFlags.Expand,
 
-        button.Alignment = HorizontalAlignment.Center;
-        button.AutowrapMode = TextServer.AutowrapMode.WordSmart;
+            Alignment = HorizontalAlignment.Center,
+            AutowrapMode = TextServer.AutowrapMode.WordSmart
+        };
         button.AddThemeFontSizeOverride("font size", 30);
         //label.LabelSettings = new LabelSettings()
         //{

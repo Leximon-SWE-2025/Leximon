@@ -10,7 +10,7 @@ public partial class Enemy : Character, ISaveable
     AnimatedSprite2D icon;
 
 
-    
+
 
     public override void Load(Dictionary<string, JsonElement> dict)
     {

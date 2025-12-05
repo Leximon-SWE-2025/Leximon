@@ -28,7 +28,7 @@ public static class RelationExtension
     {
         Relation.None => 0,
         Relation.Synonym => 1,
-        Relation.Antonym =>0.25,
+        Relation.Antonym => 0.25,
         _ => throw new NotImplementedException(),
     };
 }
