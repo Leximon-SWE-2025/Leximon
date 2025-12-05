@@ -29,7 +29,7 @@ To run the game, enter F5.
 
 - <https://kenney.nl/assets/1-bit-input-prompts-pixel-16> CC0
 - <https://kenney.nl/assets/tiny-dungeon> CC0
-- <https://www.pexels.com/photo/green-grass-388415/> (License)[https://www.pexels.com/license/]
+- <https://www.pexels.com/photo/hallway-inside-a-dungeon-13778249/> (License)[https://www.pexels.com/license/]
 
 ## Data Sources
 
