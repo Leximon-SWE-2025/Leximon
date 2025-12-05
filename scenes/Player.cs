@@ -41,7 +41,7 @@ public partial class Player : Character
 
         interactionArea = GetNode<Area2D>("InteractionArea");
 
-        knownMoves = [.. WordManager.RandomMoves()];
+        //knownMoves = [.. WordManager.RandomMoves()];
 
         baseDamage = Globals.BasePlayerDamage;
     }

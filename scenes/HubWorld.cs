@@ -17,6 +17,7 @@ public partial class HubWorld : Node2D, ISaveable
     [Export] public Node2D EnemyContainer;
     [Export] public Vector2 SpawnMin = new(0, 0);
     [Export] public Vector2 SpawnMax = new(1152, 656);
+    [Export] private Timer enemyActionTimer;
 
     private Player player;
     private BattleUI battleUI;
@@ -67,8 +68,11 @@ public partial class HubWorld : Node2D, ISaveable
 
         battleUI.PlayerWin += PlayerWin;
         battleUI.EnemyWin += PlayerLose;
-        
+
         Ready += () => Load(Globals.SAVE_FILE_PATH);
+
+
+        enemyActionTimer.Timeout += TriggerEnemyAction;
     }
 
     public void PlayerWin()
@@ -94,7 +98,10 @@ public partial class HubWorld : Node2D, ISaveable
         battleUI.UpdateEnemyHealth(opponent.PercentHealth);
         player.SelectMoves(NUMBER_OF_MOVES, target: opponent);
         battleUI.UpdateMoves(player.CurrentMoves);
-        TriggerEnemyAction();
+        //GetTree().CreateTimer(2);
+        //TriggerEnemyAction();
+        battleUI.WaitForEnemyMove();
+        enemyActionTimer.Start();
     }
 
     public void PlayerDefend(string word)
@@ -108,11 +115,14 @@ public partial class HubWorld : Node2D, ISaveable
         battleUI.UpdatePlayerLog(player);
         player.SelectMoves(NUMBER_OF_MOVES, target: opponent);
         battleUI.UpdateMoves(player.CurrentMoves);
-        TriggerEnemyAction();
+
+        battleUI.WaitForEnemyMove();
+        enemyActionTimer.Start();
     }
 
     private void TriggerEnemyAction()
     {
+
         var moveType = opponent.SelectMoveType();
         Move word;
         switch (moveType)
@@ -131,6 +141,7 @@ public partial class HubWorld : Node2D, ISaveable
                 battleUI.UpdateEnemyLog(opponent);
                 break;
         }
+        battleUI.PlayerTurn();
     }
 
     public override void _Notification(int what)
@@ -218,8 +229,13 @@ public partial class HubWorld : Node2D, ISaveable
     }
     private void OpenInfoPane()
     {
-        infoPane.Show();
-        ChangeState(GameState.Info);
+        if (State == GameState.Hub)
+        {
+            GD.Print(string.Join(", ", player.KnownMoves));
+            RefreshInfoPane();
+            infoPane.Show();
+            ChangeState(GameState.Info);
+        }
     }
 
     private void ExitBattle()

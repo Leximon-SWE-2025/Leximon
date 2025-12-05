@@ -27,8 +27,8 @@ public partial class InfoPane : PanelContainer
     {
         if (Visible)
         {
-            UpdatePlayerInfo();
             EmitSignal(SignalName.UpdateWords);
+            UpdatePlayerInfo();
         }
     }
 

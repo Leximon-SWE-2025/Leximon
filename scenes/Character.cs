@@ -55,7 +55,7 @@ public abstract partial class Character : Area2D, ISaveable
 
 
 
-    protected HashSet<Move> knownMoves = [];
+    protected IEnumerable<Move> knownMoves =  WordManager.AllMoves;
 
     public Move[] KnownMoves => [.. knownMoves];
 
@@ -126,7 +126,7 @@ public abstract partial class Character : Area2D, ISaveable
 
     public void SelectMoves(int count, Character target)
     {
-        if (knownMoves.Count <= count)
+        if (knownMoves.Count() <= count)
         {
             currentMoves = [.. knownMoves];
             return;
@@ -271,7 +271,9 @@ public abstract partial class Character : Area2D, ISaveable
         //{
         //    knownMoves = [];  // Enemies do not store this value, so this is fine
         //}
-        knownMoves = [.. WordManager.Words]; // adds all words to the player (just for prototype)
+
+        //GD.Print($"All Words {string.Join(", ", WordManager.Words)}");
+        //knownMoves = [.. WordManager.Words]; // adds all words to the player (just for prototype)
 
         //attack_multiplier = dict[nameof(attack_multiplier)].GetSingle();
         //defense_multiplier = dict[nameof(defense_multiplier)].GetSingle();

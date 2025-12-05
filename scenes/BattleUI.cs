@@ -9,7 +9,7 @@ public enum Target
 }
 enum BattleUIState
 {
-    SelectWord, ViewDefinition, SelectMove
+    SelectWord, ViewDefinition, SelectMove,EnemyMove
 }
 public partial class BattleUI : Control
 {
@@ -71,7 +71,15 @@ public partial class BattleUI : Control
         this.VisibilityChanged += () => { if (this.Visible) state = BattleUIState.SelectWord; };
     }
 
+    public void WaitForEnemyMove()
+    {
+        state = BattleUIState.EnemyMove;
+    }
 
+    public void PlayerTurn()
+    {
+        state = BattleUIState.SelectWord;
+    }
 
     public void UpdatePlayerLog(Character player)
     {
