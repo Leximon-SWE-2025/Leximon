@@ -20,6 +20,15 @@ Open Godot Version 4.5.1, go to import then choose the path the Leximon file. Se
 
 To run the game, enter F5.
 
+## Play The Game
+
+The controls of the game is as follows
+- Use w,a,s,d or the arrow keys to move
+- Use f to open the inventory to veiw player info and word info
+- Use e when close to an enemy to engage in a battle
+- Use esacpe to close the inventory, leave a battle, or open the exit menu
+
+
 ## Resources
 
 - gitignore file sourced from [gitignore.io](https://www.toptal.com/developers/gitignore) under the CC0 license as outlined in the project's [git repository](https://github.com/toptal/gitignore.io)
