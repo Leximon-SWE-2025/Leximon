@@ -10,8 +10,12 @@ We chose to create a game which presents students with an opportunity to practic
 
 
 ## Build the Game 
-The tools needed to build the game:
+### Required Tools
 - Godot Engine - .NET 4.5.1
+- Godot Engine - .NET 4.5.1 required dependencies
+
+### Instructions
+These instructions have only been tested on Windows 11
 
 1. Download and install the correct version of Godot Engine <https://godotengine.org/>
     1. If required download and install any other required software as listed on the download page for Godot Engine
