@@ -161,7 +161,7 @@ public partial class HubWorld : Node2D, ISaveable
     private void SaveAndQuit()
     {
         Save(Globals.SAVE_FILE_PATH);
-        Quit();
+        GetTree().ChangeSceneToFile(@"res://scenes/main_menu.tscn");
     }
 
     [DoesNotReturn]

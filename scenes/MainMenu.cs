@@ -3,6 +3,7 @@ using System;
 
 public partial class MainMenu : Control
 {
+    private Panel controlPanel;
     public override void _Ready()
     {
         if (OS.IsDebugBuild())
@@ -11,6 +12,8 @@ public partial class MainMenu : Control
         var b2 = GetNode<Button>("VBoxContainer/Button2");
         var b3 = GetNode<Button>("VBoxContainer/Button3");
         var b4 = GetNode<Button>("VBoxContainer/Button4");
+
+        controlPanel = GetNode<Panel>("Panel2");
     }
     private void _on_start_pressed()
     {
@@ -18,9 +21,10 @@ public partial class MainMenu : Control
         GetTree().ChangeSceneToFile(@"res://scenes/HubWorld.tscn");
     }
 
-    private void _on_load_pressed()
+    private void _on_controls_pressed()
     {
-        GD.Print("Load Button Works");
+        //GD.Print("Load Button Works");
+        controlPanel.Show();
     }
 
     private void _on_about_pressed()
@@ -32,5 +36,10 @@ public partial class MainMenu : Control
     private void _on_exit_pressed()
     {
         GetTree().Quit();
+    }
+
+    private void _on_close_control_pressed()
+    {
+        controlPanel.Hide();
     }
 }

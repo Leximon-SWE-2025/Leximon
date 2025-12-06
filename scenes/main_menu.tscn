@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhnicq2xpie3r"]
+[gd_scene load_steps=17 format=3 uid="uid://bhnicq2xpie3r"]
 
 [ext_resource type="Script" uid="uid://cbbni86d26uif" path="res://scenes/MainMenu.cs" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://ctsmnt2al00nd" path="res://art/pexels-tanuj-matta-2125119-13778249.jpg" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://cdmdao7jbsmi8" path="res://scenes/control_info.tscn" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bh622eqv4rc7a" path="res://art/input_prompt/tilemap_white.png" id="4_wu84c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("2_ekxnf")
@@ -23,6 +25,37 @@ corner_radius_bottom_left = 16
 shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.004024883, 0.004024883, 0.004024883, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqt6"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(308, 172, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(325, 189, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(308, 189, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(342, 189, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(325, 172, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(359, 189, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(291, 138, 12, 11)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -72,7 +105,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
 text = "Start"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -84,7 +116,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
-text = "Load"
+text = "Controls"
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Controls"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -130,7 +168,96 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 60
 text = "Leximon"
 
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2048611
+anchor_top = 0.14329268
+anchor_right = 0.7951389
+anchor_bottom = 0.85670733
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Up" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+Text = "Up"
+Texture = SubResource("AtlasTexture_bqqt6")
+
+[node name="Down" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+Text = "Down"
+Texture = SubResource("AtlasTexture_8ln24")
+
+[node name="Left" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+Text = "Left"
+Texture = SubResource("AtlasTexture_wu84c")
+
+[node name="Right" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+Text = "Right"
+Texture = SubResource("AtlasTexture_rtw2f")
+
+[node name="EnterBattle" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+Text = "Enter Battle"
+Texture = SubResource("AtlasTexture_oa1go")
+
+[node name="Inventory" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+Text = "View Inventory"
+Texture = SubResource("AtlasTexture_tbmy8")
+
+[node name="Exit" parent="Panel2/VBoxContainer/GridContainer" instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+Text = "Exit/Close Menu"
+Texture = SubResource("AtlasTexture_jk1qb")
+
+[node name="CloseControl" type="Button" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6cm7")
+text = "Close"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/CloseControl" to="." method="_on_close_control_pressed"]
