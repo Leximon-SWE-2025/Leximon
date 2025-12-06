@@ -94,14 +94,14 @@ public partial class BattleUI : Control
         //GD.Print(player.Type);
         playerLogPane.Label = $"Player\n" +
             $"Type: {player.Type}\n" +
-            $"Defence: {player.Armor:0.00}";
+            $"Defense: {player.Armor:0.00}";
     }
     public void UpdateEnemyLog(Character enemy)
     {
         //GD.Print(enemy.Type);
         enemyLogPane.Label = $"Enemy\n" +
             $"Type: {enemy.Type}\n" +
-            $"Defence: {enemy.Armor:0.00}";
+            $"Defense: {enemy.Armor:0.00}";
     }
 
 
