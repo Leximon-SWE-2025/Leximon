@@ -17,7 +17,7 @@ public partial class LogPane : Control
 {
 
     private VBoxContainer messageContainer;
-    private Label messageLabel;
+    private RichTextLabel messageLabel;
     private Label logLabel;
     private Queue<object> log = new();
 
@@ -31,7 +31,7 @@ public partial class LogPane : Control
     public override void _Ready()
     {
         messageContainer = GetNode<VBoxContainer>("Body/Affects");
-        messageLabel = GetNode<Label>("Body/Label");
+        messageLabel = GetNode<RichTextLabel>("Body/Label");
         logLabel = GetNode<Label>("Body/LogLabel");
     }
 
@@ -41,10 +41,10 @@ public partial class LogPane : Control
     public void Log<T>(T item)
     {
         log.Enqueue(item);
-        while (log.Count > 9)
-        {
-            log.Dequeue();
-        }
+        //while (log.Count > 8)
+        //{
+        //    log.Dequeue();
+        //}
     }
 
     public void Clear()

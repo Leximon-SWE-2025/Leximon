@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dow6qaulk6ubl"]
+[gd_scene load_steps=4 format=3 uid="uid://dow6qaulk6ubl"]
 
 [ext_resource type="Script" uid="uid://dh44r4l8o7x8a" path="res://scripts/LogPane.cs" id="1_c52vi"]
 
@@ -8,6 +8,8 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c52vi"]
 
 [node name="LogPane" type="Control"]
 layout_mode = 3
@@ -44,12 +46,17 @@ text = "Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="Body"]
+custom_minimum_size = Vector2(0, 2.755)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c52vi")
+
 [node name="Affects" type="VBoxContainer" parent="Body"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Body"]
+[node name="Label" type="RichTextLabel" parent="Body"]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_alignment = 1

@@ -91,13 +91,17 @@ public partial class BattleUI : Control
 
     public void UpdatePlayerLog(Character player)
     {
-        GD.Print(player.Type);
-        playerLogPane.Label = $"Player ({player.Type}: {player.Armor:0.00})";
+        //GD.Print(player.Type);
+        playerLogPane.Label = $"Player\n" +
+            $"Type: {player.Type}\n" +
+            $"Defence: {player.Armor:0.00}";
     }
     public void UpdateEnemyLog(Character enemy)
     {
-        GD.Print(enemy.Type);
-        enemyLogPane.Label = $"Enemy ({enemy.Type}: {enemy.Armor:0.00})";
+        //GD.Print(enemy.Type);
+        enemyLogPane.Label = $"Enemy\n" +
+            $"Type: {enemy.Type}\n" +
+            $"Defence: {enemy.Armor:0.00}";
     }
 
 
