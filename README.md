@@ -103,4 +103,4 @@ The controls of the game is as follows
   - Prompt: "c#, how to efficiently get n unique random numbers in the range 0..r"
 - [gpt-oss:20b](https://ollama.com/library/gpt-oss:20b): Used to generate list of words and their types (full chat [here](./AI-disclosure/wordlist-generation/chat_history.md)).
 - [ChatGPT Free](https://chatgpt.com): Code to select the enemies move. Chat [here](./AI-disclosure/Enemy_Select_Random_Move/chat_history.md)
-- [ChatGPT Free](https://chatgpt.com): Code to create a save button. Chat [here](./AI-disclosure/save_button/chat_history.md)
+- [ChatGPT Free](https://chatgpt.com): Code to create a save button. Chat [here](./AI-disclosure/save_button/save_button_chat_history.md)
