@@ -13,17 +13,23 @@ together {
 }
 together {
     !include ./scenes/BattleUI.puml
-    ' !include ./scenes/Card.puml
-    !include ./scenes/DefinitionPopUp.puml
-    !include ./scenes/ExitPane.puml
     !include ./scenes/InfoPane.puml
     !include ./scenes/MainMenu.puml
+    !include ./scenes/DefinitionPopUp.puml
     !include ./scenes/MovePane.puml
     !include ./scenes/MovePopUp.puml
     !include ./scripts/HealthBar.puml
     !include ./scripts/LogPane.puml
+    !include ./scenes/Card.puml
+    !include ./scenes/ExitPane.puml
     ' !include ./scenes/ControlInfo.puml
 }
+
+' hide DefinitionPopUp
+' hide MovePane
+' hide MovePopUp
+' hide HealthBar
+' hide LogPane
 
 together{
     !include ./scenes/Globals.puml

@@ -2,7 +2,7 @@
 class ExitPane{
 }
 ' PanelContainer <|-- ExitPane
-ExitPane -- HubWorld : Saves
-ExitPane -- HubWorld : Quits
+ExitPane -r-|> HubWorld : Saves and Quits
+' ExitPane --|> HubWorld : Quits
 ExitPane "1" *-- "2" Button
 @enduml

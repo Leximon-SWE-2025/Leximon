@@ -1,17 +1,19 @@
 @startuml Card
 class Card {
-    - hoverAmmount : float
-    - helpText : String
-    - helpClickedTest : String
-    - word : String <<get>>
-    - helpButton : Label <<get>>
-    - hoverTween : Tween
-    + <<override>> _Ready() 
-    + HoverBy(ammount:Vector2) 
-    - _on_mouse_entered() 
-    - _on_mouse_exited() 
-    - _on_gui_input(@event:InputEvent) 
+    ' - hoverAmmount : float
+    ' - helpText : String
+    ' - helpClickedTest : String
+    - word : String
+    ' - helpButton : Label <<get>>
+    ' - hoverTween : Tween
+    ' + <<override>> _Ready() 
+    ' + HoverBy(ammount:Vector2) 
+    ' - _on_mouse_entered() 
+    ' - _on_mouse_exited() 
+    ' - _on_gui_input(@event:InputEvent) 
     + SetLabel(text:String) 
 }
+
+MovePane "1" *-- "1..*" Card
 ' Control <|-- Card
 @enduml

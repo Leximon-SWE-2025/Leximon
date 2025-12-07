@@ -14,7 +14,7 @@ class HubWorld{
     - SpawnEnemies() 
     - StartBattle(enemy:Character) 
     - ExitBattle() 
-    + RespawnEnemies() 
+    ' + RespawnEnemies() 
 }
 ' Node2D <|-- HubWorld
 ISaveable <|.. HubWorld

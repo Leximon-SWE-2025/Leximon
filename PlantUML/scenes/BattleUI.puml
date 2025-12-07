@@ -13,9 +13,9 @@ class BattleUI{
     + PlayerTurn() 
     - Close() 
     ' - GetLogPane(target:Target) : LogPane
-    + LogAttack(word:string, target:Target) 
-    + LogDefend(word:string, target:Target) 
-    + LogAttackStatus(status:AttackStatus, target:Target) 
+    ' + LogAttack(word:string, target:Target) 
+    ' + LogDefend(word:string, target:Target) 
+    ' + LogAttackStatus(status:AttackStatus, target:Target) 
 }
 ' Control <|-- BattleUI
 

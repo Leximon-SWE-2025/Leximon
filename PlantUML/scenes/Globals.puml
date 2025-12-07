@@ -11,6 +11,6 @@ class Globals <<static>> {
     + {static} WinsToSwitchType : int = 3
 }
 
-Globals -- HubWorld: gets values from
-Globals -- Character: gets values from
+Globals <|-- HubWorld: gets values from
+Globals <|-- Character: gets values from
 @enduml
