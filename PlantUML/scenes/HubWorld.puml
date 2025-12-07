@@ -29,6 +29,8 @@ HubWorld "1" o-- "5" Enemy
 ' HubWorld "1" *-- "1" Timer
 ' HubWorld "1" *-- "1" Camera2D
 
+' HubWorld --> Character : Signals Battle State
+
 ' ISaveable <[hidden]- HubWorld
 
 @enduml

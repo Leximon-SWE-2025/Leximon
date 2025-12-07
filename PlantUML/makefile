@@ -7,7 +7,7 @@ include.svg: $(PUML_FILES)
 	plantuml -tsvg include.puml
 
 %.png: %.svg
-	magick $< -background transparent -trim $@
+	magick $< -background transparent -density 100 -trim $@
 
 include.png: include.svg
 

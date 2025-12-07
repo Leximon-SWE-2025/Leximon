@@ -43,4 +43,6 @@ class WordManager{
 ' Node <|-- WordManager
 
 WordManager "1" *-- "1..*" WordInfo : Dictionary
+
+WordManager -- Character: Gets words from
 @enduml

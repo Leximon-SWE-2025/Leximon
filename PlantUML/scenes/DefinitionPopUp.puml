@@ -7,5 +7,5 @@ class DefinitionPopUp  {
 ' PanelContainer <|-- DefinitionPopUp
 
 BattleUI "1" *-- "1" DefinitionPopUp
-ExitPane "1" *-- "1" Button
+DefinitionPopUp "1" *-- "1" Button
 @enduml

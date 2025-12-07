@@ -24,5 +24,7 @@ BattleUI "1" *-- "2" HealthBar
 BattleUI "1" *-- "1" MovePane
 BattleUI "1" *-- "1" MovePopUp
 BattleUI "1" *-- "1" DefinitionPopUp
+
+
 ' BattleUI "1" *-- "1" BattleUIState
 @enduml

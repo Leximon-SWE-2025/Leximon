@@ -10,4 +10,7 @@ class Globals <<static>> {
     + {static} BaseDefenceIncrease : float = 0.07f
     + {static} WinsToSwitchType : int = 3
 }
+
+Globals -- HubWorld: gets values from
+Globals -- Character: gets values from
 @enduml

@@ -7,5 +7,5 @@ class MovePane  {
     + AddMove(move:Move) : Card
 }
 ' Control <|-- MovePane
-ExitPane "1" *-- "3" Button
+MovePane "1" *-- "3" Button
 @enduml

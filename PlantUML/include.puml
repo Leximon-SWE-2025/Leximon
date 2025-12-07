@@ -35,7 +35,9 @@ together{
 ' !include ./scripts/Extension.puml
 !include ./scripts/ISaveable.puml
 
-ISaveable -up[hidden]- Globals
-WordManager -u[hidden]- Player
+' ISaveable -up[hidden]- Globals
+' WordManager -u[hidden]- Player
+
+hide Button
 
 @enduml
