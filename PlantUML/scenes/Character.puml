@@ -7,7 +7,7 @@ abstract class Character {
     + Type : string
     + MaxHealth : double
     / PercentHealth : double
-    + KnownMoves : Move [*]
+    ' + KnownMoves : Move [*]
     + CurrentMoves : Move [*]
     / IsAlive : bool
     + SelectRandomMove() : Move
@@ -25,6 +25,6 @@ abstract class Character {
 ' Area2D <|-- Character
 ISaveable <|.. Character
 
-Character "*" *-- "1..*" Move
+Character "*" *-- "1..*" Move : Knows
 
 @enduml
