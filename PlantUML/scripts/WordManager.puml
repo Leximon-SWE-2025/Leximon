@@ -1,36 +1,29 @@
-@startuml
-enum Relation {
-    None,
-    Synonym,
-    Antonym,
+@startuml WordManager
+
+' class RelationExtension <<static>> {
+'     + {static} DamageMultiplier(relation:Relation) : double
+'     + {static} DefenseMultiplier(relation:Relation) : double
+' }
+' class RelationJsonConverter {
+'     + <<override>> Read(reader:Utf8JsonReader, typeToConvert:Type, options:JsonSerializerOptions) : Relation
+'     + <<override>> Write(writer:Utf8JsonWriter, value:Relation, options:JsonSerializerOptions) : void
+' }
+record CategoryInfo  {
+    + Type : string
+    + Relation : Relation
 }
-class RelationExtension <<static>> {
-    + {static} DamageMultiplier(relation:Relation) : double
-    + {static} DefenseMultiplier(relation:Relation) : double
+record WordInfo {
+    + Word : string 
+    ' + Types : CategoryInfo[*]
+    + Definitions : string[1..*]
 }
-class RelationJsonConverter {
-    + <<override>> Read(reader:Utf8JsonReader, typeToConvert:Type, options:JsonSerializerOptions) : Relation
-    + <<override>> Write(writer:Utf8JsonWriter, value:Relation, options:JsonSerializerOptions) : void
-}
-class CategoryInfo <<record>> {
-    + Type : string <<get>> <<init>>
-    + Relation : Relation <<get>> <<init>>
-    + <<override>> ToString() : string
-}
-class WordInfo <<record>> {
-    + Word : string <<get>> <<init>>
-    + Types : CategoryInfo[] <<get>> <<init>>
-    + Definitions : string[] <<get>> <<init>>
-    + Word : string <<get>> <<init>>
-    + Definitions : string[] <<get>> <<init>>
-    + Types : CategoryInfo[] <<get>> <<init>>
-    + <<override>> ToString() : string
-}
-class WordManager <<partial>> {
-    {static} - WordData : Dictionary<string, WordInfo>
-    {static} + Words : IEnumerable<string> <<get>>
-    + {static} AllMoves : IEnumerable<Move> <<get>>
-    + {static} AllTypes : IEnumerable<string> <<get>>
+WordInfo "*" o-- "1..*" CategoryInfo : Types
+
+class WordManager{
+    ' {static} - WordData : Dictionary<string, WordInfo>
+    / {static} Words : IEnumerable<string>
+    / {static} AllMoves : IEnumerable<Move> 
+    / {static} AllTypes : IEnumerable<string> 
     + {static} GetDefinitions(word:string) : IEnumerable<string>
     - {static} GetOfRelation(word:string, relation:Relation) : IEnumerable<string>
     + {static} GetSynonyms(word:string) : IEnumerable<string>
@@ -42,13 +35,12 @@ class WordManager <<partial>> {
     + {static} RandomTypes(count:int) : IEnumerable<string>
     + {static} RandomMoves(count:int) : IEnumerable<Move>
     + {static} RandomWords(count:int) : IEnumerable<string>
-    {static} - <<readonly>> jsonOptions : JsonSerializerOptions
-    + {static} TitleCaseWord(word:string) : string
-    + <<override>> _Ready() : void
     + {static} AreSynonyms(word1:string, word2:string) : bool
     + {static} AreAntonyms(word1:string, word2:string) : bool
     + {static} ClassifyRelation(word:string, type:string) : Relation
 }
-"JsonConverter`1" "<Relation>" <|-- RelationJsonConverter
-Node <|-- WordManager
+' "JsonConverter`1" "<Relation>" <|-- RelationJsonConverter
+' Node <|-- WordManager
+
+WordManager "1" *-- "1..*" WordInfo : Dictionary
 @enduml

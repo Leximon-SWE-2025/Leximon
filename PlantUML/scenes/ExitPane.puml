@@ -1,8 +1,8 @@
-@startuml
-class ExitPane <<partial>> {
-    + <<override>> _Ready() : void
-    - _on_exit_button_pressed() : void
-    - _on_save_button_pressed() : void
+@startuml ExitPane
+class ExitPane{
 }
-PanelContainer <|-- ExitPane
+' PanelContainer <|-- ExitPane
+ExitPane -- HubWorld : Saves
+ExitPane -- HubWorld : Quits
+ExitPane "1" *-- "2" Button
 @enduml

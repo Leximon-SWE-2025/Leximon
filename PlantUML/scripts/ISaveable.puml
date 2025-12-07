@@ -1,4 +1,4 @@
-@startuml
+@startuml ISaveable
 interface ISaveable {
     + {abstract} Save() : Dictionary<string, object>
     + {abstract} Load(dict:LoadType) : void

@@ -1,36 +1,28 @@
-@startuml
-enum Target {
-    Player,
-    Enemy,
-}
-enum BattleUIState {
-    SelectWord,
-    ViewDefinition,
-    SelectMove,
-    EnemyMove,
-}
-class BattleUI <<partial>> {
-    - enemyHealthBar : HealthBar
-    - playerHealthBar : HealthBar
-    - enemyLogPane : LogPane
-    - playerLogPane : LogPane
+@startuml BattleUI
+class BattleUI{
+    ' - enemyHealthBar : HealthBar
+    ' - playerHealthBar : HealthBar
+    ' - enemyLogPane : LogPane
+    ' - playerLogPane : LogPane
     - state : BattleUIState
-    - movePane : MovePane
-    - DefinitionPopup : DefinitionPopUp
-    - MovePopup : MovePopUp
-    + <<override>> _Ready() : void
+    ' - movePane : MovePane
+    ' - DefinitionPopup : DefinitionPopUp
+    ' - MovePopup : MovePopUp
+    ' + <<override>> _Ready() : void
     + WaitForEnemyMove() : void
     + PlayerTurn() : void
-    + UpdatePlayerLog(player:Character) : void
-    + UpdateEnemyLog(enemy:Character) : void
-    + UpdateMoves(moves:Move[]) : void
-    + UpdatePlayerHealth(healthPercent:double) : void
-    + UpdateEnemyHealth(healthPercent:double) : void
-    <<internal>> Close() : void
-    - GetLogPane(target:Target) : LogPane
+    - Close() : void
+    ' - GetLogPane(target:Target) : LogPane
     + LogAttack(word:string, target:Target) : void
     + LogDefend(word:string, target:Target) : void
     + LogAttackStatus(status:AttackStatus, target:Target) : void
 }
-Control <|-- BattleUI
+' Control <|-- BattleUI
+
+BattleUI "1" *-- "2" LogPane
+BattleUI "1" *-- "2" HealthBar
+BattleUI "1" *-- "1" MovePane
+BattleUI "1" *-- "1" MovePopUp
+BattleUI "1" *-- "1" DefinitionPopUp
+' BattleUI "1" *-- "1" BattleUIState
 @enduml

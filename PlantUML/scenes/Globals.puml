@@ -1,17 +1,13 @@
-@startuml
+@startuml Globals
 class Globals <<static>> {
-    + {static} <<readonly>> TILE_SIZE : int = 16
-    + {static} SAVE_FILE_PATH : string <<get>>
-    + {static} MovementTime : TimeSpan <<get>>
-    + {static} MovementTimeSec : double <<get>>
-    + {static} <<readonly>> BasePlayerDamage : int = 10
-    + {static} <<readonly>> BaseEnemyDamage : int = 7
-    + {static} <<readonly>> BaseDefence : float = 1
-    + {static} <<readonly>> BaseDefenceIncrease : float = 0.07f
-    + {static} <<readonly>> WinsToSwitchType : int = 3
-}
-enum MoveType {
-    Attack,
-    Defend,
+    + {static} TILE_SIZE : int = 16
+    + {static} SAVE_FILE_PATH : string = "user://savegame.save"
+    + {static} MovementTime : TimeSpan = 0.15 Seconds
+    / {static} MovementTimeSec : double 
+    + {static} BasePlayerDamage : int = 10
+    + {static} BaseEnemyDamage : int = 7
+    + {static} BaseDefence : float = 1
+    + {static} BaseDefenceIncrease : float = 0.07f
+    + {static} WinsToSwitchType : int = 3
 }
 @enduml

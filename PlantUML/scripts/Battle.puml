@@ -1,12 +1,10 @@
-@startuml
-class Battle <<partial>> {
+@startuml Battle
+class Battle {
     - enemyHealthBar : HealthBar
     - playerHealthBar : HealthBar
     - enemyLogPane : LogPane
     - playerLogPane : LogPane
     - movePane : MovePane
-    + <<override>> _Ready() : void
-    + <<override>> _Process(delta:double) : void
 }
-Control <|-- Battle
+' Control <|-- Battle
 @enduml

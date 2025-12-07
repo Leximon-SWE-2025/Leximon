@@ -1,23 +1,38 @@
-@startuml
-!include ./scenes/BattleUI.puml
-!include ./scenes/Card.puml
-!include ./scenes/Character.puml
-!include ./scenes/ControlInfo.puml
-!include ./scenes/DefinitionPopUp.puml
-!include ./scenes/Enemy.puml
-!include ./scenes/ExitPane.puml
-!include ./scenes/Globals.puml
-!include ./scenes/HubWorld.puml
-!include ./scenes/InfoPane.puml
-!include ./scenes/MainMenu.puml
-!include ./scenes/MovePane.puml
-!include ./scenes/MovePopUp.puml
-!include ./scenes/Player.puml
-!include ./scripts/Battle.puml
-!include ./scripts/Extension.puml
-!include ./scripts/HealthBar.puml
-!include ./scripts/ISaveable.puml
-!include ./scripts/LogPane.puml
+@startuml include
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+!include ./scripts/Enums.puml
 !include ./scripts/Move.puml
-!include ./scripts/WordManager.puml
+
+together {
+    !include ./scenes/Character.puml
+    !include ./scenes/Enemy.puml
+    !include ./scenes/Player.puml
+}
+together {
+    !include ./scenes/BattleUI.puml
+    ' !include ./scenes/Card.puml
+    !include ./scenes/DefinitionPopUp.puml
+    !include ./scenes/ExitPane.puml
+    !include ./scenes/InfoPane.puml
+    !include ./scenes/MainMenu.puml
+    !include ./scenes/MovePane.puml
+    !include ./scenes/MovePopUp.puml
+    !include ./scripts/HealthBar.puml
+    !include ./scripts/LogPane.puml
+    ' !include ./scenes/ControlInfo.puml
+}
+
+together{
+    !include ./scenes/Globals.puml
+    !include ./scripts/WordManager.puml
+}
+
+!include ./scenes/HubWorld.puml
+' !include ./scripts/Battle.puml
+' !include ./scripts/Extension.puml
+!include ./scripts/ISaveable.puml
+
+
 @enduml

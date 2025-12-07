@@ -1,0 +1,32 @@
+' @startuml Enums
+enum Target {
+    Player,
+    Enemy,
+}
+enum BattleUIState {
+    SelectWord,
+    ViewDefinition,
+    SelectMove,
+    EnemyMove,
+}
+enum MoveType {
+    Attack,
+    Defend,
+}
+enum GameState {
+    Hub,
+    Battle,
+    Info,
+    Exit,
+}
+enum Relation {
+    None,
+    Synonym,
+    Antonym,
+}
+enum AttackStatus {
+    Effective,
+    Normal,
+    Ineffective,
+}
+' @enduml

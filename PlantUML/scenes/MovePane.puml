@@ -1,10 +1,11 @@
-@startuml
-class MovePane <<partial>> {
-    - cardScene : PackedScene
-    - moveContainer : HBoxContainer
-    + <<override>> _Ready() : void
+@startuml MovePane
+class MovePane  {
+    ' - cardScene : PackedScene
+    ' - moveContainer : HBoxContainer
+    ' + <<override>> _Ready() : void
     + ClearMoves() : void
     + AddMove(move:Move) : Card
 }
-Control <|-- MovePane
+' Control <|-- MovePane
+ExitPane "1" *-- "3" Button
 @enduml

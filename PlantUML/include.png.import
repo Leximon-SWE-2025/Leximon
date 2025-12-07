@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfrbumr4legyu"
-path="res://.godot/imported/MovePane.png-60e7fc51a0454368ee7393dde4df2f3f.ctex"
+uid="uid://yfynefxo0t35"
+path="res://.godot/imported/include.png-3d66ddb23b14c9c823214b12ab5b1671.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlantUML/scenes/MovePane.png"
-dest_files=["res://.godot/imported/MovePane.png-60e7fc51a0454368ee7393dde4df2f3f.ctex"]
+source_file="res://PlantUML/include.png"
+dest_files=["res://.godot/imported/include.png-3d66ddb23b14c9c823214b12ab5b1671.ctex"]
 
 [params]
 

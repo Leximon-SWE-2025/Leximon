@@ -1,25 +1,15 @@
-@startuml
-enum AttackStatus {
-    Effective,
-    Normal,
-    Ineffective,
-}
-abstract class Character <<partial>> {
-    - currentHealth : double = 100
-    + CurrentHealth : double <<get>>
+@startuml Character
+
+abstract class Character {
+    + CurrentHealth : double 
     # baseDamage : int
-    # armor : double = 1.0
-    + Armor : double <<get>>
-    # type : string
-    + Type : string <<get>>
-    - maxHealth : double = 100
-    + MaxHealth : double <<get>>
-    + PercentHealth : double <<get>> <<set>>
-    # knownMoves : IEnumerable<Move>
-    + KnownMoves : Move[] <<get>>
-    - currentMoves : Move[]
-    + CurrentMoves : Move[] <<get>>
-    + IsAlive : bool <<get>>
+    + Armor : double
+    + Type : string
+    + MaxHealth : double
+    / PercentHealth : double
+    + KnownMoves : Move [*]
+    + CurrentMoves : Move [*]
+    / IsAlive : bool
     + SelectRandomMove() : Move
     + SelectRandomMove(effectiveAgainst:Character, type:MoveType) : Move
     + SelectMoveType() : MoveType
@@ -29,12 +19,12 @@ abstract class Character <<partial>> {
     + ResetArmor() : void
     + Attack(move:Move, target:Character) : AttackStatus
     + Defend(move:Move) : void
-    + DebugSetHealth(ammount:double) : void
     + ApplyDamage(damage:float) : void
     + Heal(ammount:float) : void
-    + <<virtual>> Save() : Dictionary<string, object>
-    + <<virtual>> Load(dict:Dictionary<string, JsonElement>) : void
 }
-Area2D <|-- Character
+' Area2D <|-- Character
 ISaveable <|-- Character
+
+Character "*" *-- "1..*" Move
+
 @enduml

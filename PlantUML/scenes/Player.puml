@@ -1,18 +1,13 @@
-@startuml
-class Player <<partial>> {
-    - interactionArea : Area2D
-    - sprite : AnimatedSprite2D
-    - screenSize : Vector2
-    + CanMove : bool = true
-    - battlesWon : int = 0
-    + BattlesWon : int <<get>> <<set>>
-    + <<override>> _Ready() : void
-    + <<override>> _Process(delta:double) : void
-    + <<override>> _Input(@event:InputEvent) : void
+@startuml Player
+class Player {
+    + CanMove : bool
+    + BattlesWon : int
     - TryEnterBattle() : bool
-    + UpdateSprite(moveDirection:Vector2) : void
     + Move(ammount:Vector2) : void
-    + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
 }
 Character <|-- Player
+' sprite
+' Player "*" o-- "1" AnimatedSprite2D
+' interaction area
+' Player "1" *-- "1" Area2D : Interaction Area
 @enduml

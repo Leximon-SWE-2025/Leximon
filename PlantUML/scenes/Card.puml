@@ -1,5 +1,5 @@
-@startuml
-class Card <<partial>> {
+@startuml Card
+class Card {
     - hoverAmmount : float
     - helpText : String
     - helpClickedTest : String
@@ -13,5 +13,5 @@ class Card <<partial>> {
     - _on_gui_input(@event:InputEvent) : void
     + SetLabel(text:String) : void
 }
-Control <|-- Card
+' Control <|-- Card
 @enduml

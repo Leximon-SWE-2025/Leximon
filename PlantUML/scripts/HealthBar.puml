@@ -1,6 +1,6 @@
-@startuml
-class HealthBar <<partial>> {
+@startuml HealthBar
+class HealthBar {
     + SetHealth(value:double) : void
 }
-ProgressBar <|-- HealthBar
+' ProgressBar <|-- HealthBar
 @enduml

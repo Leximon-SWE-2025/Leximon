@@ -1,10 +1,11 @@
-@startuml
-class DefinitionPopUp <<partial>> {
-    + <<override>> _Ready() : void
-    + Text : string <<get>> <<set>>
-    + Word : string <<get>> <<set>>
-    - _on_button_pressed() : void
+@startuml DefinitionPopUp
+class DefinitionPopUp  {
+    + Text : string 
+    + Word : string
     + Close() : void
 }
-PanelContainer <|-- DefinitionPopUp
+' PanelContainer <|-- DefinitionPopUp
+
+BattleUI "1" *-- "1" DefinitionPopUp
+ExitPane "1" *-- "1" Button
 @enduml

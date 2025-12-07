@@ -1,12 +1,9 @@
-@startuml
-class Enemy <<partial>> {
-    - icon : AnimatedSprite2D
-    + <<override>> Load(dict:Dictionary<string, JsonElement>) : void
-    + <<override>> Save() : Dictionary<string, object>
-    + <<override>> _Ready() : void
-    - InteractionAreaEntered(body:Area2D) : void
-    - InteractionAreaExited(body:Area2D) : void
+@startuml Enemy
+class Enemy {
 }
 Character <|-- Enemy
-ISaveable <|-- Enemy
+' ISaveable <|-- Enemy
+' Enemy "*" o-- "1" AnimatedSprite2D
+' Interaction area
+' Enemy "*" *-- "1" Area2D : Interaction Area
 @enduml
