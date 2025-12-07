@@ -29,6 +29,7 @@ abstract class Character <<partial>> {
     + ResetArmor() : void
     + Attack(move:Move, target:Character) : AttackStatus
     + Defend(move:Move) : void
+    + DebugSetHealth(ammount:double) : void
     + ApplyDamage(damage:float) : void
     + Heal(ammount:float) : void
     + <<virtual>> Save() : Dictionary<string, object>

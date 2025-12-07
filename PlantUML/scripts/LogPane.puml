@@ -6,7 +6,7 @@ class MoveLog <<record>> {
 }
 class LogPane <<partial>> {
     - messageContainer : VBoxContainer
-    - messageLabel : Label
+    - messageLabel : RichTextLabel
     - logLabel : Label
     - log : Queue<object>
     + Label : string <<get>> <<set>>

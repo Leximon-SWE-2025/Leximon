@@ -16,10 +16,6 @@ class BattleUI <<partial>> {
     - playerLogPane : LogPane
     - state : BattleUIState
     - movePane : MovePane
-    - currentHealth : int
-    + CurrentHealth : int <<get>>
-    - maxHealth : int
-    + MaxHealth : int <<get>>
     - DefinitionPopup : DefinitionPopUp
     - MovePopup : MovePopUp
     + <<override>> _Ready() : void

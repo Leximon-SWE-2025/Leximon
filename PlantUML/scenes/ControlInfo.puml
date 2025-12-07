@@ -1,0 +1,8 @@
+@startuml
+class ControlInfo <<partial>> {
+    - Text : string
+    - Texture : AtlasTexture
+    + <<override>> _Ready() : void
+}
+Control <|-- ControlInfo
+@enduml

@@ -2,6 +2,7 @@
 !include ./scenes/BattleUI.puml
 !include ./scenes/Card.puml
 !include ./scenes/Character.puml
+!include ./scenes/ControlInfo.puml
 !include ./scenes/DefinitionPopUp.puml
 !include ./scenes/Enemy.puml
 !include ./scenes/ExitPane.puml
