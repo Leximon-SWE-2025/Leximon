@@ -17,7 +17,7 @@ class HubWorld{
     + RespawnEnemies() : void
 }
 ' Node2D <|-- HubWorld
-ISaveable <|-- HubWorld
+ISaveable <|-[dashed]- HubWorld
 
 ' HubWorld "1" *-- "1" GameState
 HubWorld "1" o-- "1" Player
