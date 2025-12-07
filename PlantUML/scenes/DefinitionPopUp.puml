@@ -2,7 +2,7 @@
 class DefinitionPopUp  {
     + Text : string 
     + Word : string
-    + Close() : void
+    + Close() 
 }
 ' PanelContainer <|-- DefinitionPopUp
 

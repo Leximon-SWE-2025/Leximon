@@ -8,14 +8,14 @@ class BattleUI{
     ' - movePane : MovePane
     ' - DefinitionPopup : DefinitionPopUp
     ' - MovePopup : MovePopUp
-    ' + <<override>> _Ready() : void
-    + WaitForEnemyMove() : void
-    + PlayerTurn() : void
-    - Close() : void
+    ' + <<override>> _Ready() 
+    + WaitForEnemyMove() 
+    + PlayerTurn() 
+    - Close() 
     ' - GetLogPane(target:Target) : LogPane
-    + LogAttack(word:string, target:Target) : void
-    + LogDefend(word:string, target:Target) : void
-    + LogAttackStatus(status:AttackStatus, target:Target) : void
+    + LogAttack(word:string, target:Target) 
+    + LogDefend(word:string, target:Target) 
+    + LogAttackStatus(status:AttackStatus, target:Target) 
 }
 ' Control <|-- BattleUI
 

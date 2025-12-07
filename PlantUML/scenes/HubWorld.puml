@@ -3,18 +3,18 @@
 class HubWorld{
     - ENEMY_COUNT : int = 5
     - NUMBER_OF_MOVES : int = 5
-    + PlayerWin() : void
-    + PlayerLose() : void
+    + PlayerWin() 
+    + PlayerLose() 
     - State: GameState
-    + PlayerAttack(word:string) : void
-    + PlayerDefend(word:string) : void
-    - TriggerEnemyAction() : void
-    - SaveAndQuit() : void
-    - Quit() : void
-    - SpawnEnemies() : void
-    - StartBattle(enemy:Character) : void
-    - ExitBattle() : void
-    + RespawnEnemies() : void
+    + PlayerAttack(word:string) 
+    + PlayerDefend(word:string) 
+    - TriggerEnemyAction() 
+    - SaveAndQuit() 
+    - Quit() 
+    - SpawnEnemies() 
+    - StartBattle(enemy:Character) 
+    - ExitBattle() 
+    + RespawnEnemies() 
 }
 ' Node2D <|-- HubWorld
 ISaveable <|.. HubWorld

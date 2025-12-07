@@ -3,7 +3,7 @@ class Player {
     + CanMove : bool
     + BattlesWon : int
     - TryEnterBattle() : bool
-    + Move(ammount:Vector2) : void
+    + Move(ammount:Vector2) 
 }
 Character <|-- Player
 ' sprite

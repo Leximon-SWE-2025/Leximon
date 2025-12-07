@@ -1,11 +1,11 @@
 @startuml MovePopUp
 class MovePopUp  {
-    ' + <<override>> _Ready() : void
+    ' + <<override>> _Ready() 
     + Text : String 
-    ' - _on_attack_button_pressed() : void
-    ' - _on_defend_button_pressed() : void
-    ' - _on_exit_button_pressed() : void
-    + Close() : void
+    ' - _on_attack_button_pressed() 
+    ' - _on_defend_button_pressed() 
+    ' - _on_exit_button_pressed() 
+    + Close() 
 }
 ' PanelContainer <|-- MovePopUp
 @enduml

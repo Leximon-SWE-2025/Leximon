@@ -13,14 +13,14 @@ abstract class Character {
     + SelectRandomMove() : Move
     + SelectRandomMove(effectiveAgainst:Character, type:MoveType) : Move
     + SelectMoveType() : MoveType
-    # RandomizeType() : void
-    + SelectMoves(count:int, target:Character) : void
-    + FullHeal() : void
-    + ResetArmor() : void
+    # RandomizeType() 
+    + SelectMoves(count:int, target:Character) 
+    + FullHeal() 
+    + ResetArmor() 
     + Attack(move:Move, target:Character) : AttackStatus
-    + Defend(move:Move) : void
-    + ApplyDamage(damage:float) : void
-    + Heal(ammount:float) : void
+    + Defend(move:Move) 
+    + ApplyDamage(damage:float) 
+    + Heal(ammount:float) 
 }
 ' Area2D <|-- Character
 ISaveable <|.. Character

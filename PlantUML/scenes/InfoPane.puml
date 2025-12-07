@@ -4,12 +4,12 @@ class InfoPane  {
     ' - playerType : Label
     ' - stats : Label
     ' - player : Player
-    ' + <<override>> _Ready() : void
-    - Display() : void
-    ' - UpdatePlayerInfo() : void
-    + ClearWords() : void
-    - DisplayWordInfo(word:string) : void
-    + AddWord(word:string) : void
+    ' + <<override>> _Ready() 
+    - Display() 
+    ' - UpdatePlayerInfo() 
+    + ClearWords() 
+    - DisplayWordInfo(word:string) 
+    + AddWord(word:string) 
 }
 ' PanelContainer <|-- InfoPane
 @enduml

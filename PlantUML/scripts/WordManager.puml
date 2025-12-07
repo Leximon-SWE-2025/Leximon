@@ -6,7 +6,7 @@
 ' }
 ' class RelationJsonConverter {
 '     + <<override>> Read(reader:Utf8JsonReader, typeToConvert:Type, options:JsonSerializerOptions) : Relation
-'     + <<override>> Write(writer:Utf8JsonWriter, value:Relation, options:JsonSerializerOptions) : void
+'     + <<override>> Write(writer:Utf8JsonWriter, value:Relation, options:JsonSerializerOptions) 
 ' }
 record CategoryInfo  {
     + Type : string
@@ -44,5 +44,5 @@ class WordManager{
 
 WordManager "1" *-- "1..*" WordInfo : Dictionary
 
-WordManager -- Character: Gets words from
+WordManager -- Character: Checks Words With
 @enduml

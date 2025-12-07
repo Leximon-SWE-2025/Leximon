@@ -1,6 +1,6 @@
 @startuml HealthBar
 class HealthBar {
-    + SetHealth(value:double) : void
+    + SetHealth(value:double) 
 }
 ' ProgressBar <|-- HealthBar
 @enduml

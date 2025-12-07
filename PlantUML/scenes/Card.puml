@@ -6,12 +6,12 @@ class Card {
     - word : String <<get>>
     - helpButton : Label <<get>>
     - hoverTween : Tween
-    + <<override>> _Ready() : void
-    + HoverBy(ammount:Vector2) : void
-    - _on_mouse_entered() : void
-    - _on_mouse_exited() : void
-    - _on_gui_input(@event:InputEvent) : void
-    + SetLabel(text:String) : void
+    + <<override>> _Ready() 
+    + HoverBy(ammount:Vector2) 
+    - _on_mouse_entered() 
+    - _on_mouse_exited() 
+    - _on_gui_input(@event:InputEvent) 
+    + SetLabel(text:String) 
 }
 ' Control <|-- Card
 @enduml

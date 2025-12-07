@@ -1,12 +1,12 @@
 @startuml MainMenu
 class MainMenu {
     ' - controlPanel : Panel
-    ' + <<override>> _Ready() : void
-    ' - _on_start_pressed() : void
-    ' - _on_controls_pressed() : void
-    ' - _on_about_pressed() : void
-    ' - _on_exit_pressed() : void
-    ' - _on_close_control_pressed() : void
+    ' + <<override>> _Ready() 
+    ' - _on_start_pressed() 
+    ' - _on_controls_pressed() 
+    ' - _on_about_pressed() 
+    ' - _on_exit_pressed() 
+    ' - _on_close_control_pressed() 
 }
 ' Control <|-- MainMenu
 MainMenu -- HubWorld: Loads

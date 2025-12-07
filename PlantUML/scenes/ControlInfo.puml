@@ -2,7 +2,7 @@
 class ControlInfo  {
     - Text : string
     - Texture : AtlasTexture
-    + <<override>> _Ready() : void
+    + <<override>> _Ready() 
 }
 Control <|-- ControlInfo
 ' @enduml

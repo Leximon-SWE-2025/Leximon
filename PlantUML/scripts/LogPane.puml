@@ -10,11 +10,11 @@ class LogPane  {
     ' - logLabel : Label
     - log : Queue<object>
     ' + Label : string <<get>> <<set>>
-    ' + <<override>> _Ready() : void
-    + LogMove(move:string, type:MoveType) : void
-    + Log(item:T) : void
-    + Clear() : void
-    ' + <<override>> _Process(delta:double) : void
+    ' + <<override>> _Ready() 
+    + LogMove(move:string, type:MoveType) 
+    + Log(item:T) 
+    + Clear() 
+    ' + <<override>> _Process(delta:double) 
 }
 ' Control <|-- LogPane
 @enduml
