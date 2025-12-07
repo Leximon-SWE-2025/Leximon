@@ -2,7 +2,7 @@
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam groupInheritance 1
-
+' left to right direction
 !include ./scripts/Enums.puml
 !include ./scripts/Move.puml
 
@@ -35,5 +35,7 @@ together{
 ' !include ./scripts/Extension.puml
 !include ./scripts/ISaveable.puml
 
+ISaveable -up[hidden]- Globals
+WordManager -u[hidden]- Player
 
 @enduml
