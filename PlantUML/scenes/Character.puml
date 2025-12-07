@@ -23,7 +23,7 @@ abstract class Character {
     + Heal(ammount:float) : void
 }
 ' Area2D <|-- Character
-ISaveable <|-[dashed]- Character
+ISaveable <|.. Character
 
 Character "*" *-- "1..*" Move
 
