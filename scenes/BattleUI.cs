@@ -80,6 +80,12 @@ public partial class BattleUI : Control
         }
     }
 
+    public void ClearLog()
+    {
+        playerLogPane.Clear();
+        enemyLogPane.Clear();
+    }
+
     public void PlayerTurn()
     {
         state = BattleUIState.SelectWord;
