@@ -241,7 +241,7 @@ public partial class HubWorld : Node2D, ISaveable
     private void ExitBattle()
     {
         // TODO: reset health
-        battleUI
+        battleUI.ClearLog();
 
         player.FullHeal();
         player.ResetArmor();
